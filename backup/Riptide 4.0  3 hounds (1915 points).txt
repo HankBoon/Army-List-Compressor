@@ -1,0 +1,181 @@
+Riptide 4.0 / 3 hounds (1915 points)
+
+T’au Empire
+Strike Force (2000 points)
+Kauyon
+
+
+CHARACTERS
+
+Commander Shadowsun (100 points)
+  • 1x Advanced Guardian Drone
+    1x Battlesuit fists
+    1x Command-link Drone (Aura)
+    1x Flechette launcher
+    2x High-energy fusion blaster
+    1x Light missile pod
+    1x Pulse pistol
+
+Darkstrider (60 points)
+  • 1x Close combat weapon
+    1x Shade
+
+
+BATTLELINE
+
+Breacher Team (100 points)
+  • 1x Support turret
+  • 1x Breacher Fire Warrior Shas’ui
+    • 1x Close combat weapon
+      1x Guardian Drone
+      1x Gun Drone
+      1x Pulse blaster
+      1x Pulse pistol
+  • 9x Breacher Fire Warrior
+    • 9x Close combat weapon
+      9x Pulse blaster
+      9x Pulse pistol
+
+Breacher Team (100 points)
+  • 1x Support turret
+  • 1x Breacher Fire Warrior Shas’ui
+    • 1x Close combat weapon
+      1x Guardian Drone
+      1x Gun Drone
+      1x Pulse blaster
+      1x Pulse pistol
+  • 9x Breacher Fire Warrior
+    • 9x Close combat weapon
+      9x Pulse blaster
+      9x Pulse pistol
+
+Breacher Team (100 points)
+  • 1x Support turret
+  • 1x Breacher Fire Warrior Shas’ui
+    • 1x Close combat weapon
+      1x Guardian Drone
+      1x Gun Drone
+      1x Pulse blaster
+      1x Pulse pistol
+  • 9x Breacher Fire Warrior
+    • 9x Close combat weapon
+      9x Pulse blaster
+      9x Pulse pistol
+
+Strike Team (80 points)
+  • 1x Support turret
+  • 1x Fire Warrior Shas’ui
+    • 1x Close combat weapon
+      1x Pulse pistol
+      1x Pulse rifle
+  • 9x Fire Warrior
+    • 9x Close combat weapon
+      9x Pulse pistol
+      9x Pulse rifle
+
+
+DEDICATED TRANSPORTS
+
+Devilfish (85 points)
+  • 1x Accelerator burst cannon
+    1x Armoured hull
+    2x Seeker missile
+    2x Twin pulse carbine
+
+Devilfish (85 points)
+  • 1x Accelerator burst cannon
+    1x Armoured hull
+    2x Seeker missile
+    2x Twin pulse carbine
+
+Devilfish (85 points)
+  • 1x Accelerator burst cannon
+    1x Armoured hull
+    2x Seeker missile
+    2x Twin pulse carbine
+
+
+OTHER DATASHEETS
+
+Broadside Battlesuits (220 points)
+  • 1x Broadside Shas’vre
+    • 1x Crushing bulk
+      1x Heavy rail rifle
+      2x Missile Drone
+      1x Seeker missile
+      1x Twin plasma rifle
+  • 1x Broadside Shas’ui
+    • 1x Crushing bulk
+      1x Heavy rail rifle
+      2x Missile Drone
+      1x Seeker missile
+      1x Twin plasma rifle
+
+Kroot Hounds (40 points)
+  • 4x Kroot Hound
+    • 4x Ripping fangs
+
+Kroot Hounds (40 points)
+  • 4x Kroot Hound
+    • 4x Ripping fangs
+
+Kroot Hounds (40 points)
+  • 4x Kroot Hound
+    • 4x Ripping fangs
+
+Pathfinder Team (90 points)
+  • 1x Pathfinder Shas’ui
+    • 1x Close combat weapon
+      2x Gun Drone
+      1x Pulse carbine
+      1x Pulse pistol
+      1x Recon Drone
+      1x Semi-automatic grenade launcher
+  • 9x Pathfinder
+    • 9x Close combat weapon
+      3x Ion rifle
+      6x Pulse carbine
+      9x Pulse pistol
+
+Pathfinder Team (90 points)
+  • 1x Pathfinder Shas’ui
+    • 1x Close combat weapon
+      2x Gun Drone
+      1x Pulse carbine
+      1x Pulse pistol
+      1x Recon Drone
+      1x Semi-automatic grenade launcher
+  • 9x Pathfinder
+    • 9x Close combat weapon
+      3x Ion rifle
+      6x Pulse carbine
+      9x Pulse pistol
+
+Riptide Battlesuit (180 points)
+  • 1x Ion accelerator
+    2x Missile Drone
+    1x Riptide fists
+    1x Twin plasma rifle
+
+Riptide Battlesuit (180 points)
+  • 1x Ion accelerator
+    2x Missile Drone
+    1x Riptide fists
+    1x Twin plasma rifle
+
+Riptide Battlesuit (180 points)
+  • 1x Ion accelerator
+    2x Missile Drone
+    1x Riptide fists
+    1x Twin plasma rifle
+
+Stealth Battlesuits (60 points)
+  • 1x Stealth Shas’vre
+    • 1x Battlesuit fists
+      1x Burst cannon
+      1x Homing Beacon
+  • 2x Stealth Shas’ui
+    • 2x Battlesuit fists
+      2x Burst cannon
+
+Exported with App Version: v1.14.0 (42), Data Version: v379
