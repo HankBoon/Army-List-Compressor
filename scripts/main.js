@@ -29,11 +29,14 @@ function convert(event) {
     }
     // Armylist
     for (const dataSheet of dataSheetList) {
-        const regularExpression = new RegExp(dataSheet, "g");
+        const unit = dataSheet[0];
+        console.log(unit);
+        const points = dataSheet[1];
+        const regularExpression = new RegExp(unit, "g");
         let count = (armyString.match(regularExpression) || []).length;
         for (i = 1; i <= count; i++) {
             resultParagraph.innerText = `${resultParagraph.innerText}
-            - ${dataSheet}`;                                           // umstrukturieren
+            - ${unit} ${points}`;                                           // umstrukturieren
         }
     }
     const resultForm = document.getElementById("resultForm");
