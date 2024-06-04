@@ -24,7 +24,7 @@ function convert(event) {
     for (detachment of detachmentList) {
         if (armyString.includes(detachment)) {
             resultParagraph.innerText = `${resultParagraph.innerText}
-            *${detachment}*\n`
+            *${detachment}*`
         }
     }
     // Armylist
@@ -47,7 +47,7 @@ function copyFunction(event) {
     event.preventDefault();
     const innerResultDiv = document.getElementById("innerResultDiv");
     navigator.clipboard.writeText(innerResultDiv.innerText);
-    alert("Awsome List!\nCopied to clipboard.");
+    alert("That´s an awsome list, Shas´el!\nCopied to clipboard.");
 }
 function reload (){
     location.reload()
