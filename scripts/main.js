@@ -97,6 +97,8 @@ const detachmentList = ["Kauyon", "Kroot Hunting Pack", "Mont’ka", "Retaliatio
 function convert(event) {
     event.preventDefault();
     document.getElementById("resultForm").style.display = "flex";
+    inputForm.style.display = "none";
+    document.getElementById("resetButton").style.display = "block";
     const textareaField = document.getElementById("inputArea");
     const armyString = textareaField.value;
 
@@ -104,7 +106,7 @@ function convert(event) {
     let armyLinebreakArray = armyString.split((/\r?\n|\r|\n/g));
     let resultParagraph = document.getElementById("resultParagraph")
     resultParagraph.innerText = `${armyLinebreakArray[0]}`;
-    
+
     // Faction
     for (faction of factionList) {
         if (armyString.includes(faction)) {
@@ -138,25 +140,31 @@ function copyFunction(event) {
     navigator.clipboard.writeText(innerResultDiv.innerText);
     alert("Copied simplified list to clipboard");
 }
+function reload (){
+    location.reload()
+};
 
 const inputForm = document.getElementById("inputForm");
 inputForm.addEventListener("submit", convert);
-// wo müssen diese Zeilen hin?
+
+const resetButton = document.getElementById("resetButton");
+resetButton.addEventListener("click", reload);
+
 
 // To Do:
 // Anzahl der Ausgaben von datasheet stimmt nicht   ->erledigt!
 // Liste taucht ausserhalb von p auf -> erledigt!
 // entscheiden, ob ein paragraph oder mehrere am Anfang besser sind -> erledigt!
 // ist es möglich Aufzählungszeichen statt einer Liste zu nutzen? -> erledigt!
-// button einfügen für "copy to clipboard"
-//reset am anfang einbauen damit die die ul nicht ständig erweitert wird sondern erneuert
+// button einfügen für "copy to clipboard" -> erledigt!
+//reset am anfang einbauen damit die die ul nicht ständig erweitert wird sondern erneuert-> erledigt!
 // Ausrüstungsoptionen einfügen
 // Machen Schalter für verschiedene Armeen Sinn?
 // Schalter für verschiedene Armeelisten tools? bzw. automatische erkennung der verwendeten tools
 // Optionsschalter für Anzeige der Ausrüstung?
 //css aufräumen!-> erledigt!
 // backlog  Trello
-//regex für 
+//regex für
 // Daten auslagern
 // Markdown umsetzen ->erledigt!
 // Alert mit anderer Benachrichtigung umsetzen

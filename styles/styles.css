@@ -45,17 +45,19 @@ form {
     padding: 1em;
     display: inline;
 }
-#resultForm {
+#resultForm, button {
     display: none;
 }
 
-input {
-    display: block;
+input, button {
     height: 3em;
     width: 500px;
     border: 1px solid black;
     border-radius: 7px;
-    margin: 0px;
+    margin: auto;
+}
+input {
+    display: block;
 }
 
 
