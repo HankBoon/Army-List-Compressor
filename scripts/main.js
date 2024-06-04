@@ -138,7 +138,7 @@ function copyFunction(event) {
     event.preventDefault();
     const innerResultDiv = document.getElementById("innerResultDiv");
     navigator.clipboard.writeText(innerResultDiv.innerText);
-    alert("Copied simplified list to clipboard");
+    alert("Awsome List!\nCopied to clipboard.");
 }
 function reload (){
     location.reload()
@@ -168,6 +168,9 @@ resetButton.addEventListener("click", reload);
 // Daten auslagern
 // Markdown umsetzen ->erledigt!
 // Alert mit anderer Benachrichtigung umsetzen
+// reset button einfügen -> erledigt!
+// Punktwerte einfügen?
+//enhancemnts einfügen
 
 
 
