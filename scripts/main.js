@@ -96,53 +96,39 @@ const detachmentList = ["Kauyon", "Kroot Hunting Pack", "Mont’ka", "Retaliatio
 // Convert Funktion
 function convert(event) {
     event.preventDefault();
+    document.getElementById("resultForm").style.display = "flex";
     const textareaField = document.getElementById("inputArea");
     const armyString = textareaField.value;
 
-    let resultForm = document.createElement("form");
-    const inputForm = document.getElementById("inputForm");
-    inputForm.insertAdjacentElement("afterend", resultForm);
-    let innerResultDiv = document.createElement("div");
-    innerResultDiv.setAttribute("id", "innerResultDiv");
-    resultForm.appendChild(innerResultDiv);
-
     // Name of army     
     let armyLinebreakArray = armyString.split((/\r?\n|\r|\n/g));
-    let firstParagraph = document.createElement("p");
-    innerResultDiv.appendChild(firstParagraph);
-    firstParagraph.innerText = armyLinebreakArray[0];
+    let resultParagraph = document.getElementById("resultParagraph")
+    resultParagraph.innerText = `${armyLinebreakArray[0]}`;
     
     // Faction
     for (faction of factionList) {
         if (armyString.includes(faction)) {
-            firstParagraph.innerText = `**${firstParagraph.innerText}**` + "\n" + `*${faction}*`
+            resultParagraph.innerText = `**${resultParagraph.innerText}**
+            *${faction}*`
         }
     }
     // Detachment    
     for (detachment of detachmentList) {
         if (armyString.includes(detachment)) {
-            firstParagraph.innerText = `${firstParagraph.innerText}\n*${detachment}*`
+            resultParagraph.innerText = `${resultParagraph.innerText}
+            *${detachment}*\n`
         }
     }
     // Armylist
-    let secondParagraph = document.createElement("p");
-    innerResultDiv.appendChild(secondParagraph);
-    const bull = "•";
-
-    // let unorderedList = document.createElement("ul");
     for (const dataSheet of dataSheetList) {
         const regularExpression = new RegExp(dataSheet, "g");
         let count = (armyString.match(regularExpression) || []).length;
         for (i = 1; i <= count; i++) {
-            secondParagraph.innerText = `${secondParagraph.innerText}
+            resultParagraph.innerText = `${resultParagraph.innerText}
             - ${dataSheet}`;                                           // umstrukturieren
         }
     }
-    // create clipboard button
-    let input = document.createElement("input");
-    let resultInputButton = innerResultDiv.insertAdjacentElement("afterend", input);
-    resultInputButton.setAttribute("type", "submit");
-    resultInputButton.value = "copy to clipboard";
+    const resultForm = document.getElementById("resultForm");
     resultForm.addEventListener("submit", copyFunction);
 }
 
@@ -150,7 +136,7 @@ function copyFunction(event) {
     event.preventDefault();
     const innerResultDiv = document.getElementById("innerResultDiv");
     navigator.clipboard.writeText(innerResultDiv.innerText);
-    alert("Copied the text");
+    alert("Copied simplified list to clipboard");
 }
 
 const inputForm = document.getElementById("inputForm");
@@ -166,13 +152,14 @@ inputForm.addEventListener("submit", convert);
 //reset am anfang einbauen damit die die ul nicht ständig erweitert wird sondern erneuert
 // Ausrüstungsoptionen einfügen
 // Machen Schalter für verschiedene Armeen Sinn?
-// Schalter für verschiedene Armeelisten tools?
+// Schalter für verschiedene Armeelisten tools? bzw. automatische erkennung der verwendeten tools
 // Optionsschalter für Anzeige der Ausrüstung?
 //css aufräumen!-> erledigt!
 // backlog  Trello
 //regex für 
 // Daten auslagern
-// Markdown umsetzen
+// Markdown umsetzen ->erledigt!
+// Alert mit anderer Benachrichtigung umsetzen
 
 
 

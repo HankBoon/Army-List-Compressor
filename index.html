@@ -14,8 +14,14 @@
         <p>A simple converter to make your army list chat-friendly.</p>
     </header>
     <form id="inputForm">
-        <textarea required autofocus id="inputArea" name="olist" placeholder="paste your original list here..."></textarea>
-        <input id="btninput" type="submit" value="simplify this list">
+        <textarea required autofocus id="inputArea"  placeholder="paste your original list here..."></textarea>
+        <input type="submit" value="simplify this list">
+    </form>
+    <form id="resultForm">
+        <div id="innerResultDiv">
+            <p id="resultParagraph"></p>
+        </div>
+        <input type="submit" id="resultInputButton" value="copy simplified list to clipboard">
     </form>
     <script src="scripts/main.js"></script>
 </body>

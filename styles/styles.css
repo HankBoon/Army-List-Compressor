@@ -45,6 +45,9 @@ form {
     padding: 1em;
     display: inline;
 }
+#resultForm {
+    display: none;
+}
 
 input {
     display: block;
