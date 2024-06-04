@@ -115,13 +115,13 @@ function convert(event) {
     // Faction
     for (faction of factionList) {
         if (armyString.includes(faction)) {
-            firstParagraph.innerText = firstParagraph.innerText + "\n" + faction
+            firstParagraph.innerText = `**${firstParagraph.innerText}**` + "\n" + `*${faction}*`
         }
     }
     // Detachment    
     for (detachment of detachmentList) {
         if (armyString.includes(detachment)) {
-            firstParagraph.innerText = `${firstParagraph.innerText}\n${detachment}`
+            firstParagraph.innerText = `${firstParagraph.innerText}\n*${detachment}*`
         }
     }
     // Armylist
@@ -135,7 +135,7 @@ function convert(event) {
         let count = (armyString.match(regularExpression) || []).length;
         for (i = 1; i <= count; i++) {
             secondParagraph.innerText = `${secondParagraph.innerText}
-            ${bull} ${dataSheet}`;                                           // umstrukturieren
+            - ${dataSheet}`;                                           // umstrukturieren
         }
     }
     // create clipboard button
@@ -150,7 +150,7 @@ function copyFunction(event) {
     event.preventDefault();
     const innerResultDiv = document.getElementById("innerResultDiv");
     navigator.clipboard.writeText(innerResultDiv.innerText);
-    alert("Copied the text: " + innerResultDiv.innerText);
+    alert("Copied the text");
 }
 
 const inputForm = document.getElementById("inputForm");
@@ -171,6 +171,8 @@ inputForm.addEventListener("submit", convert);
 //css aufräumen!-> erledigt!
 // backlog  Trello
 //regex für 
+// Daten auslagern
+// Markdown umsetzen
 
 
 
