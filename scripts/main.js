@@ -1,6 +1,8 @@
 
 // Convert Funktion
-function convert(event) {
+
+const inputForm = document.getElementById("inputForm");
+inputForm.addEventListener("submit", event => {
     event.preventDefault();
     document.getElementById("resultForm").style.display = "flex";
     inputForm.style.display = "none";
@@ -20,6 +22,7 @@ function convert(event) {
             *${faction}*`
         }
     }
+
     // Detachment    
     for (detachment of detachmentList) {
         if (armyString.includes(detachment)) {
@@ -27,6 +30,7 @@ function convert(event) {
             *${detachment}*`
         }
     }
+
     // Armylist
     for (const dataSheet of dataSheetList) {
         const unit = dataSheet[0];
@@ -39,25 +43,18 @@ function convert(event) {
             - ${unit} ${points}`;                                           // umstrukturieren
         }
     }
+    
     const resultForm = document.getElementById("resultForm");
-    resultForm.addEventListener("submit", copyFunction);
-}
-
-function copyFunction(event) {
-    event.preventDefault();
-    const innerResultDiv = document.getElementById("innerResultDiv");
-    navigator.clipboard.writeText(innerResultDiv.innerText);
-    alert("That´s an awsome list, Shas´el!\nCopied to clipboard.");
-}
-function reload (){
-    location.reload()
-};
-
-const inputForm = document.getElementById("inputForm");
-inputForm.addEventListener("submit", convert);
+    resultForm.addEventListener("submit", event => {
+        event.preventDefault();
+        const innerResultDiv = document.getElementById("innerResultDiv");
+        navigator.clipboard.writeText(innerResultDiv.innerText);
+        alert("That´s an awsome list, Shas´el!\nCopied to clipboard.");
+    });
+})
 
 const resetButton = document.getElementById("resetButton");
-resetButton.addEventListener("click", reload);
+resetButton.addEventListener("click", () => {location.reload()});
 
 
 // To Do:
@@ -76,7 +73,7 @@ resetButton.addEventListener("click", reload);
 //regex für
 // Daten auslagern
 // Markdown umsetzen ->erledigt!
-// Alert mit anderer Benachrichtigung umsetzen
+// Alert mit anderer Benachrichtigungs- umsetzen
 // reset button einfügen -> erledigt!
 // Punktwerte einfügen?
 //enhancemnts einfügen
