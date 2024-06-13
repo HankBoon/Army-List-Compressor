@@ -35,7 +35,8 @@ form {
 }
 
 #inputArea,
-#innerResultDiv {
+#innerResultDiv,
+#outputArea {
     width: 500px;
     min-height: 10em;
     border: 1px solid black;
