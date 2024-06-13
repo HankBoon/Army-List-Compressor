@@ -12,43 +12,40 @@ inputForm.addEventListener("submit", event => {
 
     // Name of army     
     let armyLinebreakArray = armyString.split((/\r?\n|\r|\n/g));
-    let resultParagraph = document.getElementById("resultParagraph")
-    resultParagraph.innerText = `${armyLinebreakArray[0]}`;
+    let outputArea = document.getElementById("outputArea");
+    outputArea.textContent = armyLinebreakArray[0];
+   
 
-    // Faction
+     // Faction
     for (faction of factionList) {
         if (armyString.includes(faction)) {
-            resultParagraph.innerText = `**${resultParagraph.innerText}**
-            *${faction}*`
+            outputArea.textContent = "**" + outputArea.textContent + "**\n*" + faction +"*"
         }
     }
 
     // Detachment    
     for (detachment of detachmentList) {
         if (armyString.includes(detachment)) {
-            resultParagraph.innerText = `${resultParagraph.innerText}
-            *${detachment}*`
+            outputArea.textContent = outputArea.textContent + "\n*" + detachment + "*\n" 
         }
     }
 
     // Armylist
     for (const dataSheet of dataSheetList) {
         const unit = dataSheet[0];
-        console.log(unit);
         const points = dataSheet[1];
         const regularExpression = new RegExp(unit, "g");
         let count = (armyString.match(regularExpression) || []).length;
         for (i = 1; i <= count; i++) {
-            resultParagraph.innerText = `${resultParagraph.innerText}
-            - ${unit} ${points}`;                                           // umstrukturieren
+            outputArea.textContent = outputArea.textContent + "\n- " + unit + " " + points              //umstrukturieren wegen seo und readability?
         }
     }
-    
+
     const resultForm = document.getElementById("resultForm");
     resultForm.addEventListener("submit", event => {
         event.preventDefault();
-        const innerResultDiv = document.getElementById("innerResultDiv");
-        navigator.clipboard.writeText(innerResultDiv.innerText);
+        const outputArea = document.getElementById("outputArea");
+        navigator.clipboard.writeText(outputArea.textContent);
         alert("That´s an awsome list, Shas´el!\nCopied to clipboard.");
     });
 })
@@ -77,6 +74,9 @@ resetButton.addEventListener("click", () => {location.reload()});
 // reset button einfügen -> erledigt!
 // Punktwerte einfügen?
 //enhancemnts einfügen
+
+// breite der textarea fixieren
+// outputArea an größe des inhalts anpassen
 
 
 
