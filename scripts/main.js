@@ -14,7 +14,6 @@ inputForm.addEventListener("submit", event => {
     let armyLinebreakArray = armyString.split((/\r?\n|\r|\n/g));
     let outputArea = document.getElementById("outputArea");
     outputArea.textContent = armyLinebreakArray[0];
-   
 
      // Faction
     for (faction of factionList) {
@@ -77,6 +76,9 @@ resetButton.addEventListener("click", () => {location.reload()});
 
 // breite der textarea fixieren
 // outputArea an größe des inhalts anpassen
+
+
+// outputArea.textContent anpassen. inhalt und logik trennen.inhalt in variable zusammenfassen und erst am ende das ergebnis ausgeben.
 
 
 
