@@ -91,3 +91,22 @@ const factionList = ["T’au Empire"];
 
 // Hier werden alle Detachments eingetragen
 const detachmentList = ["Kauyon", "Kroot Hunting Pack", "Mont’ka", "Retaliation Cadre"];
+
+
+// Objekt Beispiel
+
+//  const tauDataSheet01 = {
+//     "name":"Cadre Fireblade",
+//     "points": 50,
+//     "lineCount": 5,
+//     "weapons": [
+//         {
+//             "name": "Burst Cannon", 
+//             "amount": 2,
+//         },
+//         {
+//             "name": "Burst Cannon", 
+//             "amount": 2,
+//         }
+//     ]
+// };
