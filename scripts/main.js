@@ -9,48 +9,114 @@ inputForm.addEventListener("submit", event => {
     document.getElementById("resetButton").style.display = "block";
     const textareaField = document.getElementById("inputArea");
     const armyString = textareaField.value;
+    let testObject = {
+        "armyName": "Tau",
+        "faction": "",
+        "detachment": "",
+        "unitEntry": [
+            {
+                "name": "",
+                "points": "",
+                "entryLength": "",
+                "equip": [
+                    {
+                        "weapon": "",
+                        "amount": "",
+                    },
+                    {
+                        "weapon": "",
+                        "amount": "",
+                    }
+                ]
+
+
+            },
+            {
+                "name": "",
+                "points": "",
+                "entryLength": "",
+                "equip": [
+                    {
+                        "weapon": "",
+                        "amount": "",
+                    },
+                    {
+                        "weapon": "",
+                        "amount": "",
+                    }
+                ]
+
+
+            }
+        ]
+    }
 
     // Name of army     
     let armyLinebreakArray = armyString.split((/\r?\n|\r|\n/g));
     let outputArea = document.getElementById("outputArea");
     outputArea.textContent = armyLinebreakArray[0];
+    // console.log(armyLinebreakArray);
 
-     // Faction
+
+    // Faction
     for (faction of factionList) {
         if (armyString.includes(faction)) {
-            outputArea.textContent = "**" + outputArea.textContent + "**\n*" + faction +"*"
+            outputArea.textContent = "**" + outputArea.textContent + "**\n*" + faction + "*"
         }
     }
 
     // Detachment    
     for (detachment of detachmentList) {
         if (armyString.includes(detachment)) {
-            outputArea.textContent = outputArea.textContent + "\n*" + detachment + "*\n" 
+            outputArea.textContent = outputArea.textContent + "\n*" + detachment + "*\n"
         }
     }
 
     // Armylist
-    for (const dataSheet of dataSheetList) {
+    for (dataSheet of dataSheetList) {
         const unit = dataSheet[0];
         const points = dataSheet[1];
+        let paraStart;
+        let paraEnd;
+        let paraLength;
         const regularExpression = new RegExp(unit, "g");
         let count = (armyString.match(regularExpression) || []).length;
         for (i = 1; i <= count; i++) {
-            outputArea.textContent = outputArea.textContent + "\n- " + unit + " " + points              //umstrukturieren wegen seo und readability?
+            outputArea.textContent = outputArea.textContent + "\n- " + unit + " " + points;
         }
-    }
 
-    const resultForm = document.getElementById("resultForm");
-    resultForm.addEventListener("submit", event => {
-        event.preventDefault();
-        const outputArea = document.getElementById("outputArea");
-        navigator.clipboard.writeText(outputArea.textContent);
-        alert("That´s an awsome list, Shas´el!\nCopied to clipboard.");
-    });
-})
+        // search area for keywords
+        // for (arrayItem of armyLinebreakArray) {
+        //     if (arrayItem.startsWith(unit)) {
+        //         paraStart = armyLinebreakArray.indexOf(arrayItem);     //überschreibt sich jedes mal wenn etwas gefunden wird. darum in array oder objekt speichern.
+        //         console.log("paraStart = " + paraStart);
+        //     };
+
+        // }
+        // for (arrayItem of armyLinebreakArray) {
+        //     if (arrayItem === "" && armyLinebreakArray.indexOf(arrayItem) > paraStart) {
+        //         paraEnd = armyLinebreakArray.indexOf(arrayItem);
+        //         console.log("paraEnd = " + paraEnd);
+        //     }
+        // }
+    }
+});
+//wenn datasheet x vorkommt, gib mir die zeile, wo es vorkommt.
+
+//von dieser zeile bis zur zeile in der der nächste datasheet vorkommt, erstelle einen string.
+// wenn hier bestimmte keywords vorkommen, addiere sie zu outputarea.textcontent.
+
+const resultForm = document.getElementById("resultForm");
+resultForm.addEventListener("submit", event => {
+    event.preventDefault();
+    const outputArea = document.getElementById("outputArea");
+    navigator.clipboard.writeText(outputArea.textContent);
+    alert("That´s an awsome list, Shas´el!\nCopied to clipboard.");
+});
+
 
 const resetButton = document.getElementById("resetButton");
-resetButton.addEventListener("click", () => {location.reload()});
+resetButton.addEventListener("click", () => { location.reload() });
 
 
 // To Do:
@@ -83,5 +149,9 @@ resetButton.addEventListener("click", () => {location.reload()});
 
 
 
+//    const regExpLinebreak = new RegExp(unit, (.\n ?) * (?=\n\n));
 
 
+
+//anlegen: object oder array dass sich aus den zeilen und gefundenen ausrüstungen speisst
+// output area - textcontent ändern. so dass es erst ganz am ende mit inhalt befüllt wir und nicht in mehreren schritten
