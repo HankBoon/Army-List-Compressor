@@ -1,9 +1,9 @@
 const tauEmpire = {
-  name: "T'au Empire",
-  detachment: [
+  name: "T’au Empire",
+  detachments: [
     "Kauyon",
     "Kroot Hunting Pack",
-    "Mont'ka",
+    "Mont’ka",
     "Retaliation Cadre"
   ],
   units: [
@@ -39,8 +39,8 @@ const tauEmpire = {
       points: 100,
       warlord: true,
       weapons: [
-        { name: "Advanced Guardian Drone", display: "true", alias: "Drone" },
-        { name: "Battlesuit fists", display: "", alias: "" },
+        { name: "Advanced Guardian Drone", display: "true", alias: " Drone" },
+        { name: "Battlesuit fists", display: "true", alias: " Fists" },
         { name: "Command-link Drone (Aura)", display: "", alias: "" },
         { name: "Flechette launcher", display: "", alias: "" },
         { name: "High-energy fusion blaster", display: "", alias: "" },
