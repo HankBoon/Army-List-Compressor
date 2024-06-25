@@ -9,6 +9,7 @@ const resetButton = document.getElementById("resetButton");
 let armyString = "";
 let armyArray = [];
 let armyArrayIndex = -1;
+let armyLinebreakArray;
 
 function createArmyString() {
     armyString = textAreaField.value;
@@ -16,14 +17,27 @@ function createArmyString() {
 
 
 function getAndSetArmyName() {
-    let armyLinebreakArray = armyString.split((/\r?\n|\r|\n/g));
-    outputAreaField.textContent = armyLinebreakArray[0];  // ändern wohin diese Zeile geschrieben wird.
+    armyLinebreakArray = armyString.split((/\r?\n|\r|\n/g));
+    outputAreaField.textContent = "**" + armyLinebreakArray[0] + "**" + "\n";
 }
+function getFaction() {
+    if (armyString.includes(tauEmpire.name)) {
+        outputAreaField.textContent += "*" + tauEmpire.name + "*"  + "\n"
+    }
+}
+function getDetachment() {
+for (const detachment of tauEmpire.detachments){
+if (armyString.includes(detachment)){
+    outputAreaField.textContent += "*" + detachment + "*"  + "\n"
+}
+}
+}
+
 function searchKeywordAndEmptyLine(string, keyword, points, weapons) {
     let results = [];
     let startIndex = 0;
     let index;
-    
+
 
 
     for (index = string.indexOf(keyword, startIndex); index !== -1; index = string.indexOf(keyword, startIndex)) {
@@ -41,20 +55,20 @@ function searchKeywordAndEmptyLine(string, keyword, points, weapons) {
             armyArrayIndex: armyArrayIndex
         });
         let searchArea = string.slice(results.keywordIndex, results.nextEmptyLineIndex); //. warum funktioniert +1 nicht?
-       
-        if (index !== "") {    
-        armyArray.push({
+
+        if (index !== "") {
+            armyArray.push({
                 name: keyword,
                 points: points,
-                weaponsAlias:[]
+                weaponsAlias: []
             })
         }
-        for (const weapon of weapons ) {            
+        for (const weapon of weapons) {
             if (searchArea.includes(weapon.name) && weapon.display === "true") {
-                armyArray[armyArrayIndex].weaponsAlias.push(weapon.alias)     
+                armyArray[armyArrayIndex].weaponsAlias.push(weapon.alias)
             }
         }
-        
+
 
         console.log(armyArray);
 
@@ -75,13 +89,15 @@ function convert(event) {
     resetButton.style.display = "block";
 
     createArmyString();
-    // getAndSetArmyName();
+    getAndSetArmyName();
+    getFaction();
+    getDetachment();
     for (const unit of tauEmpire.units) {
         searchKeywordAndEmptyLine(armyString, unit.name, unit.points, unit.weapons);
     }
+    
     for (const unit of armyArray) {
-
-        outputAreaField.textContent += unit.name + " " + unit.points + "pts" + "//" + " " + unit.weaponsAlias + "\n";
+        outputAreaField.textContent += "- " + unit.name + ": " + unit.points + "pts" + " // " + unit.weaponsAlias + "\n";
     }
 };
 
