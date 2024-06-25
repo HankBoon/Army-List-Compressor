@@ -7,16 +7,65 @@ const textAreaField = document.getElementById("inputAreaField");
 const outputAreaField = document.getElementById("outputAreaField");
 const resetButton = document.getElementById("resetButton");
 let armyString = "";
+let armyArray = [];
+let armyArrayIndex = -1;
 
-function createArmyString (){
+function createArmyString() {
     armyString = textAreaField.value;
 }
 
-function getAndSetArmyName(){    
+
+function getAndSetArmyName() {
     let armyLinebreakArray = armyString.split((/\r?\n|\r|\n/g));
     outputAreaField.textContent = armyLinebreakArray[0];  // ändern wohin diese Zeile geschrieben wird.
 }
+function searchKeywordAndEmptyLine(string, keyword, points, weapons) {
+    let results = [];
+    let startIndex = 0;
+    let index;
+    
 
+
+    for (index = string.indexOf(keyword, startIndex); index !== -1; index = string.indexOf(keyword, startIndex)) {
+        // Find the next empty line
+        let emptyLineIndex = string.indexOf('\n\n', index);
+        if (emptyLineIndex === -1) {
+            // If no empty line is found, use the end of the string
+            emptyLineIndex = string.length;
+        }
+        armyArrayIndex += 1;
+
+        results.push({
+            keywordIndex: index,
+            nextEmptyLineIndex: emptyLineIndex,
+            armyArrayIndex: armyArrayIndex
+        });
+        let searchArea = string.slice(results.keywordIndex, results.nextEmptyLineIndex); //. warum funktioniert +1 nicht?
+       
+        if (index !== "") {    
+        armyArray.push({
+                name: keyword,
+                points: points,
+                weaponsAlias:[]
+            })
+        }
+        for (const weapon of weapons ) {            
+            if (searchArea.includes(weapon.name) && weapon.display === "true") {
+                armyArray[armyArrayIndex].weaponsAlias.push(weapon.alias)     
+            }
+        }
+        
+
+        console.log(armyArray);
+
+
+        startIndex = index + keyword.length;
+    }
+    // console.log(results);
+
+    return results;
+
+}
 
 inputForm.addEventListener("submit", convert);
 function convert(event) {
@@ -24,9 +73,16 @@ function convert(event) {
     inputForm.style.display = "none";
     resultForm.style.display = "flex";
     resetButton.style.display = "block";
-     
+
     createArmyString();
-    getAndSetArmyName();
+    // getAndSetArmyName();
+    for (const unit of tauEmpire.units) {
+        searchKeywordAndEmptyLine(armyString, unit.name, unit.points, unit.weapons);
+    }
+    for (const unit of armyArray) {
+
+        outputAreaField.textContent += unit.name + " " + unit.points + "pts" + "//" + " " + unit.weaponsAlias + "\n";
+    }
 };
 
 
