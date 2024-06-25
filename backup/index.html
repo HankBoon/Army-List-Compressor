@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="styles/styles.css" />
     <title>Simple Tau List</title>
+    <script defer src="data/data.js"></script>
+    <script defer src="scripts/main.js"></script>
 </head>
 
 <body>
@@ -13,20 +15,15 @@
         <h1>Simple Tau List</h1>
         <p>A simple converter to make your army list chat-friendly.</p>
     </header>
-    <form id="finput">
-        <!-- <h2>your old list</h2> -->
-        <textarea required autofocus id="tinput" name="olist" placeholder="paste your original list here..."></textarea>
-        <input id="btninput" type="submit" value="simplify this list">
+    <form id="inputForm">
+        <textarea required autofocus id="inputArea"  placeholder="Paste your original list here..."></textarea>
+        <input type="submit" value="Simplify this list">
     </form>
-    <!-- <form id="foutput">
-        <h2>your new list</h2>
-        <div id="toutput">
-            <p id="pelement">your simplified list will appear here...</p>
-            <ul id="listelement"></ul> 
-        </div>
-        <input id="btnoutput" type="submit" value="Copy this list">
-    </form> -->
-    <script src="scripts/main.js"></script>
+    <form id="resultForm">
+        <textarea autofocus id="outputArea"></textarea>
+        <input type="submit" id="resultInputButton" value="Copy simplified list to clipboard">
+    </form>
+    <button type="button" id="resetButton">Simplify another List</button>
 </body>
 
 </html>

@@ -1,0 +1,443 @@
+All Units (8025 points)
+
+T’au Empire
+Strike Force (2000 points)
+Kauyon
+
+
+CHARACTERS
+
+Cadre Fireblade (140 points)
+  • Warlord
+  • 1x Close combat weapon
+    1x Fireblade pulse rifle
+    1x Gun Drone
+    1x Marker Drone
+    1x Shield Drone
+  • Enhancement: Exemplar of the Kauyon,
+    Solid-image Projection Unit,
+    Precision of the Patient Hunter,
+    Through Unity, Devastation
+
+Commander Farsight (105 points)
+  • Warlord
+  • 1x Dawn Blade
+    1x High-intensity plasma rifle
+
+Commander Shadowsun (100 points)
+  • Warlord
+  • 1x Advanced Guardian Drone
+    1x Battlesuit fists
+    1x Command-link Drone (Aura)
+    1x Flechette launcher
+    2x High-energy fusion blaster
+    1x Light missile pod
+    1x Pulse pistol
+
+Commander in Coldstar Battlesuit (185 points)
+  • Warlord
+  • 1x Airbursting fragmentation projector
+    1x Battlesuit Support System
+    1x Battlesuit fists
+    1x Burst cannon
+    1x Cyclic ion blaster
+    1x Fusion blaster
+    1x Gun Drone
+    1x High-output burst cannon
+    1x Marker Drone
+    1x Missile pod
+    1x Plasma rifle
+    1x Shield Drone
+    1x Shield Generator
+    1x T’au flamer
+    1x Weapon Support System
+  • Enhancement: Exemplar of the Kauyon,
+    Solid-image Projection Unit,
+    Precision of the Patient Hunter,
+    Through Unity, Devastation
+
+Commander in Enforcer Battlesuit (170 points)
+  • Warlord
+  • 1x Airbursting fragmentation projector
+    1x Battlesuit Support System
+    1x Battlesuit fists
+    1x Burst cannon
+    1x Cyclic ion blaster
+    1x Fusion blaster
+    1x Gun Drone
+    1x Marker Drone
+    1x Missile pod
+    1x Plasma rifle
+    1x Shield Drone
+    1x Shield Generator
+    1x T’au flamer
+    1x Weapon Support System
+  • Enhancement: Exemplar of the Kauyon,
+    Solid-image Projection Unit,
+    Precision of the Patient Hunter,
+    Through Unity, Devastation
+
+Darkstrider (60 points)
+  • Warlord
+  • 1x Close combat weapon
+    1x Shade
+
+Ethereal (140 points)
+  • Warlord
+  • 1x Gun Drone
+    1x Honour stave
+    1x Hover Drone
+    1x Marker Drone
+    1x Shield Drone
+  • Enhancement: Exemplar of the Kauyon,
+    Solid-image Projection Unit,
+    Precision of the Patient Hunter,
+    Through Unity, Devastation
+
+Firesight Team (160 points)
+  • Warlord
+  • 1x Close combat weapons
+    1x Longshot pulse rifles
+    1x Pulse pistol
+  • Enhancement: Exemplar of the Kauyon,
+    Solid-image Projection Unit,
+    Precision of the Patient Hunter,
+    Through Unity, Devastation
+
+Kroot Flesh Shaper (100 points)
+  • Warlord
+  • 1x Kroot scattergun
+    1x Twin ritualistic blades
+  • Enhancement: Solid-image Projection Unit,
+    Precision of the Patient Hunter
+
+Kroot Lone-spear (180 points)
+  • Warlord
+  • 1x Blast javelin
+    1x Close combat weapon
+    1x Hunting javelin
+    1x Kalamandra’s bite
+    1x Kroot long gun
+  • Enhancement: Exemplar of the Kauyon,
+    Solid-image Projection Unit,
+    Precision of the Patient Hunter,
+    Through Unity, Devastation
+
+Kroot Trail Shaper (110 points)
+  • Warlord
+  • 1x Kroot rifle
+    1x Shaper’s blade
+  • Enhancement: Solid-image Projection Unit,
+    Precision of the Patient Hunter
+
+Kroot War Shaper (105 points)
+  • Warlord
+  • 1x Bladestave and prey-hook
+    1x Dart-bow and tri-blade
+    1x Kroot pistol
+    1x Shaper’s blade
+  • Enhancement: Solid-image Projection Unit,
+    Precision of the Patient Hunter
+
+
+BATTLELINE
+
+Breacher Team (100 points)
+  • 1x Support turret
+  • 1x Breacher Fire Warrior Shas’ui
+    • 1x Close combat weapon
+      1x Guardian Drone
+      1x Gun Drone
+      1x Marker Drone
+      1x Pulse blaster
+      1x Pulse pistol
+      1x Shield Drone
+  • 9x Breacher Fire Warrior
+    • 9x Close combat weapon
+      9x Pulse blaster
+      9x Pulse pistol
+
+Strike Team (75 points)
+  • 1x Support turret
+  • 1x Fire Warrior Shas’ui
+    • 1x Close combat weapon
+      1x Guardian Drone
+      1x Gun Drone
+      1x Marker Drone
+      1x Pulse pistol
+      1x Pulse rifle
+      1x Shield Drone
+  • 9x Fire Warrior
+    • 10x Close combat weapon
+      1x Pulse carbine
+      10x Pulse pistol
+      10x Pulse rifle
+
+
+DEDICATED TRANSPORTS
+
+Devilfish (85 points)
+  • 1x Accelerator burst cannon
+    1x Armoured hull
+    1x Seeker missile
+    1x Smart missile system
+    2x Twin pulse carbine
+
+
+OTHER DATASHEETS
+
+AX-1-0 Tiger Shark (315 points)
+  • 1x Armoured hull
+    2x Burst cannon
+    1x Cyclic ion blaster
+    2x Missile pod
+    1x Seeker missile
+    1x Twin heavy rail cannon
+
+Broadside Battlesuits (90 points)
+  • 1x Crushing bulk
+    1x Gun Drone
+    1x Heavy rail rifle
+    1x High-yield missile pods
+    1x Marker Drone
+    1x Missile Drone
+    1x Seeker missile
+    1x Shield Drone
+    1x Twin plasma rifle
+    1x Twin smart missile system
+    1x Weapon Support System
+
+Crisis Fireknife Battlesuits (130 points)
+  • 1x Crisis Fireknife Shas’vre
+    • 1x Battlesuit fists
+      1x Gun Drone
+      1x Marker Drone
+      1x Missile pod
+      1x Missile pod
+      1x Plasma rifle
+      1x Plasma rifle
+      1x Shield Drone
+  • 2x Crisis Fireknife Shas’ui
+    • 2x Battlesuit fists
+      2x Missile pod
+      2x Plasma rifle
+
+Crisis Starscythe Battlesuits (110 points)
+  • 1x Crisis Starscythe Shas’vre
+    • 1x Battlesuit fists
+      1x Burst cannon
+      1x Gun Drone
+      1x Marker Drone
+      1x Shield Drone
+      1x T’au flamer
+  • 2x Crisis Starscythe Shas’ui
+    • 2x Battlesuit fists
+      2x Burst cannon
+      1x Gun Drone
+      1x Marker Drone
+      1x Shield Drone
+      2x T’au flamer
+
+Crisis Sunforge Battlesuits (150 points)
+  • 1x Crisis Sunforge Shas’vre
+    • 1x Battlesuit fists
+      2x Fusion blaster
+      1x Gun Drone
+      1x Marker Drone
+      1x Shield Drone
+  • 2x Crisis Sunforge Shas’ui
+    • 2x Battlesuit fists
+      4x Fusion blaster
+
+Ghostkeel Battlesuit (160 points)
+  • 1x Battlesuit Support System
+    1x Cyclic ion raker
+    1x Fusion collider
+    1x Ghostkeel fists
+    1x Twin T’au flamer
+    1x Twin burst cannon
+    1x Twin fusion blaster
+
+Hammerhead Gunship (145 points)
+  • 1x Accelerator burst cannon
+    1x Armoured hull
+    1x Ion cannon
+    1x Railgun
+    1x Seeker missile
+    2x Twin pulse carbine
+    1x Twin smart missile system
+
+Kroot Carnivores (75 points)
+  • 1x Long-quill
+    • 1x Close combat weapon
+      1x Kroot carbine
+      1x Kroot pistol
+      1x Kroot rifle
+  • 9x Kroot Carnivore
+    • 9x Close combat weapon
+      9x Kroot rifle
+      1x Tanglebomb launcher
+
+Kroot Farstalkers (85 points)
+  • 1x Kroot Kill-broker
+    • 1x Farstalker firearm
+      1x Kroot pistol
+      1x Ritual blade
+      1x T’au-tech rifle
+  • 9x Kroot Farstalker
+    • 9x Close combat weapon
+      1x Dvorgite skinner
+      9x Farstalker firearm
+      9x Kroot pistol
+      1x Londaxi tribalest
+      1x Pech’ra
+  • 2x Kroot Hound
+    • 2x Ripping fangs
+
+Kroot Hounds (40 points)
+  • 5x Kroot Hound
+    • 5x Ripping fangs
+
+Krootox Rampagers (110 points)
+  • 3x Krootox Rampagers
+    • 3x Hunting blades
+      3x Kroot pistol and hunting javelins
+      3x Rampager fists
+
+Krootox Riders (35 points)
+  • 1x Close combat weapon
+    1x Krootox fists
+    1x Repeater cannon
+
+Manta (2100 points)
+  • 1x Armoured hull
+    2x Heavy rail cannon
+    6x Ion cannon
+    2x Long-barrelled burst cannon array
+    2x Missile pod
+    10x Seeker missile
+
+Pathfinder Team (90 points)
+  • 1x Pathfinder Shas’ui
+    • 1x Close combat weapon
+      1x Grav-inhibitor Drone
+      1x Gun Drone
+      1x Marker Drone
+      1x Pulse Accelerator Drone
+      1x Pulse carbine
+      1x Pulse pistol
+      1x Recon Drone
+      1x Semi-automatic grenade launcher
+      1x Shield Drone
+  • 9x Pathfinder
+    • 9x Close combat weapon
+      1x Ion rifle
+      9x Pulse carbine
+      9x Pulse pistol
+      1x Rail rifle
+      1x Semi-automatic grenade launcher
+
+Piranhas (55 points)
+  • 1x Armoured hull
+    1x Piranha burst cannon
+    1x Piranha fusion blaster
+    1x Seeker missile
+    2x Twin pulse carbine
+
+Razorshark Strike Fighter (170 points)
+  • 1x Accelerator burst cannon
+    1x Armoured hull
+    1x Missile pod
+    1x Quad ion turret
+    2x Seeker missile
+
+Riptide Battlesuit (180 points)
+  • 1x Heavy burst cannon
+    1x Ion accelerator
+    1x Missile Drone
+    1x Riptide fists
+    1x Twin fusion blaster
+    1x Twin plasma rifle
+    1x Twin smart missile system
+
+Sky Ray Gunship (140 points)
+  • 1x Accelerator burst cannon
+    1x Armoured hull
+    1x Seeker missile rack
+    1x Smart missile system
+    2x Twin pulse carbine
+
+Stealth Battlesuits (60 points)
+  • 1x Stealth Shas’vre
+    • 1x Battlesuit Support System
+      1x Battlesuit fists
+      1x Burst cannon
+      1x Fusion blaster
+      1x Gun Drone
+      1x Homing Beacon
+      1x Marker Drone
+      1x Shield Drone
+  • 2x Stealth Shas’ui
+    • 2x Battlesuit fists
+      2x Burst cannon
+
+Stormsurge (400 points)
+  • 1x Cluster rocket system
+    1x Destroyer missiles
+    1x Pulse blast cannon
+    1x Pulse driver cannon
+    1x Thunderous footfalls
+    1x Twin T’au flamer
+    1x Twin airbursting fragmentation projector
+    1x Twin burst cannon
+    2x Twin smart missile system
+
+Sun Shark Bomber (160 points)
+  • 1x Armoured hull
+    1x Missile pod
+    2x Seeker missile
+    2x Twin ion rifle
+    1x Twin missile pod
+
+Ta’unar Supremacy Armour (790 points)
+  • 4x Burst cannon
+    1x Crushing feet
+    1x Fragmentation cluster shell launcher
+    1x Fusion eradicator
+    1x Fusion eradicator
+    1x Heavy rail cannon array
+    1x Nexus missile launcher
+    3x Pulse ordnance driver
+    4x Smart missile system
+    1x Tri-axis ion cannon
+    1x Tri-axis ion cannon
+
+Tidewall Droneport (85 points)
+  • 1x Drone defenders
+
+Tidewall Gunrig (90 points)
+  • 1x Supremacy railgun
+
+Tidewall Shieldline (105 points)
+  • 1x Tidewall Defence Platform
+  • 1x Tidewall Shieldline
+
+Tiger Shark (275 points)
+  • 1x Armoured hull
+    2x Burst cannon
+    1x Cyclic ion blaster
+    2x Ion cannon
+    2x Missile pod
+    1x Seeker missile
+    1x Skyspear missile rack
+    1x Swiftstrike burst cannon
+    1x Swiftstrike railgun
+    1x Transport Bay
+
+Vespid Stingwings (65 points)
+  • 1x Vespid Strain Leader
+    • 1x Neutron blaster
+      1x Stingwing claws
+  • 4x Vespid Stingwing
+    • 4x Neutron blaster
+      4x Stingwing claws
