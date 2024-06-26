@@ -1,127 +1,96 @@
-
-// Convert Funktion
-
 const inputForm = document.getElementById("inputForm");
 const resultForm = document.getElementById("resultForm");
 const textAreaField = document.getElementById("inputAreaField");
 const outputAreaField = document.getElementById("outputAreaField");
 const resetButton = document.getElementById("resetButton");
-let armyString = "";
-let armyArray = [];
-let armyArrayIndex = -1;
-let armyLinebreakArray;
+let inputArmyString = "";
+let inputArmyLinebreakArray;
+let outputArmyArray = [];
+let armyArrayIndex = -1;   // anders lösen?
 
-function createArmyString() {
-    armyString = textAreaField.value;
+function createArmyStringFromInput() {
+    inputArmyString = textAreaField.value;
 }
-
-
 function getAndSetArmyName() {
-    armyLinebreakArray = armyString.split((/\r?\n|\r|\n/g));
-    outputAreaField.textContent = "**" + armyLinebreakArray[0] + "**" + "\n";
+    inputArmyLinebreakArray = inputArmyString.split((/\r?\n|\r|\n/g));
+    outputAreaField.textContent = "**" + inputArmyLinebreakArray[0] + "**" + "\n";
 }
-function getFaction() {
-    if (armyString.includes(tauEmpire.name)) {
+function getAndSetFaction() {
+    if (inputArmyString.includes(tauEmpire.name)) {
         outputAreaField.textContent += "*" + tauEmpire.name + "*" + "\n"
     }
 }
-function getDetachment() {
+function getAndSetDetachment() {
     for (const detachment of tauEmpire.detachments) {
-        if (armyString.includes(detachment)) {
+        if (inputArmyString.includes(detachment)) {
             outputAreaField.textContent += "*" + detachment + "*" + "\n"
         }
     }
 }
-
-function searchKeywordAndEmptyLine(string, keyword, points, weapons) {
+function getUnitsAndWeapons(string, keyword, points, weapons) {
     let results = [];
     let startIndex = 0;
     let index;
-
-
-
     for (index = string.indexOf(keyword, startIndex); index !== -1; index = string.indexOf(keyword, startIndex)) {
+        armyArrayIndex += 1;
         // Find the next empty line
         let emptyLineIndex = string.indexOf('\n\n', index);
         if (emptyLineIndex === -1) {
-            // If no empty line is found, use the end of the string
-            emptyLineIndex = string.length;
+            emptyLineIndex = string.length;    // If no empty line is found, use the end of the string
         }
-        armyArrayIndex += 1;
-
-        results.push({
+        outputArmyArray.push({
+            name: keyword,
+            points: points,
+            weaponsAlias: [],
             keywordIndex: index,
             nextEmptyLineIndex: emptyLineIndex,
-            armyArrayIndex: armyArrayIndex
-        });
+        })
         let searchArea = string.slice(results.keywordIndex, results.nextEmptyLineIndex); //. warum funktioniert +1 nicht?
-
-        if (index !== "") {
-            armyArray.push({
-                name: keyword,
-                points: points,
-                weaponsAlias: []
-            })
-        }
         for (const weapon of weapons) {
             if (searchArea.includes(weapon.name) && weapon.display === "true") {
-                armyArray[armyArrayIndex].weaponsAlias.push(weapon.alias)
+                outputArmyArray[armyArrayIndex].weaponsAlias.push(weapon.alias)
             }
         }
-
-
-        console.log(armyArray);
-
-
         startIndex = index + keyword.length;
     }
-    // console.log(results);
-
-    return results;
-
 }
 
-inputForm.addEventListener("submit", convert);
-function convert(event) {
+function getAndSetUnits() {
+    for (const unit of tauEmpire.units) {
+        getUnitsAndWeapons(inputArmyString, unit.name, unit.points, unit.weapons);
+    }
+    for (const unit of outputArmyArray) {
+        if (unit.weaponsAlias.length !== 0) {
+            const weaponsAliasString = unit.weaponsAlias.toString();
+            const weaponsAliasStringCommata = weaponsAliasString.replaceAll(",", ", ");
+            outputAreaField.textContent += "- " + unit.name + " (" + weaponsAliasStringCommata + ") " + unit.points + "\n";
+        }
+        else {
+            outputAreaField.textContent += "- " + unit.name + " " + unit.points + "\n";
+        }
+    }
+}
+
+function compressList(event) {
     event.preventDefault();
     inputForm.style.display = "none";
     resultForm.style.display = "flex";
     resetButton.style.display = "block";
-
-    createArmyString();
+    createArmyStringFromInput();
     getAndSetArmyName();
-    getFaction();
-    getDetachment();
-    for (const unit of tauEmpire.units) {
-        searchKeywordAndEmptyLine(armyString, unit.name, unit.points, unit.weapons);
-    }
+    getAndSetFaction();
+    getAndSetDetachment();
+    getAndSetUnits();
+}
 
-    for (const unit of armyArray) {
-    
-        if (unit.weaponsAlias.length !== 0) {
-            const weaponsAliasString = unit.weaponsAlias.toString();
-            const weaponsAliasStringCommata = weaponsAliasString.replace(",",", ");
-
-            outputAreaField.textContent += "- " + unit.name + " (" + weaponsAliasStringCommata + ") " + unit.points + "\n";
-        } 
-        else{
-            outputAreaField.textContent += "- " + unit.name + " " + unit.points + "\n";
-        }
-    }
-};
-
-
-
-
-//Copy To clipboard and alert
-resultForm.addEventListener("submit", copyToClipboard);
 function copyToClipboard(event) {
     event.preventDefault();
     navigator.clipboard.writeText(outputAreaField.textContent);
     alert("That´s an awsome list, Shas´el!\nCopied to clipboard.");
-};
+}
 
-
+inputForm.addEventListener("submit", compressList);
+resultForm.addEventListener("submit", copyToClipboard);
 resetButton.addEventListener("click", () => { location.reload() });
 
 
