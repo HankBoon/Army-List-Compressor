@@ -27,8 +27,7 @@ function getAndSetDetachment() {
         }
     }
 }
-function getUnitsAndWeapons(string, keyword, points, weapons) {
-    let results = [];
+function getUnit(string, keyword, points, weapons) {
     let startIndex = 0;
     let index;
     for (index = string.indexOf(keyword, startIndex); index !== -1; index = string.indexOf(keyword, startIndex)) {
@@ -38,38 +37,63 @@ function getUnitsAndWeapons(string, keyword, points, weapons) {
         if (emptyLineIndex === -1) {
             emptyLineIndex = string.length;    // If no empty line is found, use the end of the string
         }
+        let searchArea = string.slice(index, emptyLineIndex);
+
         outputArmyArray.push({
             name: keyword,
             points: points,
-            weaponsAlias: [],
+            equipedWeapons: [],
+            warlord: [],
             keywordIndex: index,
             nextEmptyLineIndex: emptyLineIndex,
+            searchArea: searchArea
         })
-        let searchArea = string.slice(results.keywordIndex, results.nextEmptyLineIndex); //. warum funktioniert +1 nicht?
+
         for (const weapon of weapons) {
             if (searchArea.includes(weapon.name) && weapon.display === "true") {
-                outputArmyArray[armyArrayIndex].weaponsAlias.push(weapon.alias)
+                outputArmyArray[armyArrayIndex].equipedWeapons.push(weapon.alias);
             }
         }
+
+        if (searchArea.includes("Warlord")) {    // fügt allen chars Warlord hinzu....warum? nex
+            outputArmyArray[armyArrayIndex].warlord.push("Warlord");
+        }
+
         startIndex = index + keyword.length;
     }
 }
 
-function getAndSetUnits() {
+function getAllUnits() {
     for (const unit of tauEmpire.units) {
-        getUnitsAndWeapons(inputArmyString, unit.name, unit.points, unit.weapons);
+        getUnit(inputArmyString, unit.name, unit.points, unit.weapons);
     }
-    for (const unit of outputArmyArray) {
-        if (unit.weaponsAlias.length !== 0) {
-            const weaponsAliasString = unit.weaponsAlias.toString();
-            const weaponsAliasStringCommata = weaponsAliasString.replaceAll(",", ", ");
-            outputAreaField.textContent += "- " + unit.name + " (" + weaponsAliasStringCommata + ") " + unit.points + "\n";
+
+}
+function setAllUnits() {
+    for (const item of outputArmyArray) {
+        if (item.equipedWeapons.length !== 0) {
+            const equipedWeaponsString = item.equipedWeapons.toString();
+            const equipedWeaponsCommata = equipedWeaponsString.replaceAll(",", ", ");
+            outputAreaField.textContent += "- " + item.name + " (" + equipedWeaponsCommata + ")"+ " " + item.points + "\n";
+        }
+        else if (item.equipedWeapons.length !== 0 && item.warlord.length !== 0) {
+            const equipedWeaponsString = item.equipedWeapons.toString();
+            const equipedWeaponsCommata = equipedWeaponsString.replaceAll(",", ", ");
+            outputAreaField.textContent += "- " + item.name + " (" + equipedWeaponsCommata + ")" + " " +"(" +item.warlord +")" + item.points + "\n";
+        }
+        else if (item.equipedWeapons.length === 0 && item.warlord.length !== 0) {
+            const equipedWeaponsString = item.equipedWeapons.toString();
+            const equipedWeaponsCommata = equipedWeaponsString.replaceAll(",", ", ");
+            outputAreaField.textContent += "- " + item.name + " " +"(" +item.warlord +")"+ " " + item.points  + "\n";
         }
         else {
-            outputAreaField.textContent += "- " + unit.name + " " + unit.points + "\n";
+            outputAreaField.textContent += "- " + item.name + " " + item.points + "\n";
         }
+
     }
 }
+
+//(" + weaponsAliasStringCommata + ")
 
 function compressList(event) {
     event.preventDefault();
@@ -80,7 +104,10 @@ function compressList(event) {
     getAndSetArmyName();
     getAndSetFaction();
     getAndSetDetachment();
-    getAndSetUnits();
+    getAllUnits();
+    setAllUnits();
+
+
 }
 
 function copyToClipboard(event) {

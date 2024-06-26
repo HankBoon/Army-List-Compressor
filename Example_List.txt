@@ -9,6 +9,7 @@ CHARACTERS
 
 Commander Shadowsun (100 points)
   • 1x Advanced Guardian Drone
+    Warlord
     1x Battlesuit fists
     1x Command-link Drone (Aura)
     1x Flechette launcher
