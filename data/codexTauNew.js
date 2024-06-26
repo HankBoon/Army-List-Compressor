@@ -39,8 +39,8 @@ const tauEmpire = {
       points: 100,
       warlord: true,
       weapons: [
-        { name: "Advanced Guardian Drone", display: "true", alias: " Drone" },
-        { name: "Battlesuit fists", display: "true", alias: " Fists" },
+        { name: "Advanced Guardian Drone", display: "true", alias: "Drone" },
+        { name: "Battlesuit fists", display: "true", alias: "Fists" },
         { name: "Command-link Drone (Aura)", display: "", alias: "" },
         { name: "Flechette launcher", display: "", alias: "" },
         { name: "High-energy fusion blaster", display: "", alias: "" },
@@ -447,7 +447,7 @@ const tauEmpire = {
       points: 180,
       weapons: [
         { name: "Heavy burst cannon", display: "", alias: "" },
-        { name: "Ion accelerator", display: "", alias: "" },
+        { name: "Ion accelerator", display: "true", alias: "Ion" },
         { name: "Missile Drone", display: "", alias: "" },
         { name: "Riptide fists", display: "", alias: "" },
         { name: "Twin fusion blaster", display: "", alias: "" },

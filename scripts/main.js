@@ -22,15 +22,15 @@ function getAndSetArmyName() {
 }
 function getFaction() {
     if (armyString.includes(tauEmpire.name)) {
-        outputAreaField.textContent += "*" + tauEmpire.name + "*"  + "\n"
+        outputAreaField.textContent += "*" + tauEmpire.name + "*" + "\n"
     }
 }
 function getDetachment() {
-for (const detachment of tauEmpire.detachments){
-if (armyString.includes(detachment)){
-    outputAreaField.textContent += "*" + detachment + "*"  + "\n"
-}
-}
+    for (const detachment of tauEmpire.detachments) {
+        if (armyString.includes(detachment)) {
+            outputAreaField.textContent += "*" + detachment + "*" + "\n"
+        }
+    }
 }
 
 function searchKeywordAndEmptyLine(string, keyword, points, weapons) {
@@ -95,9 +95,18 @@ function convert(event) {
     for (const unit of tauEmpire.units) {
         searchKeywordAndEmptyLine(armyString, unit.name, unit.points, unit.weapons);
     }
-    
+
     for (const unit of armyArray) {
-        outputAreaField.textContent += "- " + unit.name + ": " + unit.points + "pts" + " // " + unit.weaponsAlias + "\n";
+    
+        if (unit.weaponsAlias.length !== 0) {
+            const weaponsAliasString = unit.weaponsAlias.toString();
+            const weaponsAliasStringCommata = weaponsAliasString.replace(",",", ");
+
+            outputAreaField.textContent += "- " + unit.name + " (" + weaponsAliasStringCommata + ") " + unit.points + "\n";
+        } 
+        else{
+            outputAreaField.textContent += "- " + unit.name + " " + unit.points + "\n";
+        }
     }
 };
 
