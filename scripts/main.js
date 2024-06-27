@@ -51,14 +51,27 @@ function getUnit(string, keyword, points, weapons) {
 
         for (const weapon of weapons) {
             if (searchArea.includes(weapon.name) && weapon.display === "true") {
-                outputArmyArray[armyArrayIndex].equipedWeapons.push(weapon.alias);
+                const searchAreaLinebreakArray = searchArea.split((/\r?\n|\r|\n/g));
+                for (const line of searchAreaLinebreakArray) {
+                    if (line.includes(weapon.name)) {
+                        for (i = 1; i < 10; i++) {
+                            if (line.includes(i)) {
+                                const count = i;
+                                outputArmyArray[armyArrayIndex].equipedWeapons.push({
+                                    name: weapon.alias,
+                                    count: count
+                                })
+
+                            }
+                        }
+                    }
+                }
+
             }
         }
-
-        if (searchArea.includes("Warlord")) {    // fügt allen chars Warlord hinzu....warum? nex
+        if (searchArea.includes("Warlord")) {
             outputArmyArray[armyArrayIndex].warlord.push("Warlord");
         }
-
         startIndex = index + keyword.length;
     }
 }
@@ -71,29 +84,33 @@ function getAllUnits() {
 }
 function setAllUnits() {
     for (const item of outputArmyArray) {
-        if (item.equipedWeapons.length !== 0) {
-            const equipedWeaponsString = item.equipedWeapons.toString();
-            const equipedWeaponsCommata = equipedWeaponsString.replaceAll(",", ", ");
-            outputAreaField.textContent += "- " + item.name + " (" + equipedWeaponsCommata + ")"+ " " + item.points + "\n";
-        }
+        if (item.equipedWeapons.length !== 0  && item.warlord.length === 0) {
+            let rawWeaponString = "";
+            for (const weapon of item.equipedWeapons) {
+                rawWeaponString += `${weapon.count}x ${weapon.name}, `;
+            }
+            const weaponString = rawWeaponString.slice(rawWeaponString[1], rawWeaponString.length -2);  //warum ist index 1 nicht index0?
+            outputAreaField.textContent += `- ${item.name} [${weaponString}] ${item.points}\n`
+        }   
         else if (item.equipedWeapons.length !== 0 && item.warlord.length !== 0) {
-            const equipedWeaponsString = item.equipedWeapons.toString();
-            const equipedWeaponsCommata = equipedWeaponsString.replaceAll(",", ", ");
-            outputAreaField.textContent += "- " + item.name + " (" + equipedWeaponsCommata + ")" + " " +"(" +item.warlord +")" + item.points + "\n";
+            let rawWeaponString = "";
+            for (const weapon of item.equipedWeapons) {
+                rawWeaponString += `${weapon.count}x ${weapon.name}, `;
+            }
+            const weaponString = rawWeaponString.slice(rawWeaponString[1], rawWeaponString.length -2);
+            outputAreaField.textContent += `- ${item.name} [${weaponString}] [${item.warlord}] ${item.points}\n`
         }
         else if (item.equipedWeapons.length === 0 && item.warlord.length !== 0) {
-            const equipedWeaponsString = item.equipedWeapons.toString();
-            const equipedWeaponsCommata = equipedWeaponsString.replaceAll(",", ", ");
-            outputAreaField.textContent += "- " + item.name + " " +"(" +item.warlord +")"+ " " + item.points  + "\n";
+            outputAreaField.textContent += `- ${item.name} [${item.warlord}] ${item.points}\n`
         }
         else {
-            outputAreaField.textContent += "- " + item.name + " " + item.points + "\n";
+            outputAreaField.textContent += `- ${item.name} ${item.points}\n`
         }
+       
 
     }
 }
 
-//(" + weaponsAliasStringCommata + ")
 
 function compressList(event) {
     event.preventDefault();
@@ -121,9 +138,12 @@ resultForm.addEventListener("submit", copyToClipboard);
 resetButton.addEventListener("click", () => { location.reload() });
 
 
+console.log(outputArmyArray);
 
 
 
+// const regularExpression = new RegExp(weapon.name, "g");     //count ist evtl. überflüssig, da weapon.name nicht mehrmals vorkommt, sondern beziffert ist. linebreakarray könnte hier helfen. jede zeile die weapon.name beinhaltet wird als string gespeichert. string minus weapon.name ergibt die anzahl der waffen.
+// let count = (searchArea.match(regularExpression) || []).length;
 
 
 

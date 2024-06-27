@@ -27,3 +27,5 @@
 //anlegen: object oder array dass sich aus den zeilen und gefundenen ausrüstungen speisst -> erledigt!
 // struktur so ändern, dass nicht nur tauEmpire durchsucht wird, sondern jede x beliebige Armee.
 // Ausrüstung die mehrmals vorhanden ist, einfügen!
+
+//weapon.count aufaddieren, dammit nicht mehrmals der selbe Eintrag auftaucht.

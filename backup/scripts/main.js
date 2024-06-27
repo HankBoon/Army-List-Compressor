@@ -58,7 +58,6 @@ function getUnitsAndWeapons(string, keyword, points, weapons, unit) {
             outputArmyArray[armyArrayIndex].warlord.push("Warlord");
             console.log(searchArea)
         }
-
         startIndex = index + keyword.length;
     }
 }
