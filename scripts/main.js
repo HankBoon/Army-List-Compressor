@@ -11,15 +11,18 @@ let armyArrayIndex = -1;   // anders lösen?
 function createArmyStringFromInput() {
     inputArmyString = textAreaField.value;
 }
+
 function getAndSetArmyName() {
     inputArmyLinebreakArray = inputArmyString.split((/\r?\n|\r|\n/g));
     outputAreaField.textContent = "**" + inputArmyLinebreakArray[0] + "**" + "\n";
 }
+
 function getAndSetFaction() {
     if (inputArmyString.includes(tauEmpire.name)) {
         outputAreaField.textContent += "*" + tauEmpire.name + "*" + "\n"
     }
 }
+
 function getAndSetDetachment() {
     for (const detachment of tauEmpire.detachments) {
         if (inputArmyString.includes(detachment)) {
@@ -27,6 +30,7 @@ function getAndSetDetachment() {
         }
     }
 }
+
 function getUnit(string, keyword, points, weapons) {
     let startIndex = 0;
     let index;
@@ -52,16 +56,17 @@ function getUnit(string, keyword, points, weapons) {
         for (const weapon of weapons) {
             if (searchArea.includes(weapon.name) && weapon.display === "true") {
                 const searchAreaLinebreakArray = searchArea.split((/\r?\n|\r|\n/g));
+                outputArmyArray[armyArrayIndex].equipedWeapons.push({
+                    name: weapon.alias,
+                    count: 0
+                })
+                console.log(outputArmyArray[armyArrayIndex].equipedWeapons);
+                
                 for (const line of searchAreaLinebreakArray) {
                     if (line.includes(weapon.name)) {
                         for (i = 1; i < 10; i++) {
                             if (line.includes(i)) {
-                                const count = i;
-                                outputArmyArray[armyArrayIndex].equipedWeapons.push({
-                                    name: weapon.alias,
-                                    count: count
-                                })
-
+                                outputArmyArray[armyArrayIndex].equipedWeapons[outputArmyArray[armyArrayIndex].equipedWeapons.length -1].count  += i;  // kann ich hier mit this abkürzen?
                             }
                         }
                     }
@@ -82,6 +87,7 @@ function getAllUnits() {
     }
 
 }
+
 function setAllUnits() {
     for (const item of outputArmyArray) {
         if (item.equipedWeapons.length !== 0  && item.warlord.length === 0) {
@@ -111,7 +117,6 @@ function setAllUnits() {
     }
 }
 
-
 function compressList(event) {
     event.preventDefault();
     inputForm.style.display = "none";
@@ -123,8 +128,6 @@ function compressList(event) {
     getAndSetDetachment();
     getAllUnits();
     setAllUnits();
-
-
 }
 
 function copyToClipboard(event) {
