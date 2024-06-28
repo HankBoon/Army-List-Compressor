@@ -31,10 +31,10 @@ function getAndSetDetachment() {
     }
 }
 
-function getUnit(string, keyword, points, weapons) {
+function getUnit(string, unitName, points, weapons) {
     let startIndex = 0;
     let index;
-    for (index = string.indexOf(keyword, startIndex); index !== -1; index = string.indexOf(keyword, startIndex)) {
+    for (index = string.indexOf(unitName, startIndex); index !== -1; index = string.indexOf(unitName, startIndex)) {
         armyArrayIndex += 1;
         // Find the next empty line
         let emptyLineIndex = string.indexOf('\n\n', index);
@@ -44,7 +44,7 @@ function getUnit(string, keyword, points, weapons) {
         let searchArea = string.slice(index, emptyLineIndex);
 
         outputArmyArray.push({
-            name: keyword,
+            name: unitName,
             points: points,
             equipedWeapons: [],
             warlord: [],
@@ -77,7 +77,7 @@ function getUnit(string, keyword, points, weapons) {
         if (searchArea.includes("Warlord")) {
             outputArmyArray[armyArrayIndex].warlord.push("Warlord");
         }
-        startIndex = index + keyword.length;
+        startIndex = index + unitName.length;
     }
 }
 
@@ -85,7 +85,6 @@ function getAllUnits() {
     for (const unit of tauEmpire.units) {
         getUnit(inputArmyString, unit.name, unit.points, unit.weapons);
     }
-
 }
 
 function setAllUnits() {
@@ -112,8 +111,6 @@ function setAllUnits() {
         else {
             outputAreaField.textContent += `- ${item.name} ${item.points}\n`
         }
-       
-
     }
 }
 
