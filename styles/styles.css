@@ -8,6 +8,8 @@ html {
 
 body {
     background-color: white;
+    width: device-width;
+    margin: 0px;
     grid-gap: 20px;
     grid-template-areas:
         "header header"
@@ -35,19 +37,25 @@ form {
 }
 
 #inputAreaField,
-#innerResultDiv,
 #outputAreaField {
     width: 500px;
     min-height: 10em;
     border: 1px solid black;
     font-size: 14px;
     border-radius: 7px;
+    margin: auto; 
     margin-bottom: 10px;
     padding: 1em;
     display: inline;
 }
 #resultForm, button {
     display: none;
+}
+button {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 input, button {
@@ -56,28 +64,30 @@ input, button {
     border: 1px solid black;
     border-radius: 7px;
     margin: auto;
+    margin-bottom: 10px;
+    background-color: rgb(230, 230, 230);
+
+    /* display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; */
+    
 }
+
 input {
     display: block;
 }
 
+button {
+    display: none;
+}
 
-/* #inputForm {
-        grid-area: input;
+@media (max-width:768px) {
+    #inputAreaField,
+    #outputAreaField,
+    input, 
+    button {
+        width: 90%;
     }
-
-    #foutput {
-        grid-area: output;
-    }
-    #toutput {
-        margin: 0px;;
-    } */
-
-
-/* @media (max-width:768px) {
-        body {
-            grid-template-areas:
-                "header header"
-                "input input"
-                "output output";
-        }} */
+    
+    

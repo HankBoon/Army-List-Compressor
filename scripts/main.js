@@ -116,7 +116,7 @@ function compressList(event) {
     event.preventDefault();
     inputForm.style.display = "none";
     resultForm.style.display = "flex";
-    resetButton.style.display = "block";
+    resetButton.style.display = "flex";
     createArmyStringFromInput();
     getAndSetArmyName();
     getAndSetFaction();
