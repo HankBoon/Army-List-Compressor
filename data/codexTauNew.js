@@ -9,7 +9,7 @@ const tauEmpire = {
   units: [
     {
       name: "Cadre Fireblade",
-      points: 140,
+      points: 50,
       warlord: true,
       weapons: [
         { name: "Close combat weapon", display: "", alias: "" },
@@ -50,7 +50,7 @@ const tauEmpire = {
     },
     {
       name: "Commander in Coldstar Battlesuit",
-      points: 185,
+      points: 195,
       warlord: true,
       weapons: [
         { name: "Airbursting fragmentation projector", display: "true", alias: "AFP" },
@@ -78,7 +78,7 @@ const tauEmpire = {
     },
     {
       name: "Commander in Enforcer Battlesuit",
-      points: 170,
+      points: 80,
       warlord: true,
       weapons: [
         { name: "Airbursting fragmentation projector", display: "true", alias: "AFP" },
@@ -114,7 +114,7 @@ const tauEmpire = {
     },
     {
       name: "Ethereal",
-      points: 140,
+      points: 50,
       warlord: true,
       weapons: [
         { name: "Gun Drone", display: "true", alias: "GD" },
@@ -132,7 +132,7 @@ const tauEmpire = {
     },
     {
       name: "Firesight Team",
-      points: 160,
+      points: 70,
       warlord: true,
       weapons: [
         { name: "Close combat weapons", display: "", alias: "" },
@@ -148,7 +148,7 @@ const tauEmpire = {
     },
     {
       name: "Kroot Flesh Shaper",
-      points: 100,
+      points: 55,
       warlord: true,
       weapons: [
         { name: "Kroot scattergun", display: "", alias: "" },
@@ -161,7 +161,7 @@ const tauEmpire = {
     },
     {
       name: "Kroot Lone-spear",
-      points: 180,
+      points: 90,
       warlord: true,
       weapons: [
         { name: "Blast javelin", display: "true", alias: "Javelin" },
@@ -179,7 +179,7 @@ const tauEmpire = {
     },
     {
       name: "Kroot Trail Shaper",
-      points: 110,
+      points: 65,
       warlord: true,
       weapons: [
         { name: "Kroot rifle", display: "", alias: "" },
@@ -192,7 +192,7 @@ const tauEmpire = {
     },
     {
       name: "Kroot War Shaper",
-      points: 105,
+      points: 60,
       warlord: true,
       weapons: [
         { name: "Bladestave and prey-hook", display: "true", alias: "Bladestave/Hook" },
