@@ -1,0 +1,34 @@
+// To Do:
+// Anzahl der Ausgaben von datasheet stimmt nicht   ->erledigt!
+// Liste taucht ausserhalb von p auf -> erledigt!
+// entscheiden, ob ein paragraph oder mehrere am Anfang besser sind -> erledigt!
+// ist es möglich Aufzählungszeichen statt einer Liste zu nutzen? -> erledigt!
+// button einfügen für "copy to clipboard" -> erledigt!
+// reset am anfang einbauen damit die die ul nicht ständig erweitert wird sondern erneuert-> erledigt!
+// Ausrüstungsoptionen einfügen -> erledigt!
+// Machen Schalter für verschiedene Armeen Sinn?
+// Schalter für verschiedene Armeelisten tools? bzw. automatische erkennung der verwendeten tools
+// Optionsschalter für Anzeige der Ausrüstung?
+// css aufräumen!-> erledigt!
+// backlog  Trello
+// regex für
+// Daten auslagern -> erledigt!
+// Markdown umsetzen ->erledigt!
+// Alert mit anderer Benachrichtigungs- umsetzen
+// reset button einfügen -> erledigt!
+// Punktwerte einfügen -> erledigt
+// enhancemnts einfügen -> erledigt!
+// warlord einfügen -> erledigt!
+// data aufräumen -> erledigt!
+// breite der textarea fixieren
+// outputArea an größe des inhalts anpassen
+// outputArea.textContent anpassen. inhalt und logik trennen.inhalt in variable zusammenfassen und erst am ende das ergebnis ausgeben. -> erledigt!
+// output area - textcontent ändern. so dass es erst ganz am ende mit inhalt befüllt wir und nicht in mehreren schritten
+//anlegen: object oder array dass sich aus den zeilen und gefundenen ausrüstungen speisst -> erledigt!
+// struktur so ändern, dass nicht nur tauEmpire durchsucht wird, sondern jede x beliebige Armee.
+// Ausrüstung die mehrmals vorhanden ist, einfügen! -> erledigt!
+// Rechtschreibung in object überprüfen
+// Funktion einfügen, so dass Enter-Taste auch die HAuptfunktion startet
+// info auf Seite einfügen, die erklärt , was es ist und welche Funktionen behinhaltet sind.
+
+//weapon.count aufaddieren, dammit nicht mehrmals der selbe Eintrag auftaucht.
