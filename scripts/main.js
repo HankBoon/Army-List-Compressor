@@ -59,9 +59,7 @@ function getUnit(string, unitName, points, weapons) {
                 outputArmyArray[armyArrayIndex].equipedWeapons.push({
                     name: weapon.alias,
                     count: 0
-                })
-                console.log(outputArmyArray[armyArrayIndex].equipedWeapons);
-                
+                })                
                 for (const line of searchAreaLinebreakArray) {
                     if (line.includes(weapon.name)) {
                         for (i = 1; i < 10; i++) {
@@ -136,14 +134,5 @@ function copyToClipboard(event) {
 inputForm.addEventListener("submit", compressList);
 resultForm.addEventListener("submit", copyToClipboard);
 resetButton.addEventListener("click", () => { location.reload() });
-
-
-console.log(outputArmyArray);
-
-
-
-// const regularExpression = new RegExp(weapon.name, "g");     //count ist evtl. überflüssig, da weapon.name nicht mehrmals vorkommt, sondern beziffert ist. linebreakarray könnte hier helfen. jede zeile die weapon.name beinhaltet wird als string gespeichert. string minus weapon.name ergibt die anzahl der waffen.
-// let count = (searchArea.match(regularExpression) || []).length;
-
 
 
