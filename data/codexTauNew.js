@@ -50,7 +50,7 @@ const tauEmpire = {
     },
     {
       name: "Commander in Coldstar Battlesuit",
-      points: 195,
+      points: 95,
       warlord: true,
       weapons: [
         { name: "Airbursting fragmentation projector", display: "true", alias: "AFP" },
