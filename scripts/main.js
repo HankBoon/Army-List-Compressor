@@ -38,7 +38,7 @@ function getAndSetDetachment() {
     }
 }
 
-function getUnit(string, unitName, singleModelName, points, weapons) {
+function getUnit(string, unitName, singleModelNames, minSize, points, weapons) {
     startIndex = firstEmptyLineIndex;
     let index;
     for (index = string.indexOf(unitName, startIndex); index !== -1; index = string.indexOf(unitName, startIndex)) {
@@ -52,8 +52,9 @@ function getUnit(string, unitName, singleModelName, points, weapons) {
 
         outputArmyArray.push({
             name: unitName,
-            singleModelName: singleModelName,
+            singleModelNames: singleModelNames,
             numberOfModels: 0,
+            minSize: minSize,
             points: points,
             equipedWeapons: [],
             warlord: [],
@@ -62,24 +63,22 @@ function getUnit(string, unitName, singleModelName, points, weapons) {
             searchArea: searchArea
         })
         // checks for number of models in a unit
-        if (searchArea.includes(singleModelName)) {
-            const searchAreaLinebreakArray = searchArea.split((/\r?\n|\r|\n/g));
-            // outputArmyArray[armyArrayIndex].numberOfModels.push({
-            //     singleModelName: singleModelName,
-            //     count: 0
-            // })
-            for (const line of searchAreaLinebreakArray) {
-                if (line.includes(singleModelName)) {
-                    for (i = 1; i < 30; i++) {      // "3" equals a two digit number plus "x"
-                        if (line.includes(i) && line.trim().length + 3 <= line.length) {
-                            outputArmyArray[armyArrayIndex].numberOfModels += i;
-                            outputArmyArray[armyArrayIndex].points *= outputArmyArray[armyArrayIndex].numberOfModels;
+        for (const singleModelName of singleModelNames) {
+            if (searchArea.includes(singleModelName)) {
+                const searchAreaLinebreakArray = searchArea.split((/\r?\n|\r|\n/g));
+                for (const line of searchAreaLinebreakArray) {
+                    if (line.includes(singleModelName)) {
+                        for (i = 1; i < 30; i++) {      // "2" equals a two digit number plus "x"
+                            if (line.includes(i) && line.includes("•")) {
+                                outputArmyArray[armyArrayIndex].numberOfModels += i;
+                            }
+                        }
+                        if (outputArmyArray[armyArrayIndex].numberOfModels > minSize) {
+                            outputArmyArray[armyArrayIndex].points = points * outputArmyArray[armyArrayIndex].numberOfModels
                         }
                     }
+
                 }
-
-
-
             }
         }
 
@@ -99,7 +98,6 @@ function getUnit(string, unitName, singleModelName, points, weapons) {
                         }
                     }
                 }
-
             }
         }
         if (searchArea.includes("Warlord")) {
@@ -111,7 +109,7 @@ function getUnit(string, unitName, singleModelName, points, weapons) {
 
 function getAllUnits() {
     for (const unit of tauEmpire.units) {
-        getUnit(inputArmyString, unit.name, unit.singleModelName, unit.points, unit.weapons);
+        getUnit(inputArmyString, unit.name, unit.singleModelNames, unit.minSize, unit.points, unit.weapons);
     }
 }
 // in cases ändern!
@@ -141,6 +139,7 @@ function setAllUnits() {
                 outputAreaField.textContent += `- ${item.name} [${item.numberOfModels}x] ${item.points}\n`
             }
         }
+
         if (item.numberOfModels === 0) {
             if (item.equipedWeapons.length !== 0 && item.warlord.length === 0) {
                 let rawWeaponString = "";
@@ -191,5 +190,3 @@ inputForm.addEventListener("submit", compressList);
 resultForm.addEventListener("submit", copyToClipboard);
 resetButton.addEventListener("click", () => { location.reload() });
 
-
-console.log(outputArmyArray);

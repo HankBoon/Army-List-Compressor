@@ -32,6 +32,7 @@
 // info auf Seite einfügen, die erklärt , was es ist und welche Funktionen behinhaltet sind.
 // contakt einfügen
 // bugfixes anzeigen
+// if loop ketten verschlanken
 
 //weapon.count aufaddieren, dammit nicht mehrmals der selbe Eintrag auftaucht.
 
