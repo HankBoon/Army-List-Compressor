@@ -421,6 +421,7 @@ const tauEmpire = {
     },
     {
       name: "Piranhas",
+      singleModelName: "Piranha",
       points: 55,
       maxCount: 3,
       weapons: [
