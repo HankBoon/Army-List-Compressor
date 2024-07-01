@@ -464,7 +464,7 @@ const tauEmpire = {
       points: 90,
       weapons: [
         { name: "Close combat weapon", display: "", alias: "" },
-        { name: "Grav-inhibitor Drone", display: "true", alias: "Grave Drone" },
+        { name: "Grav-inhibitor Drone", display: "true", alias: "Grav Drone" },
         { name: "Gun Drone", display: "true", alias: "GD" },
         { name: "Marker Drone", display: "true", alias: "MD" },
         { name: "Pulse Accelerator Drone", display: "true", alias: "Pulse Acc Drone" },
