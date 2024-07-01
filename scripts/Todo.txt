@@ -30,5 +30,16 @@
 // Rechtschreibung in object überprüfen
 // Funktion einfügen, so dass Enter-Taste auch die HAuptfunktion startet
 // info auf Seite einfügen, die erklärt , was es ist und welche Funktionen behinhaltet sind.
+// contakt einfügen
+// bugfixes anzeigen
 
 //weapon.count aufaddieren, dammit nicht mehrmals der selbe Eintrag auftaucht.
+
+// Bugs:
+// etheral gefunden, obwohl nicht in Liste -> tritt auf weil etheral in titel vorkommt. -> titel von searcharea ausschließen!
+// enhancements werden nicht zu punkten gezählt
+// anzahl von pirahanas und Broadsides ist immer "1". Punkte werden nicht aufadiert. 
+// broasides waffen anzeige checken 
+//enhancements nicht auf chars geadded
+
+// zu langer Titel verursacht scheinbar Probleme. -> definition ändern! nicht nur firstLine , sondern firstLine bis \n\n

@@ -7,14 +7,21 @@ let inputArmyString = "";
 let inputArmyLinebreakArray;
 let outputArmyArray = [];
 let armyArrayIndex = -1;   // anders lösen?
+let armyTitle = "";
+let firstEmptyLineIndex ="";
 
 function createArmyStringFromInput() {
     inputArmyString = textAreaField.value;
 }
 
 function getAndSetArmyName() {
-    inputArmyLinebreakArray = inputArmyString.split((/\r?\n|\r|\n/g));
-    outputAreaField.textContent = "**" + inputArmyLinebreakArray[0] + "**" + "\n";
+    // inputArmyLinebreakArray = inputArmyString.split((/\r?\n|\r|\n/g));
+    const firstLetterIndex = inputArmyString[0];
+    firstEmptyLineIndex = inputArmyString.indexOf("\n\n");
+    for (i = 0; i <= firstEmptyLineIndex; i++) {
+        armyTitle = inputArmyString.slice(firstLetterIndex, firstEmptyLineIndex);
+        outputAreaField.textContent = "**" + armyTitle + "**" + "\n";
+    }
 }
 
 function getAndSetFaction() {
@@ -32,7 +39,7 @@ function getAndSetDetachment() {
 }
 
 function getUnit(string, unitName, points, weapons) {
-    let startIndex = 0;
+    startIndex = firstEmptyLineIndex;
     let index;
     for (index = string.indexOf(unitName, startIndex); index !== -1; index = string.indexOf(unitName, startIndex)) {
         armyArrayIndex += 1;
@@ -59,12 +66,12 @@ function getUnit(string, unitName, points, weapons) {
                 outputArmyArray[armyArrayIndex].equipedWeapons.push({
                     name: weapon.alias,
                     count: 0
-                })                
+                })
                 for (const line of searchAreaLinebreakArray) {
                     if (line.includes(weapon.name)) {
                         for (i = 1; i < 10; i++) {
                             if (line.includes(i)) {
-                                outputArmyArray[armyArrayIndex].equipedWeapons[outputArmyArray[armyArrayIndex].equipedWeapons.length -1].count  += i;  // kann ich hier mit this abkürzen?
+                                outputArmyArray[armyArrayIndex].equipedWeapons[outputArmyArray[armyArrayIndex].equipedWeapons.length - 1].count += i;  // kann ich hier mit this abkürzen?
                             }
                         }
                     }
@@ -87,20 +94,20 @@ function getAllUnits() {
 
 function setAllUnits() {
     for (const item of outputArmyArray) {
-        if (item.equipedWeapons.length !== 0  && item.warlord.length === 0) {
+        if (item.equipedWeapons.length !== 0 && item.warlord.length === 0) {
             let rawWeaponString = "";
             for (const weapon of item.equipedWeapons) {
                 rawWeaponString += `${weapon.count}x ${weapon.name}, `;
             }
-            const weaponString = rawWeaponString.slice(rawWeaponString[1], rawWeaponString.length -2);  //warum ist index 1 nicht index0?
+            const weaponString = rawWeaponString.slice(rawWeaponString[1], rawWeaponString.length - 2);  //warum ist index 1 nicht index0?
             outputAreaField.textContent += `- ${item.name} [${weaponString}] ${item.points}\n`
-        }   
+        }
         else if (item.equipedWeapons.length !== 0 && item.warlord.length !== 0) {
             let rawWeaponString = "";
             for (const weapon of item.equipedWeapons) {
                 rawWeaponString += `${weapon.count}x ${weapon.name}, `;
             }
-            const weaponString = rawWeaponString.slice(rawWeaponString[1], rawWeaponString.length -2);
+            const weaponString = rawWeaponString.slice(rawWeaponString[1], rawWeaponString.length - 2);
             outputAreaField.textContent += `- ${item.name} [${weaponString}] [${item.warlord}] ${item.points}\n`
         }
         else if (item.equipedWeapons.length === 0 && item.warlord.length !== 0) {
