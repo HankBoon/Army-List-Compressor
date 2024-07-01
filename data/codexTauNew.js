@@ -10,6 +10,7 @@ const tauEmpire = {
     {
       name: "Cadre Fireblade",
       singleModelNames: [],
+      minSize: 1,
       points: 50,
       warlord: true,
       weapons: [
@@ -29,6 +30,7 @@ const tauEmpire = {
     {
       name: "Commander Farsight",
       singleModelNames: [],
+      minSize: 1,
       points: 105,
       warlord: true,
       weapons: [
@@ -39,6 +41,7 @@ const tauEmpire = {
     {
       name: "Commander Shadowsun",
       singleModelNames: [],
+      minSize: 1,
       points: 100,
       warlord: true,
       weapons: [
@@ -54,6 +57,7 @@ const tauEmpire = {
     {
       name: "Commander in Coldstar Battlesuit",
       singleModelNames: [],
+      minSize: 1,
       points: 95,
       warlord: true,
       weapons: [
@@ -83,6 +87,7 @@ const tauEmpire = {
     {
       name: "Commander in Enforcer Battlesuit",
       singleModelNames: [],
+      minSize: 1,
       points: 80,
       warlord: true,
       weapons: [
@@ -111,6 +116,7 @@ const tauEmpire = {
     {
       name: "Darkstrider",
       singleModelNames: [],
+      minSize: 1,
       points: 60,
       warlord: true,
       weapons: [
@@ -121,6 +127,7 @@ const tauEmpire = {
     {
       name: "Ethereal",
       singleModelNames: [],
+      minSize: 1,
       points: 50,
       warlord: true,
       weapons: [
@@ -140,6 +147,7 @@ const tauEmpire = {
     {
       name: "Firesight Team",
       singleModelNames: [],
+      minSize: 1,
       points: 70,
       warlord: true,
       weapons: [
@@ -157,6 +165,7 @@ const tauEmpire = {
     {
       name: "Kroot Flesh Shaper",
       singleModelNames: [],
+      minSize: 1,
       points: 55,
       warlord: true,
       weapons: [
@@ -171,6 +180,7 @@ const tauEmpire = {
     {
       name: "Kroot Lone-spear",
       singleModelNames: [],
+      minSize: 1,
       points: 90,
       warlord: true,
       weapons: [
@@ -190,6 +200,7 @@ const tauEmpire = {
     {
       name: "Kroot Trail Shaper",
       singleModelNames: [],
+      minSize: 1,
       points: 65,
       warlord: true,
       weapons: [
@@ -204,6 +215,7 @@ const tauEmpire = {
     {
       name: "Kroot War Shaper",
       singleModelNames: [],
+      minSize: 1,
       points: 60,
       warlord: true,
       weapons: [
@@ -220,6 +232,7 @@ const tauEmpire = {
     {
       name: "Breacher Team",
       singleModelNames: [],
+      minSize: 10,
       points: 100,
       weapons: [
         { name: "Close combat weapon", display: "", alias: "" },
@@ -235,6 +248,7 @@ const tauEmpire = {
     {
       name: "Strike Team",
       singleModelNames: [],
+      minSize: 10,
       points: 75,
       weapons: [
         { name: "Close combat weapon", display: "", alias: "" },
@@ -250,6 +264,7 @@ const tauEmpire = {
     {
       name: "Devilfish",
       singleModelNames: [],
+      minSize: 1,
       points: 85,
       weapons: [
         { name: "Accelerator burst cannon", display: "", alias: "" },
@@ -262,6 +277,7 @@ const tauEmpire = {
     {
       name: "AX-1-0 Tiger Shark",
       singleModelNames: [],
+      minSize: 1,
       points: 315,
       weapons: [
         { name: "Armoured hull", display: "", alias: "" },
@@ -275,6 +291,7 @@ const tauEmpire = {
     {
       name: "Broadside Battlesuits",
       singleModelNames: ["x Broadside Shas’vre", "x Broadside Shas’ui"],
+      minSize: 1,
       points: 90,
       weapons: [
         { name: "Crushing bulk", display: "", alias: "" },
@@ -293,6 +310,7 @@ const tauEmpire = {
     {
       name: "Crisis Fireknife Battlesuits",
       singleModelNames: ["x Crisis Starscythe Shas’vre", "x Crisis Starscythe Shas’ui"],
+      minSize: 3,
       points: 130,
       weapons: [
         { name: "Battlesuit fists", display: "", alias: "" },
@@ -306,6 +324,7 @@ const tauEmpire = {
     {
       name: "Crisis Starscythe Battlesuits",
       singleModelNames: ["x Crisis Starscythe Shas’vre", "x Crisis Starscythe Shas’ui"],
+      minSize: 3,
       points: 110,
       weapons: [
         { name: "Battlesuit fists", display: "", alias: "" },
@@ -319,6 +338,7 @@ const tauEmpire = {
     {
       name: "Crisis Sunforge Battlesuits",
       singleModelNames: ["x Crisis Sunforge Shas’vre", "x Crisis Sunforge Shas’ui"],
+      minSize: 3,
       points: 150,
       weapons: [
         { name: "Battlesuit fists", display: "", alias: "" },
@@ -331,6 +351,7 @@ const tauEmpire = {
     {
       name: "Ghostkeel Battlesuit",
       singleModelNames: [],
+      minSize: 1,
       points: 160,
       weapons: [
         { name: "Battlesuit Support System", display: "true", alias: "BSS" },
@@ -345,6 +366,7 @@ const tauEmpire = {
     {
       name: "Hammerhead Gunship",
       singleModelNames: [],
+      minSize: 1,
       points: 145,
       weapons: [
         { name: "Accelerator burst cannon", display: "true", alias: "Burst" },
@@ -359,6 +381,7 @@ const tauEmpire = {
     {
       name: "Kroot Carnivores",
       singleModelNames: ["Long-quill", "Kroot Carnivore"],
+      minSize: 10,
       points: 75,
       weapons: [
         { name: "Close combat weapon", display: "", alias: "" },
@@ -371,6 +394,7 @@ const tauEmpire = {
     {
       name: "Kroot Farstalkers",
       singleModelNames: [],
+      minSize: 12,
       points: 85,
       weapons: [
         { name: "Farstalker firearm", display: "", alias: "" },
@@ -387,6 +411,7 @@ const tauEmpire = {
     {
       name: "Kroot Hounds",
       singleModelNames: ["Kroot Hound"],
+      minSize: 5,
       points: 40,
       maxCount: 10,
       weapons: [
@@ -396,6 +421,7 @@ const tauEmpire = {
     {
       name: "Krootox Rampagers",
       singleModelNames: ["Krootox Rampagers"],
+      minSize: 1,
       points: 110,
       maxCount: 6,
       weapons: [
@@ -407,6 +433,7 @@ const tauEmpire = {
     {
       name: "Krootox Riders",
       singleModelNames: ["Krootox Rider"],
+      minSize: 1,
       points: 35,
       maxCount: 3,
       weapons: [
@@ -419,6 +446,7 @@ const tauEmpire = {
     {
       name: "Manta",
       singleModelNames: [],
+      minSize: 1,
       points: 2100,
       weapons: [
         { name: "Armoured hull", display: "", alias: "" },
@@ -432,6 +460,7 @@ const tauEmpire = {
     {
       name: "Pathfinder Team",
       singleModelNames: [],
+      minSize: 10,
       points: 90,
       weapons: [
         { name: "Close combat weapon", display: "", alias: "" },
@@ -451,6 +480,7 @@ const tauEmpire = {
     {
       name: "Piranhas",
       singleModelNames: ["x Piranha"],
+      minSize: 1,
       points: 55,
       maxCount: 3,
       weapons: [
@@ -464,6 +494,7 @@ const tauEmpire = {
     {
       name: "Razorshark Strike Fighter",
       singleModelNames: [],
+      minSize: 1,
       points: 170,
       weapons: [
         { name: "Accelerator burst cannon", display: "true", alias: "Burst" },
@@ -476,6 +507,7 @@ const tauEmpire = {
     {
       name: "Riptide Battlesuit",
       singleModelNames: [],
+      minSize: 1,
       points: 180,
       weapons: [
         { name: "Heavy burst cannon", display: "true", alias: "Burst" },
@@ -490,6 +522,7 @@ const tauEmpire = {
     {
       name: "Sky Ray Gunship",
       singleModelNames: [],
+      minSize: 1,
       points: 140,
       weapons: [
         { name: "Accelerator burst cannon", display: "true", alias: "Burst" },
@@ -502,6 +535,7 @@ const tauEmpire = {
     {
       name: "Stealth Battlesuits",
       singleModelNames: ["x Stealth Shas’vre", "x Stealth Shas’ui"],
+      minSize: 3,
       points: 60,
       weapons: [
         { name: "Battlesuit Support System", display: "true", alias: "BSS" },
@@ -517,6 +551,7 @@ const tauEmpire = {
     {
       name: "Stormsurge",
       singleModelNames: [],
+      minSize: 1,
       points: 400,
       weapons: [
         { name: "Cluster rocket system", display: "", alias: "" },
@@ -533,6 +568,7 @@ const tauEmpire = {
     {
       name: "Sun Shark Bomber",
       singleModelNames: [],
+      minSize: 1,
       points: 160,
       weapons: [
         { name: "Armoured hull", display: "", alias: "" },
@@ -545,6 +581,7 @@ const tauEmpire = {
     {
       name: "Ta'unar Supremacy Armour",
       singleModelNames: [],
+      minSize: 1,
       points: 790,
       weapons: [
         { name: "Burst cannon", display: "", alias: "" },
@@ -561,6 +598,7 @@ const tauEmpire = {
     {
       name: "Tidewall Droneport",
       singleModelNames: [],
+      minSize: 1,
       points: 85,
       weapons: [
         { name: "Drone defenders", display: "", alias: "" }
@@ -569,6 +607,7 @@ const tauEmpire = {
     {
       name: "Tidewall Gunrig",
       singleModelNames: [],
+      minSize: 1,
       points: 90,
       weapons: [
         { name: "Supremacy railgun", display: "", alias: "" }
@@ -577,6 +616,7 @@ const tauEmpire = {
     {
       name: "Tidewall Shieldline",
       singleModelNames: [],
+      minSize: 1,
       points: 105,
       weapons: [
         { name: "Tidewall Defence Platform", display: "true", alias: "Defence platform" },
@@ -586,6 +626,7 @@ const tauEmpire = {
     {
       name: "Tiger Shark",
       singleModelNames: [],
+      minSize: 1,
       points: 275,
       weapons: [
         { name: "Armoured hull", display: "", alias: "" },
@@ -603,6 +644,7 @@ const tauEmpire = {
     {
       name: "Vespid Stingwings",
       singleModelNames: [],
+      minSize: 5,
       points: 65,
       weapons: [
         { name: "Neutron blaster", display: "", alias: "" },
