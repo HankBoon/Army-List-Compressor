@@ -332,7 +332,7 @@ const tauEmpire = {
         { name: "Gun Drone", display: "true", alias: "GD" },
         { name: "Marker Drone", display: "true", alias: "MD" },
         { name: "Shield Drone", display: "true", alias: "SD" },
-        { name: "T'au flamer", display: "true", alias: "Flamer" }
+        { name: "T’au flamer", display: "true", alias: "Flamer" }
       ]
     },
     {
