@@ -38,7 +38,7 @@ function getAndSetDetachment() {
     }
 }
 
-function getUnit(string, unitName, singleModelNames, minSize, points, weapons, enhancements) {
+function getUnit(string, unitName, singleModelNames, minSize, weapons, enhancements) {
     startIndex = firstEmptyLineIndex;
     let index;
     for (index = string.indexOf(unitName, startIndex); index !== -1; index = string.indexOf(unitName, startIndex)) {
@@ -55,7 +55,7 @@ function getUnit(string, unitName, singleModelNames, minSize, points, weapons, e
             singleModelNames: singleModelNames,
             numberOfModels: 0,
             minSize: minSize,
-            points: points,
+            points: "",
             equipedWeapons: [],
             warlord: [],
             enhancement: [],
@@ -65,17 +65,13 @@ function getUnit(string, unitName, singleModelNames, minSize, points, weapons, e
         })
         // checks for number of models in a unit
         for (const singleModelName of singleModelNames) {
-            if (searchArea.includes(singleModelName)) {
-                
+            if (searchArea.includes(singleModelName)) { 
                 for (const line of searchAreaLinebreakArray) {
                     if (line.includes(singleModelName)) {
                         for (i = 1; i < 30; i++) {      // "2" equals a two digit number plus "x"
                             if (line.includes(i) && line.includes("•")) {
                                 outputArmyArray[armyArrayIndex].numberOfModels += i;
                             }
-                        }
-                        if (outputArmyArray[armyArrayIndex].numberOfModels > minSize) {
-                            outputArmyArray[armyArrayIndex].points = points * outputArmyArray[armyArrayIndex].numberOfModels
                         }
                     }
 
@@ -126,7 +122,7 @@ function getUnit(string, unitName, singleModelNames, minSize, points, weapons, e
 
 function getAllUnits() {
     for (const unit of tauEmpire.units) {
-        getUnit(inputArmyString, unit.name, unit.singleModelNames, unit.minSize, unit.points, unit.weapons, unit.enhancements);
+        getUnit(inputArmyString, unit.name, unit.singleModelNames, unit.minSize, unit.weapons, unit.enhancements);
     }
 }
 // in cases ändern! struktur ändern, so dass text content erst am ende gefüllt wird.
