@@ -44,3 +44,5 @@
 //enhancements nicht auf chars geadded
 
 // zu langer Titel verursacht scheinbar Probleme. -> definition ändern! nicht nur firstLine , sondern firstLine bis \n\n
+// funktionen ändern, so dass sie nur mit regex teile der jeweiligen zeile in den output kopieren und nicht aus dem tau.objekt
+// setAllUnits grundlegend ändern. cases einführen. Wenn true, dann push to output array. ganz am ende outputfield mit array füllen.

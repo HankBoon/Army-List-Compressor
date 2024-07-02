@@ -38,7 +38,7 @@ function getAndSetDetachment() {
     }
 }
 
-function getUnit(string, unitName, singleModelNames, minSize, points, weapons) {
+function getUnit(string, unitName, singleModelNames, minSize, points, weapons, enhancements) {
     startIndex = firstEmptyLineIndex;
     let index;
     for (index = string.indexOf(unitName, startIndex); index !== -1; index = string.indexOf(unitName, startIndex)) {
@@ -58,6 +58,7 @@ function getUnit(string, unitName, singleModelNames, minSize, points, weapons) {
             points: points,
             equipedWeapons: [],
             warlord: [],
+            enhancement: [],
             keywordIndex: index,
             nextEmptyLineIndex: emptyLineIndex,
             searchArea: searchArea
@@ -100,8 +101,17 @@ function getUnit(string, unitName, singleModelNames, minSize, points, weapons) {
                 }
             }
         }
+
         if (searchArea.includes("Warlord")) {
             outputArmyArray[armyArrayIndex].warlord.push("Warlord");
+        }
+
+        if (searchArea.includes("Enhancement")) {
+            for (const enhancement of enhancements) {
+                if (searchArea.includes(enhancement)) {
+                    outputArmyArray[armyArrayIndex].enhancement.push(enhancement);
+                }
+            }
         }
         startIndex = index + unitName.length;
     }
@@ -109,10 +119,10 @@ function getUnit(string, unitName, singleModelNames, minSize, points, weapons) {
 
 function getAllUnits() {
     for (const unit of tauEmpire.units) {
-        getUnit(inputArmyString, unit.name, unit.singleModelNames, unit.minSize, unit.points, unit.weapons);
+        getUnit(inputArmyString, unit.name, unit.singleModelNames, unit.minSize, unit.points, unit.weapons, unit.enhancements);
     }
 }
-// in cases ändern!
+// in cases ändern! struktur ändern, so dass text content erst am ende gefüllt wird.
 function setAllUnits() {
     for (const item of outputArmyArray) {
         if (item.numberOfModels !== 0) {
@@ -141,7 +151,7 @@ function setAllUnits() {
         }
 
         if (item.numberOfModels === 0) {
-            if (item.equipedWeapons.length !== 0 && item.warlord.length === 0) {
+            if (item.equipedWeapons.length !== 0 && item.warlord.length === 0 && item.enhancement.length === 0) {
                 let rawWeaponString = "";
                 for (const weapon of item.equipedWeapons) {
                     rawWeaponString += `${weapon.count}x ${weapon.name}, `;
@@ -149,7 +159,15 @@ function setAllUnits() {
                 const weaponString = rawWeaponString.slice(rawWeaponString[1], rawWeaponString.length - 2);  //warum ist index 1 nicht index0?
                 outputAreaField.textContent += `- ${item.name} [${weaponString}] ${item.points}\n`
             }
-            else if (item.equipedWeapons.length !== 0 && item.warlord.length !== 0) {
+             else if (item.equipedWeapons.length !== 0 && item.warlord.length === 0 && item.enhancement !== 0) {
+                let rawWeaponString = "";
+                for (const weapon of item.equipedWeapons) {
+                    rawWeaponString += `${weapon.count}x ${weapon.name}, `;
+                }
+                const weaponString = rawWeaponString.slice(rawWeaponString[1], rawWeaponString.length - 2);  //warum ist index 1 nicht index0?
+                outputAreaField.textContent += `- ${item.name} [${item.enhancement[0]}] [${weaponString}] ${item.points}\n`
+            }
+            else if (item.equipedWeapons.length !== 0 && item.warlord.length !== 0 && item.enhancement.length === 0) {
                 let rawWeaponString = "";
                 for (const weapon of item.equipedWeapons) {
                     rawWeaponString += `${weapon.count}x ${weapon.name}, `;
@@ -157,8 +175,22 @@ function setAllUnits() {
                 const weaponString = rawWeaponString.slice(rawWeaponString[1], rawWeaponString.length - 2);
                 outputAreaField.textContent += `- ${item.name} [${weaponString}] [${item.warlord}] ${item.points}\n`
             }
+            else if (item.equipedWeapons.length !== 0 && item.warlord.length !== 0 && item.enhancement.length !== 0) {
+                let rawWeaponString = "";
+                for (const weapon of item.equipedWeapons) {
+                    rawWeaponString += `${weapon.count}x ${weapon.name}, `;
+                }
+                const weaponString = rawWeaponString.slice(rawWeaponString[1], rawWeaponString.length - 2);
+                outputAreaField.textContent += `- ${item.name} [${item.enhancement}] [${weaponString}] [${item.warlord}] ${item.points}\n`
+            }
             else if (item.equipedWeapons.length === 0 && item.warlord.length !== 0) {
                 outputAreaField.textContent += `- ${item.name} [${item.warlord}] ${item.points}\n`
+            }
+            else if (item.equipedWeapons.length === 0 && item.warlord.length !== 0 && item.enhancement.length !== 0) {
+                outputAreaField.textContent += `- ${item.name} [${item.enhancement[0]}] [${item.warlord}] ${item.points}\n`
+            }
+            else if (item.equipedWeapons.length === 0 && item.warlord.length === 0 && item.enhancement.length !== 0) {
+                outputAreaField.textContent += `- ${item.name} [${item.enhancement[0]}] ${item.points}\n`
             }
             else {
                 outputAreaField.textContent += `- ${item.name} ${item.points}\n`
@@ -166,6 +198,7 @@ function setAllUnits() {
         }
     }
 }
+
 
 function compressList(event) {
     event.preventDefault();
@@ -190,4 +223,4 @@ inputForm.addEventListener("submit", compressList);
 resultForm.addEventListener("submit", copyToClipboard);
 resetButton.addEventListener("click", () => { location.reload() });
 
-//Test
+console.log(outputArmyArray)
