@@ -358,11 +358,11 @@ const tauEmpire = {
       minSize: 3,
       points: 130,
       weapons: [
+        { name: "Missile pod", display: "true", alias: "Missile pod" },
+        { name: "Plasma rifle", display: "true", alias: "Plasma" },
         { name: "Battlesuit fists", display: "", alias: "" },
         { name: "Gun Drone", display: "true", alias: "GD" },
         { name: "Marker Drone", display: "true", alias: "MD" },
-        { name: "Missile pod", display: "true", alias: "Missile pod" },
-        { name: "Plasma rifle", display: "true", alias: "Plasma" },
         { name: "Shield Drone", display: "true", alias: "SD" }
       ]
     },
