@@ -24,7 +24,11 @@ const tauEmpire = {
         "Exemplar of the Kauyon",
         "Solid-image Projection Unit",
         "Precision of the Patient Hunter",
-        "Through Unity, Devastation"
+        "Through Unity, Devastation",
+        "Strategic Conqueror",
+        "Exemplar of the Mont’ka",
+        "Coordinated Exploitation",
+        "Strike Swiftly"
       ]
     },
     {
@@ -81,7 +85,15 @@ const tauEmpire = {
         "Exemplar of the Kauyon",
         "Solid-image Projection Unit",
         "Precision of the Patient Hunter",
-        "Through Unity, Devastation"
+        "Through Unity, Devastation",
+        "Strategic Conqueror",
+        "Exemplar of the Mont’ka",
+        "Coordinated Exploitation",
+        "Strike Swiftly",
+        "Prototype Weapon System",
+        "Starflare Ignition System",
+        "Puretide Engram Neurochip",
+        "Internal Grenade Racks"
       ]
     },
     {
@@ -110,7 +122,15 @@ const tauEmpire = {
         "Exemplar of the Kauyon",
         "Solid-image Projection Unit",
         "Precision of the Patient Hunter",
-        "Through Unity, Devastation"
+        "Through Unity, Devastation",
+        "Strategic Conqueror",
+        "Exemplar of the Mont’ka",
+        "Coordinated Exploitation",
+        "Strike Swiftly",
+        "Prototype Weapon System",
+        "Starflare Ignition System",
+        "Puretide Engram Neurochip",
+        "Internal Grenade Racks"
       ]
     },
     {
@@ -141,7 +161,11 @@ const tauEmpire = {
         "Exemplar of the Kauyon",
         "Solid-image Projection Unit",
         "Precision of the Patient Hunter",
-        "Through Unity, Devastation"
+        "Through Unity, Devastation",
+        "Strategic Conqueror",
+        "Exemplar of the Mont’ka",
+        "Coordinated Exploitation",
+        "Strike Swiftly"
       ]
     },
     {
@@ -159,7 +183,11 @@ const tauEmpire = {
         "Exemplar of the Kauyon",
         "Solid-image Projection Unit",
         "Precision of the Patient Hunter",
-        "Through Unity, Devastation"
+        "Through Unity, Devastation",
+        "Strategic Conqueror",
+        "Exemplar of the Mont’ka",
+        "Coordinated Exploitation",
+        "Strike Swiftly"
       ]
     },
     {
@@ -174,7 +202,11 @@ const tauEmpire = {
       ],
       enhancements: [
         "Solid-image Projection Unit",
-        "Precision of the Patient Hunter"
+        "Precision of the Patient Hunter",
+        "Strategic Conqueror",
+        "Strike Swiftly",
+        "Kroothawk Flock",
+        "Borthrod Gland"
       ]
     },
     {
@@ -194,7 +226,12 @@ const tauEmpire = {
         "Exemplar of the Kauyon",
         "Solid-image Projection Unit",
         "Precision of the Patient Hunter",
-        "Through Unity, Devastation"
+        "Through Unity, Devastation",
+        "Strategic Conqueror",
+        "Exemplar of the Mont’ka",
+        "Coordinated Exploitation",
+        "Strike Swiftly",
+        "Kroothawk Flock"
       ]
     },
     {
@@ -209,7 +246,11 @@ const tauEmpire = {
       ],
       enhancements: [
         "Solid-image Projection Unit",
-        "Precision of the Patient Hunter"
+        "Precision of the Patient Hunter",
+        "Strategic Conqueror",
+        "Strike Swiftly",
+        "Kroothawk Flock",
+        "Nomadic Hunter"
       ]
     },
     {
@@ -226,7 +267,11 @@ const tauEmpire = {
       ],
       enhancements: [
         "Solid-image Projection Unit",
-        "Precision of the Patient Hunter"
+        "Precision of the Patient Hunter",
+        "Strategic Conqueror",
+        "Strike Swiftly",
+        "Kroothawk Flock",
+        "Root-carved Weapons"
       ]
     },
     {
