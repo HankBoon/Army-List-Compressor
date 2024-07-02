@@ -49,7 +49,7 @@ function getUnit(string, unitName, singleModelNames, minSize, points, weapons, e
             emptyLineIndex = string.length;    // If no empty line is found, use the end of the string
         }
         let searchArea = string.slice(index, emptyLineIndex);
-
+        const searchAreaLinebreakArray = searchArea.split((/\r?\n|\r|\n/g));
         outputArmyArray.push({
             name: unitName,
             singleModelNames: singleModelNames,
@@ -66,7 +66,7 @@ function getUnit(string, unitName, singleModelNames, minSize, points, weapons, e
         // checks for number of models in a unit
         for (const singleModelName of singleModelNames) {
             if (searchArea.includes(singleModelName)) {
-                const searchAreaLinebreakArray = searchArea.split((/\r?\n|\r|\n/g));
+                
                 for (const line of searchAreaLinebreakArray) {
                     if (line.includes(singleModelName)) {
                         for (i = 1; i < 30; i++) {      // "2" equals a two digit number plus "x"
@@ -82,6 +82,13 @@ function getUnit(string, unitName, singleModelNames, minSize, points, weapons, e
                 }
             }
         }
+        // checks for points
+        for (const line of searchAreaLinebreakArray){
+        if(line.includes(unitName) && "points"){
+           const trimmedLine = line.trim();
+           const onlyPoints = trimmedLine.substring((unitName.length +2), (trimmedLine.length -8));
+           outputArmyArray[armyArrayIndex].points = onlyPoints ;
+        }}
 
         for (const weapon of weapons) {
             if (searchArea.includes(weapon.name) && weapon.display === "true") {
