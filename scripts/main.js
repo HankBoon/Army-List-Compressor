@@ -67,20 +67,17 @@ function getUnit(string, unitName, singleModelNames, minSize, weapons, enhanceme
                 })
             }
         }
-        
-        // checks for number of models in a unit
-        for (const singleModelName of singleModelNames) {
-            if (searchArea.includes(singleModelName)) {
-                for (const line of searchAreaLinebreakArray) {
-                    if (line.includes(singleModelName)) {
-                        for (i = 1; i < 30; i++) {      // "2" equals a two digit number plus "x"
-                            if (line.includes(i) && line.includes("•")) {
-                                outputArmyArray[armyArrayIndex].numberOfModels += i;
-                            }
-                        }
-                    }
 
+        // checks for number of models in a unit
+
+        for (const singleModelName of singleModelNames) {
+            for (const line of searchAreaLinebreakArray) {
+                if (line.includes(singleModelName) && line.includes("•")) {
+                    const trimmedLine = line.trim();
+                    let onlyNumber = Number(trimmedLine.substring(2, (trimmedLine.length - singleModelName.length - 2)));
+                    outputArmyArray[armyArrayIndex].numberOfModels += onlyNumber;
                 }
+
             }
         }
         // checks for points
@@ -231,5 +228,3 @@ function copyToClipboard(event) {
 inputForm.addEventListener("submit", compressList);
 resultForm.addEventListener("submit", copyToClipboard);
 resetButton.addEventListener("click", () => { location.reload() });
-
-console.log(outputArmyArray)

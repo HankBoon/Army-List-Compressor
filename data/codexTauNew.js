@@ -335,26 +335,26 @@ const tauEmpire = {
     },
     {
       name: "Broadside Battlesuits",
-      singleModelNames: ["x Broadside Shas’vre", "x Broadside Shas’ui"],
+      singleModelNames: ["Broadside Shas’vre", "Broadside Shas’ui"],
       minSize: 1,
       points: 90,
       weapons: [
-        { name: "Crushing bulk", display: "", alias: "" },
-        { name: "Gun Drone", display: "true", alias: "GD" },
         { name: "Heavy rail rifle", display: "true", alias: "Rail" },
         { name: "High-yield missile pods", display: "true", alias: "Missle pods" },
+        { name: "Crushing bulk", display: "", alias: "" },
         { name: "Marker Drone", display: "true", alias: "MD" },
         { name: "Missile Drone", display: "true", alias: "Missle Drone" },
         { name: "Seeker missile", display: "true", alias: "Seeker" },
-        { name: "Shield Drone", display: "true", alias: "SD" },
         { name: "Twin plasma rifle", display: "true", alias: "Plasma" },
         { name: "Twin smart missile system", display: "true", alias: "SMS" },
+        { name: "Gun Drone", display: "true", alias: "GD" },
+        { name: "Shield Drone", display: "true", alias: "SD" },
         { name: "Weapon Support System", display: "true", alias: "WSS" }
       ]
     },
     {
       name: "Crisis Fireknife Battlesuits",
-      singleModelNames: ["x Crisis Starscythe Shas’vre", "x Crisis Starscythe Shas’ui"],
+      singleModelNames: ["Crisis Starscythe Shas’vre", "Crisis Starscythe Shas’ui"],
       minSize: 3,
       points: 130,
       weapons: [
@@ -368,7 +368,7 @@ const tauEmpire = {
     },
     {
       name: "Crisis Starscythe Battlesuits",
-      singleModelNames: ["x Crisis Starscythe Shas’vre", "x Crisis Starscythe Shas’ui"],
+      singleModelNames: ["Crisis Starscythe Shas’vre", "Crisis Starscythe Shas’ui"],
       minSize: 3,
       points: 110,
       weapons: [
@@ -382,7 +382,7 @@ const tauEmpire = {
     },
     {
       name: "Crisis Sunforge Battlesuits",
-      singleModelNames: ["x Crisis Sunforge Shas’vre", "x Crisis Sunforge Shas’ui"],
+      singleModelNames: ["Crisis Sunforge Shas’vre", "Crisis Sunforge Shas’ui"],
       minSize: 3,
       points: 150,
       weapons: [
@@ -524,7 +524,7 @@ const tauEmpire = {
     },
     {
       name: "Piranhas",
-      singleModelNames: ["x Piranha"],
+      singleModelNames: ["Piranha"],
       minSize: 1,
       points: 55,
       maxCount: 3,
@@ -579,7 +579,7 @@ const tauEmpire = {
     },
     {
       name: "Stealth Battlesuits",
-      singleModelNames: ["x Stealth Shas’vre", "x Stealth Shas’ui"],
+      singleModelNames: ["Stealth Shas’vre", "Stealth Shas’ui"],
       minSize: 3,
       points: 60,
       weapons: [
