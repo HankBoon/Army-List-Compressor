@@ -43,14 +43,14 @@ function getUnit(string, unitName, singleModelNames, minSize, weapons, enhanceme
     let index;
     for (index = string.indexOf(unitName, startIndex); index !== -1; index = string.indexOf(unitName, startIndex)) {
         // Find the next empty line
-        let emptyLineIndex = string.indexOf('\n\n', index);
+        let emptyLineIndex = string.indexOf("\n\n", index);
         if (emptyLineIndex === -1) {
             emptyLineIndex = string.length;    // If no empty line is found, use the end of the string
         }
         let searchArea = string.slice(index, emptyLineIndex);
         const searchAreaLinebreakArray = searchArea.split((/\r?\n|\r|\n/g));
         for (const line of searchAreaLinebreakArray) {
-            if (line.includes(unitName) && line.includes("Points") || line.includes(unitName) && line.includes("points")) {
+            if (line.includes(unitName) && line.includes("oints")) {
                 armyArrayIndex += 1;
                 outputArmyArray.push({
                     name: unitName,
@@ -82,7 +82,7 @@ function getUnit(string, unitName, singleModelNames, minSize, weapons, enhanceme
         }
         // checks for points
         for (const line of searchAreaLinebreakArray) {
-            if (line.includes(unitName) && line.includes("points")) {
+            if (line.includes(unitName) && line.includes("oints")) {
                 const trimmedLine = line.trim();
                 const onlyPoints = trimmedLine.substring((unitName.length + 2), (trimmedLine.length - 8));
                 outputArmyArray[armyArrayIndex].points = onlyPoints;
@@ -229,3 +229,4 @@ inputForm.addEventListener("submit", compressList);
 resultForm.addEventListener("submit", copyToClipboard);
 resetButton.addEventListener("click", () => { location.reload() });
 
+console.log(outputArmyArray);

@@ -48,4 +48,7 @@
 // setAllUnits grundlegend ändern. cases einführen. Wenn true, dann push to output array. ganz am ende outputfield mit array füllen.
 
 // krootox rampagers wird 2x mal gefunden durch die index funktionen
-// 20er kroot trupp wird als 30er angezeigt
+// 20er kroot trupp wird als 30er angezeigt-> erledigt!
+
+// umstrukturieren so dass am anfang ein array mit allen gefundenen keywords angelegt wird. aus diesen dann erst die searcharea definieren.
+// aus irgendeinem grund erkennt er bei holodiscus nicht die leeren zeilen. bzw es es ind keine vorhanden
