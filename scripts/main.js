@@ -50,7 +50,7 @@ function getUnit(string, unitName, singleModelNames, minSize, weapons, enhanceme
         let searchArea = string.slice(index, emptyLineIndex);
         const searchAreaLinebreakArray = searchArea.split((/\r?\n|\r|\n/g));
         for (const line of searchAreaLinebreakArray) {
-            if (line.includes(unitName) && line.includes("points")) {
+            if (line.includes(unitName) && line.includes("Points") || line.includes(unitName) && line.includes("points")) {
                 armyArrayIndex += 1;
                 outputArmyArray.push({
                     name: unitName,
@@ -228,3 +228,4 @@ function copyToClipboard(event) {
 inputForm.addEventListener("submit", compressList);
 resultForm.addEventListener("submit", copyToClipboard);
 resetButton.addEventListener("click", () => { location.reload() });
+
