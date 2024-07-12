@@ -3,6 +3,12 @@ const resultForm = document.getElementById("resultForm");
 const textAreaField = document.getElementById("inputAreaField");
 const outputAreaField = document.getElementById("outputAreaField");
 const resetButton = document.getElementById("resetButton");
+const modelCountButton = document.querySelector("#modelCount");
+const enhancementsButton = document.querySelector("#enhancements");
+const warlordbutton = document.querySelector("#warlord");
+const weaponsButton = document.querySelector("#weapons");
+const pointsButton = document.querySelector("#points");
+
 let inputArmyString = "";
 let inputArmyLinebreakArray;
 let outputArmyObject = [];
@@ -133,16 +139,16 @@ function setAllUnitsToArray() {
     for (const item of outputArmyObject) {
         index++;
         allUnitsArray.push(item.name)
-        if (item.numberOfModels !== 0) {
+        if (item.numberOfModels !== 0 && modelCountButton.checked) {
             allUnitsArray[index] += ` [${item.numberOfModels}]`
         }
-        if(item.enhancement.length !== 0){
-             allUnitsArray[index] += ` [${item.enhancement[0]}]`
+        if (item.enhancement.length !== 0 && enhancementsButton.checked) {
+            allUnitsArray[index] += ` [${item.enhancement[0]}]`
         }
-        if (item.warlord.length !== 0) {
+        if (item.warlord.length !== 0 && warlordbutton.checked) {
             allUnitsArray[index] += ` [Warlord]`
         }
-        if (item.equipedWeapons.length !== 0) {
+        if (item.equipedWeapons.length !== 0 && weaponsButton.checked) {
             let rawWeaponString = "";
             for (const weapon of item.equipedWeapons) {
                 rawWeaponString += `${weapon.count}x ${weapon.name}, `;
@@ -150,7 +156,9 @@ function setAllUnitsToArray() {
             const weaponString = rawWeaponString.slice(rawWeaponString[1], rawWeaponString.length - 2)
             allUnitsArray[index] += ` [${weaponString}]`
         }
-        allUnitsArray[index] += ` ${item.points}`
+        if (pointsButton.checked) {
+            allUnitsArray[index] += ` ${item.points}`
+        }
     }
 }
 function setAllUnits() {
@@ -269,9 +277,9 @@ inputForm.addEventListener("keydown", (event) => {
     }
 })
 resultForm.addEventListener("submit", (event) => {
-        event.preventDefault();
-        copyToClipboard();
-    }
+    event.preventDefault();
+    copyToClipboard();
+}
 );
 resultForm.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {

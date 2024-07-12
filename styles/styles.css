@@ -86,14 +86,18 @@ fieldset {
 div  {
     display: flex;
     /* grid-template-columns: 1fr 1fr; */
-    align-items: center;
     /* justify-content: center; */
+    align-items: center;
 
 }
 div > input, div > label {
     display: inline;
     white-space: nowrap;
+    /* vertical-align: middle; */
 }
+/* div > input{
+    vertical-align: middle;
+} */
 input {
     display: block;
 }
