@@ -136,6 +136,9 @@ function setAllUnitsToArray() {
         if (item.numberOfModels !== 0) {
             allUnitsArray[index] += ` [${item.numberOfModels}]`
         }
+        if(item.enhancement.length !== 0){
+             allUnitsArray[index] += ` [${item.enhancement[0]}]`
+        }
         if (item.warlord.length !== 0) {
             allUnitsArray[index] += ` [Warlord]`
         }
