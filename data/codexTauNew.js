@@ -314,7 +314,7 @@ const tauEmpire = {
       weapons: [
         { name: "Accelerator burst cannon", display: "", alias: "" },
         { name: "Armoured hull", display: "", alias: "" },
-        { name: "Seeker missile", display: "true", alias: "Seeker" },
+        { name: "Seeker missile", display: "", alias: "Seeker" },
         { name: "Smart missile system", display: "true", alias: "SMS" },
         { name: "Twin pulse carbine", display: "true", alias: "TPC" }
       ]
@@ -329,7 +329,7 @@ const tauEmpire = {
         { name: "Burst cannon", display: "true", alias: "BC" },
         { name: "Cyclic ion blaster", display: "true", alias: "CIB" },
         { name: "Missile pod", display: "", alias: "" },
-        { name: "Seeker missile", display: "true", alias: "Seeker" },
+        { name: "Seeker missile", display: "", alias: "Seeker" },
         { name: "Twin heavy rail cannon", display: "", alias: "" }
       ]
     },
@@ -532,7 +532,7 @@ const tauEmpire = {
         { name: "Armoured hull", display: "", alias: "" },
         { name: "Piranha burst cannon", display: "true", alias: "Burst" },
         { name: "Piranha fusion blaster", display: "true", alias: "Fusion" },
-        { name: "Seeker missile", display: "true", alias: "Seeker" },
+        { name: "Seeker missile", display: "", alias: "Seeker" },
         { name: "Twin pulse carbine", display: "", alias: "" }
       ]
     },
@@ -572,7 +572,7 @@ const tauEmpire = {
       weapons: [
         { name: "Accelerator burst cannon", display: "true", alias: "Burst" },
         { name: "Armoured hull", display: "", alias: "" },
-        { name: "Seeker missile rack", display: "true", alias: "Seeker" },
+        { name: "Seeker missile rack", display: "", alias: "Seeker" },
         { name: "Smart missile system", display: "true", alias: "SMS" },
         { name: "Twin pulse carbine", display: "true", alias: "TPC" }
       ]

@@ -167,85 +167,6 @@ function setAllUnits() {
     }
 }
 
-// in cases ändern! struktur ändern, so dass text content erst am ende gefüllt wird.
-// function setAllUnits() {
-//     for (const item of outputArmyObject) {
-//         if (item.numberOfModels !== 0) {
-//             if (item.equipedWeapons.length !== 0 && item.warlord.length === 0) {
-//                 let rawWeaponString = "";
-//                 for (const weapon of item.equipedWeapons) {
-//                     rawWeaponString += `${weapon.count}x ${weapon.name}, `;
-//                 }
-//                 const weaponString = rawWeaponString.slice(rawWeaponString[1], rawWeaponString.length - 2);  //warum ist index 1 nicht index0?
-//                 outputAreaField.textContent += `- ${item.name} [${item.numberOfModels}x] [${weaponString}] ${item.points}\n`
-//             }
-//             else if (item.equipedWeapons.length !== 0 && item.warlord.length !== 0) {
-//                 let rawWeaponString = "";
-//                 for (const weapon of item.equipedWeapons) {
-//                     rawWeaponString += `${weapon.count}x ${weapon.name}, `;
-//                 }
-//                 const weaponString = rawWeaponString.slice(rawWeaponString[1], rawWeaponString.length - 2);
-//                 outputAreaField.textContent += `- ${item.name} [${item.numberOfModels}x] [${weaponString}] [${item.warlord}] ${item.points}\n`
-//             }
-//             else if (item.equipedWeapons.length === 0 && item.warlord.length !== 0) {
-//                 outputAreaField.textContent += `- ${item.name} [${item.numberOfModels}x] [${item.warlord}] ${item.points}\n`
-//             }
-//             else {
-//                 outputAreaField.textContent += `- ${item.name} [${item.numberOfModels}x] ${item.points}\n`
-//             }
-//         }
-
-//         if (item.numberOfModels === 0) {
-//             if (item.equipedWeapons.length !== 0 && item.warlord.length === 0 && item.enhancement.length === 0) {
-//                 let rawWeaponString = "";
-//                 for (const weapon of item.equipedWeapons) {
-//                     rawWeaponString += `${weapon.count}x ${weapon.name}, `;
-//                 }
-//                 const weaponString = rawWeaponString.slice(rawWeaponString[1], rawWeaponString.length - 2);  //warum ist index 1 nicht index0?
-//                 outputAreaField.textContent += `- ${item.name} [${weaponString}] ${item.points}\n`
-//             }
-//             else if (item.equipedWeapons.length !== 0 && item.warlord.length === 0 && item.enhancement !== 0) {
-//                 let rawWeaponString = "";
-//                 for (const weapon of item.equipedWeapons) {
-//                     rawWeaponString += `${weapon.count}x ${weapon.name}, `;
-//                 }
-//                 const weaponString = rawWeaponString.slice(rawWeaponString[1], rawWeaponString.length - 2);  //warum ist index 1 nicht index0?
-//                 outputAreaField.textContent += `- ${item.name} [${item.enhancement[0]}] [${weaponString}] ${item.points}\n`
-//             }
-//             else if (item.equipedWeapons.length !== 0 && item.warlord.length !== 0 && item.enhancement.length === 0) {
-//                 let rawWeaponString = "";
-//                 for (const weapon of item.equipedWeapons) {
-//                     rawWeaponString += `${weapon.count}x ${weapon.name}, `;
-//                 }
-//                 const weaponString = rawWeaponString.slice(rawWeaponString[1], rawWeaponString.length - 2);
-//                 outputAreaField.textContent += `- ${item.name} [${weaponString}] [${item.warlord}] ${item.points}\n`
-//             }
-//             else if (item.equipedWeapons.length !== 0 && item.warlord.length !== 0 && item.enhancement.length !== 0) {
-//                 let rawWeaponString = "";
-//                 for (const weapon of item.equipedWeapons) {
-//                     rawWeaponString += `${weapon.count}x ${weapon.name}, `;
-//                 }
-//                 const weaponString = rawWeaponString.slice(rawWeaponString[1], rawWeaponString.length - 2);
-//                 outputAreaField.textContent += `- ${item.name} [${item.enhancement}] [${weaponString}] [${item.warlord}] ${item.points}\n`
-//             }
-//             else if (item.equipedWeapons.length === 0 && item.warlord.length !== 0) {
-//                 outputAreaField.textContent += `- ${item.name} [${item.warlord}] ${item.points}\n`
-//             }
-//             else if (item.equipedWeapons.length === 0 && item.warlord.length !== 0 && item.enhancement.length !== 0) {
-//                 outputAreaField.textContent += `- ${item.name} [${item.enhancement[0]}] [${item.warlord}] ${item.points}\n`
-//             }
-//             else if (item.equipedWeapons.length === 0 && item.warlord.length === 0 && item.enhancement.length !== 0) {
-//                 outputAreaField.textContent += `- ${item.name} [${item.enhancement[0]}] ${item.points}\n`
-//             }
-//             else {
-//                 outputAreaField.textContent += `- ${item.name} ${item.points}\n`
-//             }
-//         }
-//     }
-// }
-
-
-
 function compressList() {
     inputForm.style.display = "none";
     resultForm.style.display = "flex";
@@ -290,5 +211,5 @@ resultForm.addEventListener("keydown", (event) => {
 
 resetButton.addEventListener("click", () => { location.reload() });
 
-console.log(outputArmyObject);
-console.log(allUnitsArray);
+// console.log(outputArmyObject);
+// console.log(allUnitsArray);
