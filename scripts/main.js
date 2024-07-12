@@ -34,7 +34,6 @@ function getAndSetDetachment() {
     for (const detachment of tauEmpire.detachments) {
         if (inputArmyString.includes(detachment)) {
             outputAreaField.textContent += "*" + detachment + "*" + "\n";
-            console.log(outputAreaField.textContent)
         }
     }
 }
@@ -151,10 +150,10 @@ function setAllUnitsToArray() {
         allUnitsArray[index] += ` ${item.points}`
     }
 }
-function setAllUnits(){
-   for(const item of allUnitsArray){
-    outputAreaField.textContent += `- ${item}\n`   
-   } 
+function setAllUnits() {
+    for (const item of allUnitsArray) {
+        outputAreaField.textContent += `- ${item}\n`
+    }
 }
 
 // in cases ändern! struktur ändern, so dass text content erst am ende gefüllt wird.
@@ -235,29 +234,49 @@ function setAllUnits(){
 // }
 
 
-function compressList(event) {
-    event.preventDefault();
+
+function compressList() {
     inputForm.style.display = "none";
     resultForm.style.display = "flex";
     resetButton.style.display = "flex";
+    outputAreaField.focus();
     createArmyStringFromInput();
     getAndSetArmyName();
     getAndSetFaction();
     getAndSetDetachment();
     getAllUnits();
-    // setAllUnits();
     setAllUnitsToArray();
     setAllUnits();
 }
 
-function copyToClipboard(event) {
-    event.preventDefault();
+function copyToClipboard() {
+    // event.preventDefault();
     navigator.clipboard.writeText(outputAreaField.textContent);
     alert("That´s an awsome list, Shas´el!\nCopied to clipboard.");
 }
 
-inputForm.addEventListener("submit", compressList);
-resultForm.addEventListener("submit", copyToClipboard);
+inputForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    compressList();
+});
+inputForm.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        compressList();
+    }
+})
+resultForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        copyToClipboard();
+    }
+);
+resultForm.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        copyToClipboard();
+    }
+})
+
 resetButton.addEventListener("click", () => { location.reload() });
 
 console.log(outputArmyObject);

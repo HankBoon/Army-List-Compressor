@@ -28,13 +28,13 @@
 // struktur so ändern, dass nicht nur tauEmpire durchsucht wird, sondern jede x beliebige Armee.
 // Ausrüstung die mehrmals vorhanden ist, einfügen! -> erledigt!
 // Rechtschreibung in object überprüfen
-// Funktion einfügen, so dass Enter-Taste auch die HAuptfunktion startet
+// Funktion einfügen, so dass Enter-Taste                                                                                                                                                                                                                                                      auch die HAuptfunktion startet
 // info auf Seite einfügen, die erklärt , was es ist und welche Funktionen behinhaltet sind.
 // contakt einfügen
 // bugfixes anzeigen
-// if loop ketten verschlanken
+// if loop ketten verschlanken ->erledigt!
 
-//weapon.count aufaddieren, dammit nicht mehrmals der selbe Eintrag auftaucht. 
+//weapon.count aufaddieren, dammit nicht mehrmals der selbe Eintrag auftaucht. ->erledigt!
 
 // Bugs:
 // etheral gefunden, obwohl nicht in Liste -> tritt auf weil etheral in titel vorkommt. -> titel von searcharea ausschließen! )>erledigt!
@@ -46,10 +46,11 @@
 // zu langer Titel verursacht scheinbar Probleme. -> definition ändern! nicht nur firstLine , sondern firstLine bis \n\n ->erledigt!
 
 // funktionen ändern, so dass sie nur mit regex teile der jeweiligen zeile in den output kopieren und nicht aus dem tau.objekt 
-// setAllUnits grundlegend ändern. cases einführen. Wenn true, dann push to output array. ganz am ende outputfield mit array füllen.
+// setAllUnits grundlegend ändern. cases einführen. Wenn true, dann push to output array. ganz am ende outputfield mit array füllen. -> erledigt!
 
 // krootox rampagers wird 2x mal gefunden durch die index funktionen ->erledigt!
 // 20er kroot trupp wird als 30er angezeigt-> erledigt!
 
-// umstrukturieren so dass am anfang ein array mit allen gefundenen keywords angelegt wird. aus diesen dann erst die searcharea definieren.
+// umstrukturieren so dass am anfang ein array mit allen gefundenen keywords angelegt wird. aus diesen dann erst die searcharea definieren. ->erledigt!
 // aus irgendeinem grund erkennt er bei holodiscus nicht die leeren zeilen. bzw es es ind keine vorhanden ->erledigt!
+// enhancements wieder einfuegen
