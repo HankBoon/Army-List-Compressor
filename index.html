@@ -17,6 +17,29 @@
     </header>
     <form id="inputForm">
         <textarea required autofocus id="inputAreaField"  placeholder="Paste your original list here..."></textarea>
+        <fieldset>
+            <legend>Display Options:</legend>
+            <div>
+                <input type="checkbox" value="modelCount" id="modelCount" name="options" checked>
+                <label for="modelCount">Model Count</label>
+            </div>
+            <div>
+                <input type="checkbox" value="enhancements" id="enhancements" name="options" checked>
+                <label for="enhancements">Enhancements</label>
+            </div>
+            <div>
+                <input type="checkbox" value="warlord" id="warlord" name="options" checked>
+                <label for="warlord">Warlord</label>
+            </div>
+            <div>
+                <input type="checkbox" value="weapons" id="weapons" name="options" checked>
+                <label for="weapons">Weapons</label>
+            </div>
+            <div>
+                <input type="checkbox" value="points" id="points" name="options"z checked>
+                <label for="points">Points</label>
+            </div>
+        </fieldset>
         <input type="submit" value="compress this list">
     </form>
     <form id="resultForm">
