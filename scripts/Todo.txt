@@ -34,21 +34,22 @@
 // bugfixes anzeigen
 // if loop ketten verschlanken
 
-//weapon.count aufaddieren, dammit nicht mehrmals der selbe Eintrag auftaucht.
+//weapon.count aufaddieren, dammit nicht mehrmals der selbe Eintrag auftaucht. 
 
 // Bugs:
-// etheral gefunden, obwohl nicht in Liste -> tritt auf weil etheral in titel vorkommt. -> titel von searcharea ausschließen!
-// enhancements werden nicht zu punkten gezählt
-// anzahl von pirahanas und Broadsides ist immer "1". Punkte werden nicht aufadiert. 
-// broasides waffen anzeige checken 
-//enhancements nicht auf chars geadded
+// etheral gefunden, obwohl nicht in Liste -> tritt auf weil etheral in titel vorkommt. -> titel von searcharea ausschließen! )>erledigt!
+// enhancements werden nicht zu punkten gezählt ->erledigt!
+// anzahl von pirahanas und Broadsides ist immer "1". Punkte werden nicht aufadiert. ->erledigt! 
+// broasides waffen anzeige checken  ->erledigt!
+//enhancements nicht auf chars geadded ->erledigt!
 
-// zu langer Titel verursacht scheinbar Probleme. -> definition ändern! nicht nur firstLine , sondern firstLine bis \n\n
-// funktionen ändern, so dass sie nur mit regex teile der jeweiligen zeile in den output kopieren und nicht aus dem tau.objekt
+// zu langer Titel verursacht scheinbar Probleme. -> definition ändern! nicht nur firstLine , sondern firstLine bis \n\n ->erledigt!
+
+// funktionen ändern, so dass sie nur mit regex teile der jeweiligen zeile in den output kopieren und nicht aus dem tau.objekt 
 // setAllUnits grundlegend ändern. cases einführen. Wenn true, dann push to output array. ganz am ende outputfield mit array füllen.
 
-// krootox rampagers wird 2x mal gefunden durch die index funktionen
+// krootox rampagers wird 2x mal gefunden durch die index funktionen ->erledigt!
 // 20er kroot trupp wird als 30er angezeigt-> erledigt!
 
 // umstrukturieren so dass am anfang ein array mit allen gefundenen keywords angelegt wird. aus diesen dann erst die searcharea definieren.
-// aus irgendeinem grund erkennt er bei holodiscus nicht die leeren zeilen. bzw es es ind keine vorhanden
+// aus irgendeinem grund erkennt er bei holodiscus nicht die leeren zeilen. bzw es es ind keine vorhanden ->erledigt!
