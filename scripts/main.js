@@ -9,42 +9,42 @@ const warlordbutton = document.querySelector("#warlord");
 const weaponsButton = document.querySelector("#weapons");
 const pointsButton = document.querySelector("#points");
 
+let armyArrayIndex = -1;   // anders lösen?
 let inputArmyString = "";
 let inputArmyLinebreakArray;
 let outputArmyObject = [];
-let armyArrayIndex = -1;   // anders lösen?
-let armyTitle = "";
 let firstEmptyLineIndex = "";
+let compressedArmyArray = [];
 
 function createArmyStringFromInput() {
     inputArmyString = textAreaField.value;
 }
 
 function getAndSetArmyName() {
-    // inputArmyLinebreakArray = inputArmyString.split((/\r?\n|\r|\n/g));
+    let armyTitle = "";
     const firstLetterIndex = inputArmyString[0];
     firstEmptyLineIndex = inputArmyString.indexOf("\n\n");
     for (i = 0; i <= firstEmptyLineIndex; i++) {
         armyTitle = inputArmyString.slice(firstLetterIndex, firstEmptyLineIndex);
-        outputAreaField.textContent = "**" + armyTitle + "**" + "\n";
     }
+    compressedArmyArray.push("**" + armyTitle + "**")
 }
 
 function getAndSetFaction() {
     if (inputArmyString.includes(tauEmpire.name)) {
-        outputAreaField.textContent += "*" + tauEmpire.name + "*" + "\n"
+        compressedArmyArray.push("*" + tauEmpire.name + "*") 
     }
 }
 
 function getAndSetDetachment() {
     for (const detachment of tauEmpire.detachments) {
         if (inputArmyString.includes(detachment)) {
-            outputAreaField.textContent += "*" + detachment + "*" + "\n";
+            compressedArmyArray.push("*" + detachment + "*")
         }
     }
 }
 
-function getUnit(string, unitName, singleModelNames, minSize, weapons, enhancements) {
+function createUnitObject(string, unitName, singleModelNames, minSize, weapons, enhancements) {
     startIndex = firstEmptyLineIndex;
     let index;
     for (index = string.indexOf(unitName, startIndex); index !== -1; index = string.indexOf(unitName, startIndex)) {
@@ -72,9 +72,9 @@ function getUnit(string, unitName, singleModelNames, minSize, weapons, enhanceme
                 })
             }
         }
-
+        
         // checks for number of models in a unit
-
+        
         for (const singleModelName of singleModelNames) {
             for (const line of searchAreaLinebreakArray) {
                 if (line.includes(singleModelName) && line.includes("•")) {
@@ -82,7 +82,7 @@ function getUnit(string, unitName, singleModelNames, minSize, weapons, enhanceme
                     let onlyNumber = Number(trimmedLine.substring(2, (trimmedLine.length - singleModelName.length - 2)));
                     outputArmyObject[armyArrayIndex].numberOfModels += onlyNumber;
                 }
-
+                
             }
         }
         // checks for points
@@ -93,7 +93,7 @@ function getUnit(string, unitName, singleModelNames, minSize, weapons, enhanceme
                 outputArmyObject[armyArrayIndex].points = onlyPoints;
             }
         }
-
+        
         for (const weapon of weapons) {
             if (searchArea.includes(weapon.name) && weapon.display === "true") {
                 const searchAreaLinebreakArray = searchArea.split((/\r?\n|\r|\n/g));
@@ -112,11 +112,11 @@ function getUnit(string, unitName, singleModelNames, minSize, weapons, enhanceme
                 }
             }
         }
-
+        
         if (searchArea.includes("Warlord")) {
             outputArmyObject[armyArrayIndex].warlord.push("Warlord");
         }
-
+        
         if (searchArea.includes("Enhancement")) {
             for (const enhancement of enhancements) {
                 if (searchArea.includes(enhancement)) {
@@ -128,25 +128,24 @@ function getUnit(string, unitName, singleModelNames, minSize, weapons, enhanceme
     }
 }
 
-function getAllUnits() {
+function getAllUnitsToObject() {
     for (const unit of tauEmpire.units) {
-        getUnit(inputArmyString, unit.name, unit.singleModelNames, unit.minSize, unit.weapons, unit.enhancements);
+        createUnitObject(inputArmyString, unit.name, unit.singleModelNames, unit.minSize, unit.weapons, unit.enhancements);
     }
 }
-let allUnitsArray = [];
-function setAllUnitsToArray() {
-    let index = -1
+function setAllUnitsToOutput() {
+    let index = compressedArmyArray.length -1
     for (const item of outputArmyObject) {
         index++;
-        allUnitsArray.push(item.name)
+        compressedArmyArray.push(`- ${item.name}`)
         if (item.numberOfModels !== 0 && modelCountButton.checked) {
-            allUnitsArray[index] += ` [${item.numberOfModels}]`
+            compressedArmyArray[index] += ` [${item.numberOfModels}]`
         }
         if (item.enhancement.length !== 0 && enhancementsButton.checked) {
-            allUnitsArray[index] += ` [${item.enhancement[0]}]`
+            compressedArmyArray[index] += ` [${item.enhancement[0]}]`
         }
         if (item.warlord.length !== 0 && warlordbutton.checked) {
-            allUnitsArray[index] += ` [Warlord]`
+            compressedArmyArray[index] += ` [Warlord]`
         }
         if (item.equipedWeapons.length !== 0 && weaponsButton.checked) {
             let rawWeaponString = "";
@@ -154,16 +153,14 @@ function setAllUnitsToArray() {
                 rawWeaponString += `${weapon.count}x ${weapon.name}, `;
             }
             const weaponString = rawWeaponString.slice(rawWeaponString[1], rawWeaponString.length - 2)
-            allUnitsArray[index] += ` [${weaponString}]`
+            compressedArmyArray[index] += ` [${weaponString}]`
         }
         if (pointsButton.checked) {
-            allUnitsArray[index] += ` ${item.points}`
+            compressedArmyArray[index] += ` ${item.points}`
         }
     }
-}
-function setAllUnits() {
-    for (const item of allUnitsArray) {
-        outputAreaField.textContent += `- ${item}\n`
+    for (const item of compressedArmyArray) {
+        outputAreaField.textContent += `${item}\n`
     }
 }
 
@@ -176,9 +173,8 @@ function compressList() {
     getAndSetArmyName();
     getAndSetFaction();
     getAndSetDetachment();
-    getAllUnits();
-    setAllUnitsToArray();
-    setAllUnits();
+    getAllUnitsToObject();
+    setAllUnitsToOutput();
 }
 
 function copyToClipboard() {
