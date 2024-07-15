@@ -9,11 +9,10 @@ const warlordbutton = document.querySelector("#warlord");
 const weaponsButton = document.querySelector("#weapons");
 const pointsButton = document.querySelector("#points");
 
-let armyArrayIndex = -1;   // anders lösen?
 let inputArmyString = "";
-let inputArmyLinebreakArray;
-let outputArmyObject = [];
 let firstEmptyLineIndex = "";
+let outputArmyArray = [];
+let outputArmyArrayIndex = -1;   // anders lösen?
 let compressedArmyArray = [];
 
 function createArmyStringFromInput() {
@@ -57,8 +56,8 @@ function createUnitObject(string, unitName, singleModelNames, minSize, weapons, 
         const searchAreaLinebreakArray = searchArea.split((/\r?\n|\r|\n/g));
         for (const line of searchAreaLinebreakArray) {
             if (line.includes(unitName) && line.includes("oints")) {
-                armyArrayIndex++;
-                outputArmyObject.push({
+                outputArmyArrayIndex++;
+                outputArmyArray.push({
                     name: unitName,
                     singleModelNames: singleModelNames,
                     numberOfModels: 0,
@@ -80,7 +79,7 @@ function createUnitObject(string, unitName, singleModelNames, minSize, weapons, 
                 if (line.includes(singleModelName) && line.includes("•")) {
                     const trimmedLine = line.trim();
                     let onlyNumber = Number(trimmedLine.substring(2, (trimmedLine.length - singleModelName.length - 2)));
-                    outputArmyObject[armyArrayIndex].numberOfModels += onlyNumber;
+                    outputArmyArray[outputArmyArrayIndex].numberOfModels += onlyNumber;
                 }
                 
             }
@@ -90,14 +89,14 @@ function createUnitObject(string, unitName, singleModelNames, minSize, weapons, 
             if (line.includes(unitName) && line.includes("oints")) {
                 const trimmedLine = line.trim();
                 const onlyPoints = trimmedLine.substring((unitName.length + 2), (trimmedLine.length - 8));
-                outputArmyObject[armyArrayIndex].points = onlyPoints;
+                outputArmyArray[outputArmyArrayIndex].points = onlyPoints;
             }
         }
         
         for (const weapon of weapons) {
             if (searchArea.includes(weapon.name) && weapon.display === "true") {
                 const searchAreaLinebreakArray = searchArea.split((/\r?\n|\r|\n/g));
-                outputArmyObject[armyArrayIndex].equipedWeapons.push({
+                outputArmyArray[outputArmyArrayIndex].equipedWeapons.push({
                     name: weapon.alias,
                     count: 0
                 })
@@ -105,7 +104,7 @@ function createUnitObject(string, unitName, singleModelNames, minSize, weapons, 
                     if (line.includes(weapon.name)) {
                         for (i = 1; i < 10; i++) {
                             if (line.includes(i)) {
-                                outputArmyObject[armyArrayIndex].equipedWeapons[outputArmyObject[armyArrayIndex].equipedWeapons.length - 1].count += i;  // kann ich hier mit this abkürzen?
+                                outputArmyArray[outputArmyArrayIndex].equipedWeapons[outputArmyArray[outputArmyArrayIndex].equipedWeapons.length - 1].count += i;  // kann ich hier mit this abkürzen?
                             }
                         }
                     }
@@ -114,13 +113,13 @@ function createUnitObject(string, unitName, singleModelNames, minSize, weapons, 
         }
         
         if (searchArea.includes("Warlord")) {
-            outputArmyObject[armyArrayIndex].warlord.push("Warlord");
+            outputArmyArray[outputArmyArrayIndex].warlord.push("Warlord");
         }
         
         if (searchArea.includes("Enhancement")) {
             for (const enhancement of enhancements) {
                 if (searchArea.includes(enhancement)) {
-                    outputArmyObject[armyArrayIndex].enhancement.push(enhancement);
+                    outputArmyArray[outputArmyArrayIndex].enhancement.push(enhancement);
                 }
             }
         }
@@ -133,9 +132,9 @@ function getAllUnitsToObject() {
         createUnitObject(inputArmyString, unit.name, unit.singleModelNames, unit.minSize, unit.weapons, unit.enhancements);
     }
 }
-function setAllUnitsToOutput() {
+function setArmyToOutput() {
     let index = compressedArmyArray.length -1
-    for (const item of outputArmyObject) {
+    for (const item of outputArmyArray) {
         index++;
         compressedArmyArray.push(`- ${item.name}`)
         if (item.numberOfModels !== 0 && modelCountButton.checked) {
@@ -174,7 +173,7 @@ function compressList() {
     getAndSetFaction();
     getAndSetDetachment();
     getAllUnitsToObject();
-    setAllUnitsToOutput();
+    setArmyToOutput();
 }
 
 function copyToClipboard() {
