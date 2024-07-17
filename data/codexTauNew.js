@@ -1,5 +1,5 @@
 const tauEmpire = {
-  name: "T’au Empire",
+  name: " T’au Empire",
   detachments: [
     "Kauyon",
     "Kroot Hunting Pack",
@@ -40,7 +40,8 @@ const tauEmpire = {
       weapons: [
         { name: "Dawn Blade", display: "", alias: "" },
         { name: "High-intensity plasma rifle", display: "", alias: "" }
-      ]
+      ],
+      enhancements: []
     },
     {
       name: "Commander Shadowsun",
@@ -56,7 +57,8 @@ const tauEmpire = {
         { name: "High-energy fusion blaster", display: "", alias: "" },
         { name: "Light missile pod", display: "", alias: "" },
         { name: "Pulse pistol", display: "", alias: "" }
-      ]
+      ],
+      enhancements: []
     },
     {
       name: "Commander in Coldstar Battlesuit",
@@ -142,7 +144,8 @@ const tauEmpire = {
       weapons: [
         { name: "Close combat weapon", display: "", alias: "" },
         { name: "Shade", display: "", alias: "" }
-      ]
+      ],
+      enhancements: []
     },
     {
       name: "Ethereal",
@@ -288,12 +291,20 @@ const tauEmpire = {
         { name: "Marker Drone", display: "true", alias: "MD" },
         { name: "Shield Drone", display: "true", alias: "SD" },
         { name: "Support turret", display: "", alias: "" }
+      ],
+      enhancements: [
+        "Solid-image Projection Unit",
+        "Precision of the Patient Hunter",
+        "Strategic Conqueror",
+        "Strike Swiftly",
+        "Kroothawk Flock",
+        "Root-carved Weapons"
       ]
     },
     {
       name: "Strike Team",
       singleModelNames: [],
-      minSize: 10,
+      minSize: 10,  
       points: 75,
       weapons: [
         { name: "Close combat weapon", display: "", alias: "" },
@@ -304,7 +315,8 @@ const tauEmpire = {
         { name: "Marker Drone", display: "true", alias: "MD" },
         { name: "Shield Drone", display: "true", alias: "SD" },
         { name: "Support turret", display: "", alias: "" }
-      ]
+      ],
+      enhancements: []
     },
     {
       name: "Devilfish",
@@ -317,7 +329,8 @@ const tauEmpire = {
         { name: "Seeker missile", display: "", alias: "Seeker" },
         { name: "Smart missile system", display: "true", alias: "SMS" },
         { name: "Twin pulse carbine", display: "true", alias: "TPC" }
-      ]
+      ],
+      enhancements: []
     },
     {
       name: "AX-1-0 Tiger Shark",
@@ -331,7 +344,8 @@ const tauEmpire = {
         { name: "Missile pod", display: "", alias: "" },
         { name: "Seeker missile", display: "", alias: "Seeker" },
         { name: "Twin heavy rail cannon", display: "", alias: "" }
-      ]
+      ],
+      enhancements: []
     },
     {
       name: "Broadside Battlesuits",
@@ -350,7 +364,8 @@ const tauEmpire = {
         { name: "Gun Drone", display: "true", alias: "GD" },
         { name: "Shield Drone", display: "true", alias: "SD" },
         { name: "Weapon Support System", display: "true", alias: "WSS" }
-      ]
+      ],
+      enhancements: []
     },
     {
       name: "Crisis Fireknife Battlesuits",
@@ -364,7 +379,8 @@ const tauEmpire = {
         { name: "Gun Drone", display: "true", alias: "GD" },
         { name: "Marker Drone", display: "true", alias: "MD" },
         { name: "Shield Drone", display: "true", alias: "SD" }
-      ]
+      ],
+      enhancements: []
     },
     {
       name: "Crisis Starscythe Battlesuits",
@@ -378,7 +394,8 @@ const tauEmpire = {
         { name: "Gun Drone", display: "true", alias: "GD" },
         { name: "Marker Drone", display: "true", alias: "MD" },
         { name: "Shield Drone", display: "true", alias: "SD" }
-      ]
+      ],
+      enhancements: []
     },
     {
       name: "Crisis Sunforge Battlesuits",
@@ -391,7 +408,8 @@ const tauEmpire = {
         { name: "Gun Drone", display: "true", alias: "GD" },
         { name: "Marker Drone", display: "true", alias: "MD" },
         { name: "Shield Drone", display: "true", alias: "SD" }
-      ]
+      ],
+      enhancements: []
     },
     {
       name: "Ghostkeel Battlesuit",
@@ -406,7 +424,8 @@ const tauEmpire = {
         { name: "Twin T'au flamer", display: "true", alias: "Flamer" },
         { name: "Twin burst cannon", display: "true", alias: "Burst" },
         { name: "Twin fusion blaster", display: "true", alias: "Twin fusion" }
-      ]
+      ],
+      enhancements: []
     },
     {
       name: "Hammerhead Gunship",
@@ -421,7 +440,8 @@ const tauEmpire = {
         { name: "Seeker missile", display: "true", alias: "Seeker" },
         { name: "Twin pulse carbine", display: "true", alias: "TPC" },
         { name: "Twin smart missile system", display: "true", alias: "SMS" }
-      ]
+      ],
+      enhancements: []
     },
     {
       name: "Kroot Carnivores",
@@ -434,7 +454,8 @@ const tauEmpire = {
         { name: "Kroot pistol", display: "", alias: "" },
         { name: "Kroot rifle", display: "", alias: "" },
         { name: "Tanglebomb launcher", display: "true", alias: "Tanglebomb" }
-      ]
+      ],
+      enhancements: []
     },
     {
       name: "Kroot Farstalkers",
@@ -451,7 +472,8 @@ const tauEmpire = {
         { name: "Dvorgite skinner", display: "true", alias: "Dvorgite skinner" },
         { name: "Londaxi tribalest", display: "true", alias: "Londaxi tribalest" },
         { name: "Pech’ra", display: "true", alias: "Pech’ra" }
-      ]
+      ],
+      enhancements: []
     },
     {
       name: "Kroot Hounds",
@@ -461,7 +483,8 @@ const tauEmpire = {
       maxCount: 10,
       weapons: [
         { name: "Ripping fangs", display: "", alias: "" }
-      ]
+      ],
+      enhancements: []
     },
     {
       name: "Krootox Rampagers",
@@ -473,7 +496,8 @@ const tauEmpire = {
         { name: "Hunting blades", display: "", alias: "" },
         { name: "Kroot pistol and hunting javelins", display: "", alias: "" },
         { name: "Rampager fists", display: "", alias: "" }
-      ]
+      ],
+      enhancements: []
     },
     {
       name: "Krootox Riders",
@@ -486,7 +510,8 @@ const tauEmpire = {
         { name: "Krootox fists", display: "", alias: "" },
         { name: "Repeater cannon", display: "true", alias: "Repeater cannon" },
         { name: "Tanglecannon", display: "true", alias: "Tanglecannon" }
-      ]
+      ],
+      enhancements: []
     },
     {
       name: "Manta",
@@ -500,7 +525,8 @@ const tauEmpire = {
         { name: "Long-barrelled burst cannon array", display: "", alias: "" },
         { name: "Missile pod", display: "", alias: "" },
         { name: "Seeker missile", display: "", alias: "" }
-      ]
+      ],
+      enhancements: []
     },
     {
       name: "Pathfinder Team",
@@ -520,7 +546,8 @@ const tauEmpire = {
         { name: "Shield Drone", display: "true", alias: "SD" },
         { name: "Ion rifle", display: "true", alias: "Ion Rifle" },
         { name: "Rail rifle", display: "true", alias: "Rail rifle" }
-      ]
+      ],
+      enhancements: []
     },
     {
       name: "Piranhas",
@@ -534,7 +561,23 @@ const tauEmpire = {
         { name: "Piranha fusion blaster", display: "true", alias: "Fusion" },
         { name: "Seeker missile", display: "", alias: "Seeker" },
         { name: "Twin pulse carbine", display: "", alias: "" }
-      ]
+      ],
+      enhancements: []
+    },
+    {
+      name: "Piranha",
+      singleModelNames: ["Piranhas"],
+      minSize: 1,
+      points: 55,
+      maxCount: 3,
+      weapons: [
+        { name: "Armoured hull", display: "", alias: "" },
+        { name: "Piranha burst cannon", display: "true", alias: "Burst" },
+        { name: "Piranha fusion blaster", display: "true", alias: "Fusion" },
+        { name: "Seeker missile", display: "", alias: "Seeker" },
+        { name: "Twin pulse carbine", display: "", alias: "" }
+      ],
+      enhancements: []
     },
     {
       name: "Razorshark Strike Fighter",
@@ -547,7 +590,8 @@ const tauEmpire = {
         { name: "Missile pod", display: "true", alias: "Missile pod" },
         { name: "Quad ion turret", display: "", alias: "" },
         { name: "Seeker missile", display: "", alias: "" }
-      ]
+      ],
+      enhancements: []
     },
     {
       name: "Riptide Battlesuit",
@@ -562,7 +606,8 @@ const tauEmpire = {
         { name: "Twin fusion blaster", display: "true", alias: "Fusion" },
         { name: "Twin plasma rifle", display: "true", alias: "Plasma" },
         { name: "Twin smart missile system", display: "true", alias: "SMS" }
-      ]
+      ],
+      enhancements: []
     },
     {
       name: "Sky Ray Gunship",
@@ -575,11 +620,12 @@ const tauEmpire = {
         { name: "Seeker missile rack", display: "", alias: "Seeker" },
         { name: "Smart missile system", display: "true", alias: "SMS" },
         { name: "Twin pulse carbine", display: "true", alias: "TPC" }
-      ]
+      ],
+      enhancements: []
     },
     {
       name: "Stealth Battlesuits",
-      singleModelNames: ["Stealth Shas’vre", "Stealth Shas’ui"],
+      singleModelNames: ["Stealth Shas’vre", "Stealth Shas’ui", "Stealth Shas'vre", "Stealth Shas'ui"],
       minSize: 3,
       points: 60,
       weapons: [
@@ -591,7 +637,8 @@ const tauEmpire = {
         { name: "Homing Beacon", display: "", alias: "" },
         { name: "Marker Drone", display: "true", alias: "MD" },
         { name: "Shield Drone", display: "true", alias: "SD" }
-      ]
+      ],
+      enhancements: []
     },
     {
       name: "Stormsurge",
@@ -608,7 +655,8 @@ const tauEmpire = {
         { name: "Twin airbursting fragmentation projector", display: "true", alias: "TAFP" },
         { name: "Twin burst cannon", display: "true", alias: "Burst" },
         { name: "Twin smart missile system", display: "true", alias: "SMS" }
-      ]
+      ],
+      enhancements: []
     },
     {
       name: "Sun Shark Bomber",
@@ -621,7 +669,8 @@ const tauEmpire = {
         { name: "Seeker missile", display: "", alias: "" },
         { name: "Twin ion rifle", display: "", alias: "" },
         { name: "Twin missile pod", display: "", alias: "" }
-      ]
+      ],
+      enhancements: []
     },
     {
       name: "Ta'unar Supremacy Armour",
@@ -638,7 +687,8 @@ const tauEmpire = {
         { name: "Pulse ordnance driver", display: "true", alias: "Pulse ordnance driver" },
         { name: "Smart missile system", display: "", alias: "" },
         { name: "Tri-axis ion cannon", display: "true", alias: "Tri-axis ion cannon" }
-      ]
+      ],
+      enhancements: []
     },
     {
       name: "Tidewall Droneport",
@@ -647,7 +697,8 @@ const tauEmpire = {
       points: 85,
       weapons: [
         { name: "Drone defenders", display: "", alias: "" }
-      ]
+      ],
+      enhancements: []
     },
     {
       name: "Tidewall Gunrig",
@@ -656,7 +707,8 @@ const tauEmpire = {
       points: 90,
       weapons: [
         { name: "Supremacy railgun", display: "", alias: "" }
-      ]
+      ],
+      enhancements: []
     },
     {
       name: "Tidewall Shieldline",
@@ -666,7 +718,8 @@ const tauEmpire = {
       weapons: [
         { name: "Tidewall Defence Platform", display: "true", alias: "Defence platform" },
         { name: "Tidewall Shieldline", display: "", alias: "" }
-      ]
+      ],
+      enhancements: []
     },
     {
       name: "Tiger Shark",
@@ -684,7 +737,8 @@ const tauEmpire = {
         { name: "Swiftstrike burst cannon", display: "", alias: "" },
         { name: "Swiftstrike railgun", display: "", alias: "" },
         { name: "Transport Bay", display: "", alias: "" }
-      ]
+      ],
+      enhancements: []
     },
     {
       name: "Vespid Stingwings",
@@ -694,7 +748,8 @@ const tauEmpire = {
       weapons: [
         { name: "Neutron blaster", display: "", alias: "" },
         { name: "Stingwing claws", display: "", alias: "" }
-      ]
+      ],
+      enhancements: []
     }
   ]
 }
