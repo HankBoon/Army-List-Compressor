@@ -17,6 +17,7 @@ let compressedArmyArray = [];
 let inputArmyLinebreakArray = [];
 
 
+
 function identifyOrigin() {
     inputArmyString = textAreaField.value;
     inputArmyLinebreakArray = inputArmyString.split((/\r?\n|\r|\n/g));
