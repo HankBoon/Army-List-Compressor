@@ -430,7 +430,7 @@ const tauEmpire = {
         { name: "Armoured hull", display: "", alias: "" },
         { name: "Ion cannon", display: "true", alias: "Ion" },
         { name: "Railgun", display: "true", alias: "Rail" },
-        { name: "Seeker missile", display: "true", alias: "Seeker" },
+        { name: "Seeker missile", display: "", alias: "Seeker" },
         { name: "Twin pulse carbine", display: "true", alias: "TPC" },
         { name: "Twin smart missile system", display: "true", alias: "SMS" }
       ],
@@ -598,7 +598,8 @@ const tauEmpire = {
         { name: "Riptide fists", display: "", alias: "" },
         { name: "Twin fusion blaster", display: "true", alias: "Fusion" },
         { name: "Twin plasma rifle", display: "true", alias: "Plasma" },
-        { name: "Twin smart missile system", display: "true", alias: "SMS" }
+        { name: "Twin smart missile system", display: "true", alias: "SMS" },
+        { name: "Missile pod", display: "true", alias: "Missile Drone" }
       ],
       enhancements: []
     },
