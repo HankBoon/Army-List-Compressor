@@ -4,20 +4,21 @@
 function compressNRList() {
 
 
-    function getAndSetArmyName() {
-        let armyTitle = "";
-        const firstLetterIndex = inputArmyString[0];
-        firstEmptyLineIndex = inputArmyString.indexOf("\n\n");  //warum beeinflusst diese zeile den zugriff auf enhancement?
-        for (i = 0; i <= firstEmptyLineIndex; i++) {
-            armyTitle = inputArmyString.slice(firstLetterIndex, firstEmptyLineIndex);
-        }
-        compressedArmyArray.push("**" + armyTitle + "**")
-    }
 
     function getAndSetFaction() {
         for (const item of tauEmpire.name) {
             if (inputArmyString.includes(item)) {
-                compressedArmyArray.push("*" + item + "*")
+                compressedArmyArray.push("**" + item + "**")
+            }
+        }
+    }
+
+    function getTotalPoints() {
+        for (const line of inputArmyLinebreakArray) {
+            if (line.includes("POINTS")) {
+                const trimmedLine = line.trim();
+                const onlyPoints = trimmedLine.substring(21, (trimmedLine.length - 3));
+                compressedArmyArray.push(`*${onlyPoints} Points*`)
             }
         }
     }
@@ -62,8 +63,8 @@ function compressNRList() {
                     })
                 }
             }
-            console.log(outputArmyArray[outputArmyArrayIndex].name);
-            console.log(outputArmyArray[outputArmyArrayIndex]);
+            // console.log(outputArmyArray[outputArmyArrayIndex].name);
+            // console.log(outputArmyArray[outputArmyArrayIndex]);
             startIndex = index + unitName.length;
         }
     }
@@ -193,8 +194,8 @@ function compressNRList() {
     resultForm.style.display = "flex";
     resetButton.style.display = "flex";
     outputAreaField.focus();
-    getAndSetArmyName();    //warum beinflusst diese zeile enhancemnts
     getAndSetFaction();
+    getTotalPoints();
     getAndSetDetachment();
     getAllUnitsToObject();
     getPoints();
