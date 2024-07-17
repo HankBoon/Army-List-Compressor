@@ -46,6 +46,7 @@ function compressNRList() {
                         name: unitName,
                         numberOfModels: 0,
                         minSize: minSize,
+                        weapons: weapons,
                         equipedWeapons: [],
                         warlord: warlord,
                         enhancements: enhancements,
@@ -69,28 +70,36 @@ function compressNRList() {
                     outputArmyArray[outputArmyArrayIndex].points = onlyPoints;
                 }
             }
+            startIndex = index + unitName.length;
+        }
+    }
 
-            for (const weapon of weapons) {
-                if (searchArea.includes(weapon.name) && weapon.display === "true") {
-                    const searchAreaLinebreakArray = searchArea.split((/\r?\n|\r|\n/g));
-                    outputArmyArray[outputArmyArrayIndex].equipedWeapons.push({
+    function getWeapons() {
+        for (const item of outputArmyArray) {
+            for (const weapon of item.weapons) {
+                if (item.searchArea.includes(weapon.name) && weapon.display === "true") {
+                    item.equipedWeapons.push({
                         name: weapon.alias,
                         count: 0
                     })
-                    for (const line of searchAreaLinebreakArray) {
+                    for (const line of item.searchAreaLinebreakArray) {
                         if (line.includes(weapon.name)) {
                             for (i = 1; i < 10; i++) {
                                 if (line.includes(i)) {
-                                    outputArmyArray[outputArmyArrayIndex].equipedWeapons[outputArmyArray[outputArmyArrayIndex].equipedWeapons.length - 1].count += i;  // kann ich hier mit this abkürzen?
+                                    item.equipedWeapons[item.equipedWeapons.length - 1].count += i;  // kann ich hier mit this abkürzen?
+                                }
+                                else{
+                                    item.equipedWeapons[item.equipedWeapons.length - 1].count = 1;
                                 }
                             }
                         }
                     }
                 }
+
             }
-            startIndex = index + unitName.length;
         }
     }
+
     function getWarlord() {
         for (const item of outputArmyArray) {
             if (item.warlord !== undefined) {
@@ -182,6 +191,7 @@ function compressNRList() {
     getAndSetFaction();
     getAndSetDetachment();
     getAllUnitsToObject();
+    getWeapons();
     getWarlord();
     getEnhancement();
     getModelCount();
