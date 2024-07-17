@@ -62,16 +62,20 @@ function compressNRList() {
             }
             console.log(outputArmyArray[outputArmyArrayIndex].name);
             console.log(outputArmyArray[outputArmyArrayIndex]);
-
-            for (const line of searchAreaLinebreakArray) {
-                if (line.includes(unitName) && line.includes("pts")) {
-                    const trimmedLine = line.trim();
-                    const onlyPoints = trimmedLine.substring((unitName.length + 2), (trimmedLine.length - 5));
-                    outputArmyArray[outputArmyArrayIndex].points = onlyPoints;
-                }
-            }
             startIndex = index + unitName.length;
         }
+    }
+    function getPoints(){
+        for (const item of outputArmyArray){
+            for(const line of item.searchAreaLinebreakArray){
+                if (line.includes(item.name) && line.includes("pts")) {
+                    const trimmedLine = line.trim();
+                    const onlyPoints = trimmedLine.substring((item.name.length + 2), (trimmedLine.length - 5));
+                    item.points = onlyPoints;
+                }
+            }
+        }
+
     }
 
     function getWeapons() {
@@ -96,7 +100,6 @@ function compressNRList() {
                         }
                     }
                 }
-
             }
         }
     }
@@ -192,6 +195,7 @@ function compressNRList() {
     getAndSetFaction();
     getAndSetDetachment();
     getAllUnitsToObject();
+    getPoints();
     getWeapons();
     getWarlord();
     getEnhancement();
