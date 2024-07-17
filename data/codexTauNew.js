@@ -292,14 +292,7 @@ const tauEmpire = {
         { name: "Shield Drone", display: "true", alias: "SD" },
         { name: "Support turret", display: "", alias: "" }
       ],
-      enhancements: [
-        "Solid-image Projection Unit",
-        "Precision of the Patient Hunter",
-        "Strategic Conqueror",
-        "Strike Swiftly",
-        "Kroothawk Flock",
-        "Root-carved Weapons"
-      ]
+      enhancements: []
     },
     {
       name: "Strike Team",
