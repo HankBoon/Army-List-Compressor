@@ -362,7 +362,7 @@ const tauEmpire = {
         { name: "Crushing bulk", display: "", alias: "" },
         { name: "Marker Drone", display: "true", alias: "MD" },
         { name: "Missile Drone", display: "true", alias: "Missle Drone" },
-        { name: "Missile pods", display: "true", alias: "Missle Drone" },
+        { name: "Missile pod", display: "true", alias: "Missle Drone" },
         { name: "Seeker missile", display: "true", alias: "Seeker" },
         { name: "Twin plasma rifle", display: "true", alias: "Plasma" },
         { name: "Twin smart missile system", display: "true", alias: "SMS" },
