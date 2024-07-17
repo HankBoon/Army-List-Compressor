@@ -15,8 +15,10 @@ function compressNRList() {
     }
 
     function getAndSetFaction() {
-        if (inputArmyString.includes(tauEmpire.name)) {
-            compressedArmyArray.push("*" + tauEmpire.name + "*")
+        for (const item of tauEmpire.name) {
+            if (inputArmyString.includes(item)) {
+                compressedArmyArray.push("*" + item + "*")
+            }
         }
     }
 
@@ -65,9 +67,9 @@ function compressNRList() {
             startIndex = index + unitName.length;
         }
     }
-    function getPoints(){
-        for (const item of outputArmyArray){
-            for(const line of item.searchAreaLinebreakArray){
+    function getPoints() {
+        for (const item of outputArmyArray) {
+            for (const line of item.searchAreaLinebreakArray) {
                 if (line.includes(item.name) && line.includes("pts")) {
                     const trimmedLine = line.trim();
                     const onlyPoints = trimmedLine.substring((item.name.length + 2), (trimmedLine.length - 5));
@@ -92,9 +94,9 @@ function compressNRList() {
                                 if (line.includes(i)) {
                                     item.equipedWeapons[item.equipedWeapons.length - 1].count += i;  // kann ich hier mit this abkürzen?
                                     break
-                                }                                                      
+                                }
                             }
-                            if (item.equipedWeapons[item.equipedWeapons.length - 1].count === 0){
+                            if (item.equipedWeapons[item.equipedWeapons.length - 1].count === 0) {
                                 item.equipedWeapons[item.equipedWeapons.length - 1].count = 1
                             }
                         }

@@ -1,5 +1,8 @@
 const tauEmpire = {
-  name: " T’au Empire", "T'au Empire",
+  name: [
+    "T’au Empire",
+    "T'au Empire",
+  ],
   detachments: [
     "Kauyon",
     "Kroot Hunting Pack",
@@ -297,7 +300,7 @@ const tauEmpire = {
     {
       name: "Strike Team",
       singleModelNames: [],
-      minSize: 10,  
+      minSize: 10,
       points: 75,
       weapons: [
         { name: "Close combat weapon", display: "", alias: "" },
