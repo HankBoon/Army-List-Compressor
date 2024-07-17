@@ -13,7 +13,7 @@ function compressNRList() {
         }
     }
 
-    function getTotalPoints() {
+    function getandSetTotalPoints() {
         for (const line of inputArmyLinebreakArray) {
             if (line.includes("POINTS")) {
                 const trimmedLine = line.trim();
@@ -195,7 +195,7 @@ function compressNRList() {
     resetButton.style.display = "flex";
     outputAreaField.focus();
     getAndSetFaction();
-    getTotalPoints();
+    getandSetTotalPoints();
     getAndSetDetachment();
     getAllUnitsToObject();
     getPoints();
