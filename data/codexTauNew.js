@@ -294,6 +294,7 @@ const tauEmpire = {
         { name: "Pulse pistol", display: "", alias: "" },
         { name: "Guardian Drone", display: "true", alias: "Guardian Drone" },
         { name: "Gun Drone", display: "true", alias: "GD" },
+        { name: "Twin pulse carbine", display: "true", alias: "GD" },
         { name: "Marker Drone", display: "true", alias: "MD" },
         { name: "Shield Drone", display: "true", alias: "SD" },
         { name: "Support turret", display: "", alias: "" }
@@ -311,6 +312,7 @@ const tauEmpire = {
         { name: "Pulse rifle", display: "", alias: "" },
         { name: "Guardian Drone", display: "true", alias: "Guardian Drone" },
         { name: "Gun Drone", display: "true", alias: "GD" },
+        { name: "Twin pulse carbine", display: "true", alias: "GD" },
         { name: "Marker Drone", display: "true", alias: "MD" },
         { name: "Shield Drone", display: "true", alias: "SD" },
         { name: "Support turret", display: "", alias: "" }
