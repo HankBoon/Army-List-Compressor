@@ -87,10 +87,11 @@ function compressNRList() {
                             for (i = 1; i < 10; i++) {
                                 if (line.includes(i)) {
                                     item.equipedWeapons[item.equipedWeapons.length - 1].count += i;  // kann ich hier mit this abkürzen?
-                                }
-                                else{
-                                    item.equipedWeapons[item.equipedWeapons.length - 1].count = 1;
-                                }
+                                    break
+                                }                                                      
+                            }
+                            if (item.equipedWeapons[item.equipedWeapons.length - 1].count === 0){
+                                item.equipedWeapons[item.equipedWeapons.length - 1].count = 1
                             }
                         }
                     }
