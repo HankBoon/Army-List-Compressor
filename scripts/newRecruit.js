@@ -48,7 +48,7 @@ function compressNRList() {
                         minSize: minSize,
                         equipedWeapons: [],
                         warlord: [],
-                        enhancement: [],
+                        enhancements: enhancements,
                         keywordIndex: index,
                         nextEmptyLineIndex: emptyLineIndex,
                         searchArea: searchArea,
@@ -107,17 +107,24 @@ function compressNRList() {
             if (searchArea.includes("Warlord")) {
                 outputArmyArray[outputArmyArrayIndex].warlord.push("Warlord");
             }
+            startIndex = index + unitName.length;
+        }
+    }
 
-            if (enhancements.length !== 0) {
-                for (const enhancement of enhancements) {
-                    if (searchArea.includes(enhancement)) {
-                        outputArmyArray[outputArmyArrayIndex].enhancement.push(enhancement);
+
+    function getEnhancement() {
+        for (const item of outputArmyArray) {
+            if (item.enhancements.length !== 0) {
+                for (const enhancement of item.enhancements) {
+                    if (item.searchArea.includes(enhancement)) {
+                        item.enhancements = enhancement;
+                        break
+                    }
+                    else{
+                        item.enhancements = ""
                     }
                 }
             }
-
-
-            startIndex = index + unitName.length;
         }
     }
 
@@ -133,21 +140,7 @@ function compressNRList() {
                 }
             }
         }
-
-
     }
-    // if (singleModelNames.length !== 0) {
-    //     for (const singleModelName of singleModelNames) {
-    //         for (const line of searchAreaLinebreakArray) {
-    //             if (line.includes(singleModelName) && line.includes("•")) {
-    //                 const trimmedLine = line.trim();
-    //                 let onlyNumber = Number(trimmedLine.substring(2, (trimmedLine.length - singleModelName.length - 2)));
-    //                 outputArmyArray[outputArmyArrayIndex].numberOfModels += onlyNumber;
-    //             }
-
-    //         }
-    //     }
-    // }
 
     function getAllUnitsToObject() {
         for (const unit of tauEmpire.units) {
@@ -162,8 +155,8 @@ function compressNRList() {
             if (item.numberOfModels !== 0 && modelCountButton.checked) {
                 compressedArmyArray[index] += ` [${item.numberOfModels}]`
             }
-            if (item.enhancement.length !== 0 && enhancementsButton.checked) {
-                compressedArmyArray[index] += ` [${item.enhancement[0]}]`
+            if (item.enhancements.length !== 0 && enhancementsButton.checked) {
+                compressedArmyArray[index] += ` [${item.enhancements}]`
             }
             if (item.warlord.length !== 0 && warlordbutton.checked) {
                 compressedArmyArray[index] += ` [Warlord]`
@@ -194,6 +187,7 @@ function compressNRList() {
     getAndSetFaction();
     getAndSetDetachment();
     getAllUnitsToObject();
+    getEnhancement();
     getModelCount();
     setArmyToOutput();
 }
