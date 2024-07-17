@@ -21,6 +21,7 @@ const tauEmpire = {
         { name: "Fireblade pulse rifle", display: "", alias: "" },
         { name: "Gun Drone", display: "true", alias: "GD" },
         { name: "Marker Drone", display: "true", alias: "MD" },
+        { name: "Twin pulse carbine", display: "true", alias: "GD" },
         { name: "Shield Drone", display: "true", alias: "SD" }
       ],
       enhancements: [
@@ -77,6 +78,7 @@ const tauEmpire = {
         { name: "Cyclic ion blaster", display: "true", alias: "CIB" },
         { name: "Fusion blaster", display: "true", alias: "FB" },
         { name: "Gun Drone", display: "true", alias: "GD" },
+        { name: "Twin pulse carbine", display: "true", alias: "GD" },
         { name: "High-output burst cannon", display: "true", alias: "HOBC" },
         { name: "Marker Drone", display: "true", alias: "MD" },
         { name: "Missile pod", display: "true", alias: "MP" },
@@ -116,6 +118,7 @@ const tauEmpire = {
         { name: "Cyclic ion blaster", display: "true", alias: "CIB" },
         { name: "Fusion blaster", display: "true", alias: "FB" },
         { name: "Gun Drone", display: "true", alias: "GD" },
+        { name: "Twin pulse carbine", display: "true", alias: "GD" },
         { name: "Marker Drone", display: "true", alias: "MD" },
         { name: "Missile pod", display: "true", alias: "MP" },
         { name: "Plasma rifle", display: "true", alias: "PR" },
