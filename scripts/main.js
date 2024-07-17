@@ -14,11 +14,12 @@ let firstEmptyLineIndex = "";
 let outputArmyArray = [];
 let outputArmyArrayIndex = -1;   // anders lösen?
 let compressedArmyArray = [];
+let inputArmyLinebreakArray = [];
 
 
 function identifyOrigin() {
     inputArmyString = textAreaField.value;
-    const inputArmyLinebreakArray = inputArmyString.split((/\r?\n|\r|\n/g));
+    inputArmyLinebreakArray = inputArmyString.split((/\r?\n|\r|\n/g));
     if (inputArmyLinebreakArray[0].includes("++++++++++++++++++++")) {
         compressNRList();
     }
