@@ -16,9 +16,15 @@
         <h1> Tau Army List Compressor</h1>
         <p>A simple converter to make your Tau army list chat-friendly.</p>
     </header>
+
+    
     <form id="inputForm">
-        <textarea required autofocus id="inputAreaField"  placeholder="Paste your original list here..."></textarea>
-        <fieldset>
+        <textarea required autofocus id="inputAreaField" placeholder="Paste your original list here..."></textarea>
+        <fieldset id="info">
+            <legend>Info:</legend>
+            The compressor is still WIP. It only works for lists created with the GW app and for New Recruit. For the compressor to work with New Recruit set the list export option to "Text" and the export format to "GW".
+        </fieldset>
+        <fieldset id="options">
             <legend>Display Options:</legend>
             <div>
                 <input type="checkbox" value="modelCount" id="modelCount" name="options" checked>
@@ -37,7 +43,7 @@
                 <label for="weapons">Weapons</label>
             </div>
             <div>
-                <input type="checkbox" value="points" id="points" name="options"z checked>
+                <input type="checkbox" value="points" id="points" name="options" z checked>
                 <label for="points">Points</label>
             </div>
         </fieldset>
