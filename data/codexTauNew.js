@@ -1,5 +1,5 @@
 const tauEmpire = {
-  name: " T’au Empire",
+  name: " T’au Empire", "T'au Empire",
   detachments: [
     "Kauyon",
     "Kroot Hunting Pack",
