@@ -40,8 +40,10 @@ function compressGwList() {
     }
 
     function getAndSetFaction() {
-        if (inputArmyString.includes(tauEmpire.name)) {
-            compressedArmyArray.push("*" + tauEmpire.name + "*")
+        for (const item of tauEmpire.name) {
+            if (inputArmyString.includes(item)) {
+                compressedArmyArray.push("*" + item + "*")
+            }
         }
     }
 
