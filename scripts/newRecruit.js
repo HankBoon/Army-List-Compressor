@@ -28,7 +28,7 @@ function compressNRList() {
         }
     }
 
-    function createUnitObject(string, unitName, singleModelNames, minSize, weapons, enhancements) {
+    function createUnitObject(string, unitName, singleModelNames, minSize, weapons, enhancements, warlord) {
         startIndex = firstEmptyLineIndex;
         let index;
         for (index = string.indexOf(unitName, startIndex); index !== -1; index = string.indexOf(unitName, startIndex)) {
@@ -47,7 +47,7 @@ function compressNRList() {
                         numberOfModels: 0,
                         minSize: minSize,
                         equipedWeapons: [],
-                        warlord: [],
+                        warlord: warlord,
                         enhancements: enhancements,
                         keywordIndex: index,
                         nextEmptyLineIndex: emptyLineIndex,
@@ -62,21 +62,6 @@ function compressNRList() {
             console.log(outputArmyArray[outputArmyArrayIndex].name);
             console.log(outputArmyArray[outputArmyArrayIndex]);
 
-            // checks for number of models in a unit
-            // if (outputArmyArray[outputArmyArrayIndex].singleModelNames.length !== 0) {    //wenn die zeile nur nach singleModelNames.length checked findet sie bei pathfinders immer eine array l'nge von 1
-            // if (singleModelNames.length !== 0) {
-            //     for (const singleModelName of singleModelNames) {
-            //         for (const line of searchAreaLinebreakArray) {
-            //             if (line.includes(singleModelName) && line.includes("•")) {
-            //                 const trimmedLine = line.trim();
-            //                 let onlyNumber = Number(trimmedLine.substring(2, (trimmedLine.length - singleModelName.length - 2)));
-            //                 outputArmyArray[outputArmyArrayIndex].numberOfModels += onlyNumber;
-            //             }
-
-            //         }
-            //     }
-            // }
-            // checks for points
             for (const line of searchAreaLinebreakArray) {
                 if (line.includes(unitName) && line.includes("pts")) {
                     const trimmedLine = line.trim();
@@ -103,14 +88,24 @@ function compressNRList() {
                     }
                 }
             }
-
-            if (searchArea.includes("Warlord")) {
-                outputArmyArray[outputArmyArrayIndex].warlord.push("Warlord");
-            }
             startIndex = index + unitName.length;
         }
     }
-
+    function getWarlord() {
+        for (const item of outputArmyArray) {
+            if (item.warlord !== undefined) {
+                if (item.searchArea.includes("Warlord")) {
+                    item.warlord = "Warlord";
+                }
+                else {
+                    item.warlord = ""
+                }
+            }
+            else {
+                item.warlord = ""
+            }
+        }
+    }
 
     function getEnhancement() {
         for (const item of outputArmyArray) {
@@ -120,7 +115,7 @@ function compressNRList() {
                         item.enhancements = enhancement;
                         break
                     }
-                    else{
+                    else {
                         item.enhancements = ""
                     }
                 }
@@ -144,7 +139,7 @@ function compressNRList() {
 
     function getAllUnitsToObject() {
         for (const unit of tauEmpire.units) {
-            createUnitObject(inputArmyString, unit.name, unit.singleModelNames, unit.minSize, unit.weapons, unit.enhancements);
+            createUnitObject(inputArmyString, unit.name, unit.singleModelNames, unit.minSize, unit.weapons, unit.enhancements, unit.warlord);
         }
     }
     function setArmyToOutput() {
@@ -159,7 +154,7 @@ function compressNRList() {
                 compressedArmyArray[index] += ` [${item.enhancements}]`
             }
             if (item.warlord.length !== 0 && warlordbutton.checked) {
-                compressedArmyArray[index] += ` [Warlord]`
+                compressedArmyArray[index] += ` [${item.warlord}]`
             }
             if (item.equipedWeapons.length !== 0 && weaponsButton.checked) {
                 let rawWeaponString = "";
@@ -187,6 +182,7 @@ function compressNRList() {
     getAndSetFaction();
     getAndSetDetachment();
     getAllUnitsToObject();
+    getWarlord();
     getEnhancement();
     getModelCount();
     setArmyToOutput();
