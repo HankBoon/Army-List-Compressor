@@ -432,7 +432,8 @@ const tauEmpire = {
         { name: "Railgun", display: "true", alias: "Rail" },
         { name: "Seeker missile", display: "", alias: "Seeker" },
         { name: "Twin pulse carbine", display: "true", alias: "TPC" },
-        { name: "Twin smart missile system", display: "true", alias: "SMS" }
+        { name: "Twin smart missile system", display: "true", alias: "SMS" },
+        { name: "Smart missile system", display: "true", alias: "SMS" }
       ],
       enhancements: []
     },
