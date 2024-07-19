@@ -61,3 +61,4 @@
 
 
 //wie hochgestelltes komma in mehreren varianten gleichzeitig ausgeben?
+// wie so funktioniert pointsIdentifier  nicht mit createUnitObjective??
