@@ -53,4 +53,11 @@
 
 // umstrukturieren so dass am anfang ein array mit allen gefundenen keywords angelegt wird. aus diesen dann erst die searcharea definieren. ->erledigt!
 // aus irgendeinem grund erkennt er bei holodiscus nicht die leeren zeilen. bzw es es ind keine vorhanden ->erledigt!
-// enhancements wieder einfuegen
+// enhancements wieder einfuegen -> erledigt!
+
+// main.js struktur an neue struktur anpassen
+// parameter einbauen, so dass getOrigin nur eine folgende codestruktur aufweist und nicht zwei.
+// fetch und catch eibauen, so dass fehler angezeigt wird, falls liste nicht richtiges format hat
+
+
+//wie hochgestelltes komma in mehreren varianten gleichzeitig ausgeben?
