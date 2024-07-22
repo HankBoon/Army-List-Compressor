@@ -30,6 +30,7 @@ form {
     background-color: white;
     border-radius: 5px;
     padding: 1em;
+    padding-top: 0.75em;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -45,14 +46,21 @@ fieldset {
     border: 1px solid black;
     font-size: 14px;
     border-radius: 7px;
-    margin: auto; 
+    margin: auto;
     margin-bottom: 10px;
     padding: 1em;
+    padding-top: 0.5em;
     display: inline;
 }
-#resultForm, button {
+fieldset {
+    padding-top: 0.25em;
+}
+
+#resultForm,
+button {
     display: none;
 }
+
 button {
     display: none;
     flex-direction: column;
@@ -60,7 +68,8 @@ button {
     justify-content: center;
 }
 
-form > input, form > button {
+form>input,
+form>button {
     height: 3em;
     width: 500px;
     border: 1px solid black;
@@ -69,7 +78,8 @@ form > input, form > button {
     margin-bottom: 10px;
     background-color: rgb(230, 230, 230);
 }
-fieldset {
+
+#options {
     min-height: auto;
     display: grid;
     gap: 0.5em;
@@ -83,18 +93,26 @@ fieldset {
     /* grid-template-columns: 1fr 1fr 1fr 1fr; */
 
 }
-div  {
+
+#info {
+    min-height: auto;
+}
+
+div {
     display: flex;
     /* grid-template-columns: 1fr 1fr; */
     /* justify-content: center; */
     align-items: center;
 
 }
-div > input, div > label {
+
+div>input,
+div>label {
     display: inline;
     white-space: nowrap;
     /* vertical-align: middle; */
 }
+
 /* div > input{
     vertical-align: middle;
 } */
@@ -108,15 +126,33 @@ button {
 
 
 @media (max-width:768px) {
+
     #inputAreaField,
     #outputAreaField,
     header,
-    form > input,
-    form > button,
+    form>input,
+    form>button,
+    fieldset {
+        width: 90%;
+        padding: 0.75em;
+        padding-top: 0.5em;
+    }
+
+
+}
+
+@media (max-width:400px) {
+
+    #inputAreaField,
+    #outputAreaField,
+    header,
+    form>input,
+    form>button,
     fieldset {
         width: 90%;
         padding: 0.5em;
+        padding-top: 0.25em;
     }
-    
-    
+
+
 }
