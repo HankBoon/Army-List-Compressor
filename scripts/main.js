@@ -145,8 +145,8 @@ function getModelCount() {
     }
 }
 
-function createUnitObject(string, unitName, singleModelNames, weapons, enhancements, warlord, pointsIdentifier) {
-    console.log(pointsIdentifier);
+function createUnitObject(string, unit, unitName, singleModelNames, weapons, enhancements, warlord, pointsIdentifier) {
+    // console.log(pointsIdentifier);
     startIndex = firstEmptyLineIndex;
     let index;
     for (index = string.indexOf(unitName, startIndex); index !== -1; index = string.indexOf(unitName, startIndex)) {
@@ -157,8 +157,22 @@ function createUnitObject(string, unitName, singleModelNames, weapons, enhanceme
         }
         let searchArea = string.slice(index, emptyLineIndex);
         const searchAreaLinebreakArray = searchArea.split((/\r?\n|\r|\n/g));
+        let lineIncludesSinglename;
         for (const line of searchAreaLinebreakArray) {
-            if (line.includes(unitName) && line.includes("oints") || line.includes(unitName) && line.includes("pts") ) {
+            if (unit.singleModelNames.length !== 0) {
+                for (const singleModelName of singleModelNames) {
+                    if (line.includes(singleModelName) === false) {
+                        lineIncludesSinglename = false;
+                    }
+                    else if (unitName.includes(singleModelName)) {
+                        lineIncludesSinglename = false;
+                    }
+                }
+            }
+            else {
+                lineIncludesSinglename = false;
+            }
+            if (line.includes(unitName) && line.includes("oints") && lineIncludesSinglename === false || line.includes(unitName) && line.includes("pts") && lineIncludesSinglename === false) {
                 outputArmyArrayIndex++;
                 outputArmyArray.push({
                     name: unitName,
@@ -179,10 +193,12 @@ function createUnitObject(string, unitName, singleModelNames, weapons, enhanceme
         }
     }
 }
+// for (const singleModelName of unit.singleModelNames){
+//     if (line.includes(singleModelName) = false)
 
 function getAllUnitsToObject(pointsIdentifier) {
     for (const unit of tauEmpire.units) {
-        createUnitObject(inputArmyString, unit.name, unit.singleModelNames, unit.weapons, unit.enhancements, pointsIdentifier);
+        createUnitObject(inputArmyString, unit, unit.name, unit.singleModelNames, unit.weapons, unit.enhancements, pointsIdentifier);
     }
 }
 
@@ -269,7 +285,7 @@ function copyToClipboard() {
 
 inputForm.addEventListener("submit", (event) => {
     event.preventDefault();
-   identifyOrigin();
+    identifyOrigin();
 });
 
 inputForm.addEventListener("keydown", (event) => {
@@ -294,7 +310,7 @@ resultForm.addEventListener("keydown", (event) => {
 
 resetButton.addEventListener("click", () => { location.reload() });
 
-console.log("outputArmyArray: ");
-console.log(outputArmyArray);
-console.log("compressedArmyArray: ");
-console.log(compressedArmyArray);
+// console.log("outputArmyArray: ");
+// console.log(outputArmyArray);
+// console.log("compressedArmyArray: ");
+// console.log(compressedArmyArray);
