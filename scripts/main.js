@@ -135,10 +135,10 @@ function getModelCount() {
     }
 }
 
-function createUnitObject(string, unit, unitName, singleModelNames, weapons, enhancements, pointsIdentifier) {
+function createUnitObject(string, unit, pointsIdentifier) {
     startIndex = firstEmptyLineIndex;
     let index;
-    for (index = string.indexOf(unitName, startIndex); index !== -1; index = string.indexOf(unitName, startIndex)) {
+    for (index = string.indexOf(unit.name, startIndex); index !== -1; index = string.indexOf(unit.name, startIndex)) {
         // Find the next empty line
         let emptyLineIndex = string.indexOf("\n\n", index);
         if (emptyLineIndex === -1) {
@@ -149,11 +149,11 @@ function createUnitObject(string, unit, unitName, singleModelNames, weapons, enh
         let lineIncludesSinglename;
         for (const line of searchAreaLinebreakArray) {
             if (unit.singleModelNames.length !== 0) {
-                for (const singleModelName of singleModelNames) {
+                for (const singleModelName of unit.singleModelNames) {
                     if (line.includes(singleModelName) === false) {
                         lineIncludesSinglename = false;
                     }
-                    else if (unitName.includes(singleModelName)) {
+                    else if (unit.name.includes(singleModelName)) {
                         lineIncludesSinglename = false;
                     }
                 }
@@ -161,29 +161,29 @@ function createUnitObject(string, unit, unitName, singleModelNames, weapons, enh
             else {
                 lineIncludesSinglename = false;
             }
-            if (line.includes(unitName) && line.includes(pointsIdentifier) && lineIncludesSinglename === false) {
+            if (line.includes(unit.name) && line.includes(pointsIdentifier) && lineIncludesSinglename === false) {
                 outputArmyArray.push({
-                    name: unitName,
+                    name: unit.name,
                     numberOfModels: 0,
-                    weapons: weapons,
+                    weapons: unit.weapons,
                     equipedWeapons: [],
                     warlord: warlord,
-                    enhancements: enhancements,
+                    enhancements: unit.enhancements,
                     keywordIndex: index,
                     nextEmptyLineIndex: emptyLineIndex,
                     searchArea: searchArea,
                     searchAreaLinebreakArray: searchAreaLinebreakArray,
-                    singleModelNames: singleModelNames
+                    singleModelNames: unit.singleModelNames
                 })
             }
-            startIndex = index + unitName.length;
+            startIndex = index + unit.name.length;
         }
     }
 }
 
 function getAllUnitsToObject(pointsIdentifier) {
     for (const unit of tauEmpire.units) {
-        createUnitObject(inputArmyString, unit, unit.name, unit.singleModelNames, unit.weapons, unit.enhancements, pointsIdentifier);
+        createUnitObject(inputArmyString, unit, pointsIdentifier);
     }
 }
 
