@@ -12,12 +12,14 @@ const pointsButton = document.querySelector("#points");
 const gwSpecs = {
     pointsIdentifier: "oints",
     charactersAfterPoints: 8,
-    armyIdentifier: "GW"
+    armyIdentifier: "GW",
+    factionMarkdown: "*"
 }
 const nrSpecs = {
     pointsIdentifier: "pts",
     charactersAfterPoints: 5,
-    armyIdentifier: "NR"
+    armyIdentifier: "NR",
+    factionMarkdown: "**"
 }
 
 let inputArmyString = "";
@@ -37,10 +39,10 @@ function getAndSetArmyName() {
     compressedArmyArray.push("**" + armyTitle + "**")
 }
 
-function getAndSetFaction() {
-    for (const item of tauEmpire.name) {
-        if (inputArmyString.includes(item)) {
-            compressedArmyArray.push("**" + item + "**")
+function getAndSetFaction(factionMarkdown) {
+    for (const faction of tauEmpire.name) {
+        if (inputArmyString.includes(faction)) {
+            compressedArmyArray.push(factionMarkdown + faction + factionMarkdown)
         }
     }
 }
@@ -232,7 +234,7 @@ function setArmyToOutput() {
     }
 }
 
-function compressList(pointsIdentifier, charactersAfterPoints, armyIdentifier) {
+function compressList(pointsIdentifier, charactersAfterPoints, armyIdentifier, factionMarkdown) {
     inputForm.style.display = "none";
     resultForm.style.display = "flex";
     resetButton.style.display = "flex";
@@ -242,7 +244,8 @@ function compressList(pointsIdentifier, charactersAfterPoints, armyIdentifier) {
     getAndSetArmyName();
     }
 
-    getAndSetFaction(armyIdentifier);
+    getAndSetFaction(factionMarkdown);
+
     if ( armyIdentifier === "NR"){
         getandSetTotalPoints();
     };
@@ -257,31 +260,14 @@ function compressList(pointsIdentifier, charactersAfterPoints, armyIdentifier) {
     setArmyToOutput();
 }
 
-// function compressNRList(pointsIdentifier, charactersAfterPoints) {
-//     inputForm.style.display = "none";
-//     resultForm.style.display = "flex";
-//     resetButton.style.display = "flex";
-//     outputAreaField.focus();
-//     getAndSetFaction();
-//     getandSetTotalPoints();
-//     getAndSetDetachment();
-//     getAllUnitsToObject(pointsIdentifier);
-//     getPoints(pointsIdentifier, charactersAfterPoints);
-//     getWeapons();
-//     getWarlord();
-//     getEnhancement();
-//     getModelCount();
-//     setArmyToOutput();
-// }
-
 function identifyOrigin() {
     inputArmyString = textAreaField.value;
     inputArmyLinebreakArray = inputArmyString.split((/\r?\n|\r|\n/g));
     if (inputArmyLinebreakArray[0].includes("++++++++++++++++++++")) {
-        compressList(nrSpecs.pointsIdentifier, nrSpecs.charactersAfterPoints, nrSpecs.armyIdentifier);
+        compressList(nrSpecs.pointsIdentifier, nrSpecs.charactersAfterPoints, nrSpecs.armyIdentifier, nrSpecs.factionMarkdown);
     }
     else {
-        compressList(gwSpecs.pointsIdentifier, gwSpecs.charactersAfterPoints, gwSpecs.armyIdentifier);
+        compressList(gwSpecs.pointsIdentifier, gwSpecs.charactersAfterPoints, gwSpecs.armyIdentifier, gwSpecs.factionMarkdown);
     }
 }
 
