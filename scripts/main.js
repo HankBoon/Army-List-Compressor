@@ -232,13 +232,21 @@ function setArmyToOutput() {
     }
 }
 
-function compressGwList(pointsIdentifier, charactersAfterPoints) {
+function compressList(pointsIdentifier, charactersAfterPoints, armyIdentifier) {
     inputForm.style.display = "none";
     resultForm.style.display = "flex";
     resetButton.style.display = "flex";
     outputAreaField.focus();
+
+    if(armyIdentifier === "GW"){
     getAndSetArmyName();
-    getAndSetFaction();
+    }
+
+    getAndSetFaction(armyIdentifier);
+    if ( armyIdentifier === "NR"){
+        getandSetTotalPoints();
+    };
+
     getAndSetDetachment();
     getAllUnitsToObject(pointsIdentifier);
     getPoints(pointsIdentifier, charactersAfterPoints);
@@ -249,31 +257,31 @@ function compressGwList(pointsIdentifier, charactersAfterPoints) {
     setArmyToOutput();
 }
 
-function compressNRList(pointsIdentifier, charactersAfterPoints) {
-    inputForm.style.display = "none";
-    resultForm.style.display = "flex";
-    resetButton.style.display = "flex";
-    outputAreaField.focus();
-    getAndSetFaction();
-    getandSetTotalPoints();
-    getAndSetDetachment();
-    getAllUnitsToObject(pointsIdentifier);
-    getPoints(pointsIdentifier, charactersAfterPoints);
-    getWeapons();
-    getWarlord();
-    getEnhancement();
-    getModelCount();
-    setArmyToOutput();
-}
+// function compressNRList(pointsIdentifier, charactersAfterPoints) {
+//     inputForm.style.display = "none";
+//     resultForm.style.display = "flex";
+//     resetButton.style.display = "flex";
+//     outputAreaField.focus();
+//     getAndSetFaction();
+//     getandSetTotalPoints();
+//     getAndSetDetachment();
+//     getAllUnitsToObject(pointsIdentifier);
+//     getPoints(pointsIdentifier, charactersAfterPoints);
+//     getWeapons();
+//     getWarlord();
+//     getEnhancement();
+//     getModelCount();
+//     setArmyToOutput();
+// }
 
 function identifyOrigin() {
     inputArmyString = textAreaField.value;
     inputArmyLinebreakArray = inputArmyString.split((/\r?\n|\r|\n/g));
     if (inputArmyLinebreakArray[0].includes("++++++++++++++++++++")) {
-        compressNRList(nrSpecs.pointsIdentifier, nrSpecs.charactersAfterPoints);
+        compressList(nrSpecs.pointsIdentifier, nrSpecs.charactersAfterPoints, nrSpecs.armyIdentifier);
     }
     else {
-        compressGwList(gwSpecs.pointsIdentifier, gwSpecs.charactersAfterPoints);
+        compressList(gwSpecs.pointsIdentifier, gwSpecs.charactersAfterPoints, gwSpecs.armyIdentifier);
     }
 }
 
