@@ -12,7 +12,6 @@ const pointsButton = document.querySelector("#points");
 let inputArmyString = "";
 let firstEmptyLineIndex = "";
 let outputArmyArray = [];
-let outputArmyArrayIndex = -1;   // anders lösen?
 let compressedArmyArray = [];
 let inputArmyLinebreakArray = [];
 
@@ -163,7 +162,6 @@ function createUnitObject(string, unit, unitName, singleModelNames, weapons, enh
                 lineIncludesSinglename = false;
             }
             if (line.includes(unitName) && line.includes(pointsIdentifier) && lineIncludesSinglename === false) {
-                outputArmyArrayIndex++;
                 outputArmyArray.push({
                     name: unitName,
                     numberOfModels: 0,
@@ -174,7 +172,6 @@ function createUnitObject(string, unit, unitName, singleModelNames, weapons, enh
                     keywordIndex: index,
                     nextEmptyLineIndex: emptyLineIndex,
                     searchArea: searchArea,
-                    index: outputArmyArrayIndex,
                     searchAreaLinebreakArray: searchAreaLinebreakArray,
                     singleModelNames: singleModelNames
                 })
