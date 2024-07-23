@@ -12,10 +12,12 @@ const pointsButton = document.querySelector("#points");
 const gwSpecs = {
     pointsIdentifier: "oints",
     charactersAfterPoints: 8,
+    armyIdentifier: "GW"
 }
 const nrSpecs = {
     pointsIdentifier: "pts",
     charactersAfterPoints: 5,
+    armyIdentifier: "NR"
 }
 
 let inputArmyString = "";
@@ -145,8 +147,7 @@ function getModelCount() {
     }
 }
 
-function createUnitObject(string, unit, unitName, singleModelNames, weapons, enhancements, warlord, pointsIdentifier) {
-    // console.log(pointsIdentifier);
+function createUnitObject(string, unit, unitName, singleModelNames, weapons, enhancements, pointsIdentifier) {
     startIndex = firstEmptyLineIndex;
     let index;
     for (index = string.indexOf(unitName, startIndex); index !== -1; index = string.indexOf(unitName, startIndex)) {
@@ -172,7 +173,7 @@ function createUnitObject(string, unit, unitName, singleModelNames, weapons, enh
             else {
                 lineIncludesSinglename = false;
             }
-            if (line.includes(unitName) && line.includes("oints") && lineIncludesSinglename === false || line.includes(unitName) && line.includes("pts") && lineIncludesSinglename === false) {
+            if (line.includes(unitName) && line.includes(pointsIdentifier) && lineIncludesSinglename === false) {
                 outputArmyArrayIndex++;
                 outputArmyArray.push({
                     name: unitName,
@@ -193,8 +194,6 @@ function createUnitObject(string, unit, unitName, singleModelNames, weapons, enh
         }
     }
 }
-// for (const singleModelName of unit.singleModelNames){
-//     if (line.includes(singleModelName) = false)
 
 function getAllUnitsToObject(pointsIdentifier) {
     for (const unit of tauEmpire.units) {
