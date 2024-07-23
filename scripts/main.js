@@ -9,19 +9,6 @@ const warlordbutton = document.querySelector("#warlord");
 const weaponsButton = document.querySelector("#weapons");
 const pointsButton = document.querySelector("#points");
 
-const gwSpecs = {
-    pointsIdentifier: "oints",
-    charactersAfterPoints: 8,
-    armyIdentifier: "GW",
-    factionMarkdown: "*"
-}
-const nrSpecs = {
-    pointsIdentifier: "pts",
-    charactersAfterPoints: 5,
-    armyIdentifier: "NR",
-    factionMarkdown: "**"
-}
-
 let inputArmyString = "";
 let firstEmptyLineIndex = "";
 let outputArmyArray = [];
@@ -264,10 +251,10 @@ function identifyOrigin() {
     inputArmyString = textAreaField.value;
     inputArmyLinebreakArray = inputArmyString.split((/\r?\n|\r|\n/g));
     if (inputArmyLinebreakArray[0].includes("++++++++++++++++++++")) {
-        compressList(nrSpecs.pointsIdentifier, nrSpecs.charactersAfterPoints, nrSpecs.armyIdentifier, nrSpecs.factionMarkdown);
+        compressList(tauEmpire.formatSpecs.nr.pointsIdentifier, tauEmpire.formatSpecs.nr.charactersAfterPoints, tauEmpire.formatSpecs.nr.armyIdentifier, tauEmpire.formatSpecs.nr.factionMarkdown);
     }
     else {
-        compressList(gwSpecs.pointsIdentifier, gwSpecs.charactersAfterPoints, gwSpecs.armyIdentifier, gwSpecs.factionMarkdown);
+        compressList(tauEmpire.formatSpecs.gw.pointsIdentifier, tauEmpire.formatSpecs.gw.charactersAfterPoints, tauEmpire.formatSpecs.gw.armyIdentifier, tauEmpire.formatSpecs.gw.factionMarkdown);
     }
 }
 

@@ -9,6 +9,20 @@ const tauEmpire = {
     "Mont’ka",
     "Retaliation Cadre"
   ],
+  formatSpecs: {
+    gw: {
+      pointsIdentifier: "oints",
+      charactersAfterPoints: 8,
+      armyIdentifier: "GW",
+      factionMarkdown: "*",
+    },
+    nr: {
+      pointsIdentifier: "pts",
+      charactersAfterPoints: 5,
+      armyIdentifier: "NR",
+      factionMarkdown: "**"
+    }
+  },
   units: [
     {
       name: "Cadre Fireblade",
